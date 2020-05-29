@@ -1,3 +1,53 @@
-/* 1 first css file
+                /* 1 first css file
 You may make differnt files for differnt purposes.
 REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED.*/
+                
+                body {
+                    font-family: 'Karla', sans-serif;
+                    font-size: 1.5vw;
+                }
+                
+                .container {
+                    margin: auto;
+                }
+                
+                 ::-webkit-input-placeholder {
+                    text-align: center;
+                    font-size: 1.2em;
+                }
+                
+                legend {
+                    display: block;
+                    font-family: 'Bree Serif', serif;
+                    font-size: 40px;
+                    margin: auto;
+                    color: #0ec9be;
+                }
+                
+                input,
+                textarea {
+                    margin: 10px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    color: black;
+                    background-color: wheat;
+                    justify-content: center;
+                }
+                
+                textarea {
+                    width: 100%;
+                }
+                
+                label {
+                    display: inline;
+                }
+                
+                #submit {
+                    clear: both;
+                    margin: 30px auto;
+                }
+                
+                fieldset {
+                    margin: 5px;
+                    padding: 5px;
+                }
