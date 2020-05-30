@@ -5,7 +5,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 body {
                     font-family: 'Karla', sans-serif;
                     font-size: 1.5vw;
-                    background-image: linear-gradient(to right bottom,#232abc,#dcb6e6);
+                    background-image: linear-gradient(to right bottom, #232abc, #dcb6e6);
                 }
                 
                 .container {
@@ -25,13 +25,23 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     color: #0ec9be;
                 }
                 
+                .duration,
+                .cancel {
+                    float: right;
+                }
+                
+                .next {
+                    float: left;
+                    clear: both;
+                }
+                
                 input,
                 textarea {
                     margin: 10px;
                     border: 1px solid black;
                     border-radius: 5px;
                     color: black;
-                    background-color: wheat;
+                    background-color: #ffffff;
                     justify-content: center;
                 }
                 
@@ -51,4 +61,14 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 fieldset {
                     margin: 5px;
                     padding: 5px;
+                }
+                
+                #URL {
+                    font-size: 0.4em;
+                    font-variant: small-caps;
+                    color: black;
+                }
+                
+                input[type="url"] {
+                    width: 100%;
                 }

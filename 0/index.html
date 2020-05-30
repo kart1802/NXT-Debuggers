@@ -27,17 +27,18 @@
                 <legend>Personal Details:</legend>
                 <div class="row">
                     <div class="col">
-                        <label for="fname"> First Name     :</label><br> <input type="text" id="fname" required><br></div>
+                        <label for="fname"> First Name :</label><br> <input type="text" id="fname" required><br></div>
                     <div class="col">
-                        <label for="lname"> Last Name      :</label><br> <input type="text" id="lname" required><br></div>
+                        <label for="lname"> Last Name :</label><br> <input type="text" id="lname" required><br></div>
                 </div>
 
 
                 <div class="row">
                     <div class="col">
-                        <label for="num">  Contact Number :</label> <br><input type="tel" max="13" id="num" required><br></div>
+                        <label for="num"> Contact Number :</label> <br><input type="tel" max="13" id="num" required><br>
+                    </div>
                     <div class="col">
-                        <label for="mail">  Email ID       :</label><br> <input type="email" id="mail" placeholder="mymail@example.com" required>
+                        <label for="mail"> Email ID :</label><br> <input type="email" id="mail" placeholder="mymail@example.com" required>
                     </div>
                 </div>
             </fieldset>
@@ -59,29 +60,31 @@
 
 
             <fieldset class="justify-content-center col-md-6 col-lg-12" id="edu_node">
-                <legend>Education:</legend>
+                <legend> Education:</legend>
 
-                <label for="ed1">Name of Institution :</label> <input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12 "> <br>
+                <label for="ed1">Name of Institution :</label> <input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
                 <div class="row">
                     <div class="col">
-                        <label for="ed2">Gradutaion(Expected) :</label> <input type=" date " id="ed2" required><br></div>
+                        <label for="ed2">Gradutaion(Expected) :</label> <input type="date" id="ed2" required><br>
+                    </div>
                     <div class="col">
-                        <label for="ed3">CGPA :</label> <input type="number " id="ed3" placeholder=" type out of 10 " required><br></div>
+                        <label for="ed3">CGPA :</label> <input type="number " id="ed3" placeholder="type out of 10" required><br></div>
                 </div>
                 <label for="ed4">Core Classes :</label> <textarea rows="2 " cols="100 " id="ed4" placeholder=" " required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
+                <button type="button" onclick="cancel()" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
+                <span id="edu"></span>
 
-                <button type="button" onclick="add_edu()" class=" button btn btn-outline-success btn-lg text-center ">Next Education details</button>
             </fieldset>
+            <button type="button" onclick="addedu()" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
 
 
 
 
-
-            <fieldset class="justify-content-center col-md-6 col-lg-12 ">
+            <fieldset class="justify-content-center col-md-6 col-lg-12">
                 <legend>
                     Skills:
                 </legend>
-                <textarea rows="3 " cols="100 " placeholder="Show off your skills here " class="col-sm-9 col-md-6 col-lg-12 "></textarea>
+                <textarea rows="3" cols="100" placeholder="Show off your skills here" class="col-sm-9 col-md-6 col-lg-12 "></textarea>
             </fieldset>
 
 
@@ -89,49 +92,60 @@
 
 
 
-            <fieldset class="justify-content-center col-md-6 col-lg-12 " id="pro_node">
-                <legend>
-                    Projects:
+            <fieldset class="justify-content-center col-md-6 col-lg-12" id="pro_node">
+                <legend> Projects:
                 </legend>
 
                 <dl>
                     <dt>
-                        <input type="text " placeholder="Project name" >  <input id="durationp" type="text " placeholder="Sep-19 to Dec 19 ">
+                        <input type="text" placeholder="Project name"> <input class="duration" type="text"
+                            placeholder="Sep-19 to Dec 19 ">
                     <dd>
-                        <textarea maxlength="100 " placeholder="Details"></textarea>
+                        <textarea maxlength="100" placeholder="Details"></textarea>
                     </dd>
                     </dt>
-                    
+
                 </dl>
-                <button type="button" onclick="add_pro()" class=" button btn btn-outline-success btn-lg text-center ">Next Project details</button>
-
+                <button type="button" onclick="cancel()" class="cancel btn btn-danger btn-lg text-center">Remove Project</button>
+                <span id="pro"></span>
             </fieldset>
+            <button type="button" onclick="addpro()" class="next btn btn-primary btn-lg text-center">Next Project details</button>
 
 
 
 
 
-
-            <fieldset class="justify-content-center col-md-6 col-lg-12 " id="int_node">
+            <fieldset class="justify-content-center col-md-6 col-lg-12" id="int_node">
                 <legend>
                     Internships:
                 </legend>
                 <dl>
                     <dt>
-                        <input  type="text " placeholder="Title"> <input id="durationi" type="text " placeholder="Sep-19 to Dec 19 ">
+                        <input type="text" placeholder="Title "> <input class="duration" type="text"
+                            placeholder="Sep-19 to Dec 19">
                     <dd>
-                        <textarea maxlength="100 " placeholder="Details"></textarea>
+                        <textarea maxlength="100" placeholder="Details"></textarea>
                     </dd>
                     </dt>
-                    <button type="button" onclick="add_int()" class=" button btn btn-outline-success btn-lg text-center ">Next Internship details</button>
-                </dl>
-            </fieldset>
-        </div>
 
+                </dl>
+                <button type="button" onclick="cancel()" class="cancel btn btn-danger btn-lg text-center">Remove Internship</button>
+                <span id="int"></span>
+            </fieldset>
+            <button type="button" onclick="addint()" class="next  btn btn-primary btn-lg btn-md text-center">Next Internship details</button>
+        </div>
+        <fieldset>
+            <legend>
+                Profile Links
+                <div id="URL">*These URLs will be used in digital resume only</div>
+            </legend>
+            Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br><br>Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
+
+        </fieldset>
 
 
         <div class="text-center">
-            <input id="submit" type="submit" value="Go get it!" class=" button btn btn-outline-success btn-lg text-center ">
+            <input type="button" id="submit" value="Go get it!" class=" button btn btn-outline-success btn-lg text-center">
         </div>
     </form>
 
@@ -141,7 +155,7 @@ RESUME MAKER MAIN PAGE
 REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 -->
 
-    <script src="js01.js "></script>
+    <script src="js01.js"></script>
 
 </body>
 

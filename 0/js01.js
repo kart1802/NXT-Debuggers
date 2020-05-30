@@ -1,35 +1,26 @@
 // You may make differnt files for differnt purposes.
 // REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
+function addedu() {
+    var x = document.getElementById('edu_node');
+    var y = document.getElementById("edu");
+    y.innerHTML = x.innerHTML;
+}
 
-
-
-
-function add_edu(){
-        var x=document.getElementById("edu_node");
-
-        var node=x.cloneNode(true);
-        document.getElementById("edu_node").appendChild(node);
-
+function cancel(id) {
+    var y = document.getElementById(id);
+    y.innerHTML = "";
 }
 
 
-
-
-function add_pro(){
-    var x=document.getElementById("pro_node");
-
-    var node=x.cloneNode(true);
-    x.appendChild(node);
-
+function addpro() {
+    var x = document.getElementById('pro_node')
+    var y = document.getElementById("pro");
+    y.innerHTML = x.innerHTML;
 }
 
-
-
-function add_int(){
-    var x=document.getElementById("int_node");
-
-    var node=x.cloneNode(true);
-    x.appendChild(node);
-
+function addint() {
+    var x = document.getElementById('int_node');
+    var y = document.getElementById("int");
+    y.innerHTML = x.innerHTML;
 }
