@@ -4,8 +4,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 
                 body {
                     font-family: 'Karla', sans-serif;
-                    font-size: 1.5vw;
-                    background-image: linear-gradient(to right bottom, #232abc, #dcb6e6);
+                    font-size: 1.3em;
+                    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
                 }
                 
                 .container {
@@ -17,22 +17,22 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     font-size: 1.2em;
                 }
                 
+                div .address {
+                    margin: auto;
+                    justify-content: center;
+                }
+                
                 legend {
                     display: block;
                     font-family: 'Bree Serif', serif;
                     font-size: 40px;
                     margin: auto;
-                    color: #0ec9be;
+                    color: #19a2da;
                 }
                 
                 .duration,
                 .cancel {
                     float: right;
-                }
-                
-                .next {
-                    float: left;
-                    clear: both;
                 }
                 
                 input,
@@ -49,24 +49,40 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     width: 100%;
                 }
                 
-                label {
-                    display: inline;
+                input {
+                    text-align: center;
                 }
                 
-                #submit {
-                    clear: both;
-                    margin: 30px auto;
+                textarea {
+                    width: 100%;
+                }
+                
+                label {
+                    display: inline;
+                    font-size: 1.3em;
                 }
                 
                 fieldset {
-                    margin: 5px;
-                    padding: 5px;
+                    display: block;
+                    margin: 2%;
+                    padding: 3%;
+                    width: 100%;
                 }
                 
                 #URL {
                     font-size: 0.4em;
                     font-variant: small-caps;
                     color: black;
+                    text-indent: 3%;
+                }
+                
+                .links {
+                    clear: both;
+                    float: left;
+                }
+                
+                .next {
+                    margin: auto;
                 }
                 
                 input[type="url"] {

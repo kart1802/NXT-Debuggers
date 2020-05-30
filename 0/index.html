@@ -16,71 +16,82 @@
 </head>
 
 <body class="container">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="GET">
 
         <div class="form-group row">
 
 
+            <!--PERSONAL DETAILS-->
 
-
-            <fieldset class="justify-content-center col-md-6 col-lg-12">
+            <fieldset class="justify-content-center col-lg-12">
                 <legend>Personal Details:</legend>
                 <div class="row">
-                    <div class="col">
-                        <label for="fname"> First Name :</label><br> <input type="text" id="fname" required><br></div>
-                    <div class="col">
-                        <label for="lname"> Last Name :</label><br> <input type="text" id="lname" required><br></div>
+                    <div class="col-lg-6">
+                        <label for="fname"> First Name :</label><br> <input type="text" id="fname" size="30" placeholder="First name" required><br></div>
+                    <div class="col-lg-6">
+                        <label for="lname"> Last Name :</label><br> <input type="text" id="lname" size="30" placeholder="Last name" required><br></div>
                 </div>
 
 
                 <div class="row">
-                    <div class="col">
-                        <label for="num"> Contact Number :</label> <br><input type="tel" max="13" id="num" required><br>
+                    <div class="col-lg-6">
+                        <label for="num"> Contact Number:</label> <br><input type="tel" max="13" size="30" id="num" placeholder="Phone number" required><br>
                     </div>
-                    <div class="col">
-                        <label for="mail"> Email ID :</label><br> <input type="email" id="mail" placeholder="mymail@example.com" required>
+                    <div class="col-lg-6">
+                        <label for="mail"> Email ID:</label><br> <input type="email" id="mail" size="30" placeholder="mymail@example.com" required>
                     </div>
                 </div>
+                <label for="Address">Address:</label><br>
+                <address><input   type="text" placeholder="Street" class="col-md-12"> 
+                <br><div class="address row" >
+                    <label for="City" hidden>City</label><input   type="text" class="col" placeholder="City" >
+                    <label for="State" hidden> State</label><input   type="text" class="col" placeholder="State" >
+                    <label for="Country" hidden>Country</label><input   type="text" class="col" placeholder="Country">
+                    </div>
+                </address>
             </fieldset>
+            <!--PERSONAL DETAILS  CLOSED-->
 
-
-
-
-
-
-            <fieldset class="justify-content-center col-md-6 col-lg-12">
+            <!--OBJECTIVE-->
+            <fieldset class="justify-content-center col-lg-12">
                 <legend>Objective:</legend>
 
                 <textarea placeholder="Not more than 250 characters" maxlength="250"></textarea>
 
             </fieldset>
 
+            <!--OBJECTIVE CLOSED-->
 
 
 
 
-            <fieldset class="justify-content-center col-md-6 col-lg-12" id="edu_node">
+            <!--EDUCATION-->
+
+            <fieldset class="justify-content-center col-lg-12" id="edu_node">
                 <legend> Education:</legend>
 
                 <label for="ed1">Name of Institution :</label> <input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
                 <div class="row">
                     <div class="col">
-                        <label for="ed2">Gradutaion(Expected) :</label> <input type="date" id="ed2" required><br>
+                        <label for="ed2">Year of Graduation(Or Expected) :</label> <input type="date" id="ed2" placeholder="DD-MM-YYYY" required><br>
                     </div>
                     <div class="col">
-                        <label for="ed3">CGPA :</label> <input type="number " id="ed3" placeholder="type out of 10" required><br></div>
+                        <label for="ed3">CGPA :</label> <input type="number " id="ed3" placeholder="Out Of 10" required><br></div>
                 </div>
                 <label for="ed4">Core Classes :</label> <textarea rows="2 " cols="100 " id="ed4" placeholder=" " required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
-                <button type="button" onclick="cancel()" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
+                <button type="button" onclick="cancel('edu')" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
                 <span id="edu"></span>
 
             </fieldset>
-            <button type="button" onclick="addedu()" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
+            <button type="button" onclick="next('edu_node','edu')" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
+
+            <!--EDUCATION CLOSED-->
 
 
+            <!--SKILLS-->
 
 
-            <fieldset class="justify-content-center col-md-6 col-lg-12">
+            <fieldset class="justify-content-center col-lg-12">
                 <legend>
                     Skills:
                 </legend>
@@ -88,65 +99,86 @@
             </fieldset>
 
 
+            <!--SKILLS CLOSED-->
 
 
 
 
-            <fieldset class="justify-content-center col-md-6 col-lg-12" id="pro_node">
+            <!--PROJECTS-->
+
+            <fieldset class="justify-content-center col-lg-12" id="pro_node">
                 <legend> Projects:
                 </legend>
 
                 <dl>
                     <dt>
-                        <input type="text" placeholder="Project name"> <input class="duration" type="text"
+                        <input   type="text" placeholder="Project name"> <br><input   class="duration" type="text"
                             placeholder="Sep-19 to Dec 19 ">
                     <dd>
-                        <textarea maxlength="100" placeholder="Details"></textarea>
+                        <textarea maxlength="100" placeholder="Project Description"></textarea>
                     </dd>
                     </dt>
 
                 </dl>
-                <button type="button" onclick="cancel()" class="cancel btn btn-danger btn-lg text-center">Remove Project</button>
+                <button type="button" onclick="cancel('pro')" class="cancel btn btn-danger btn-lg text-center">Remove Project</button>
                 <span id="pro"></span>
             </fieldset>
-            <button type="button" onclick="addpro()" class="next btn btn-primary btn-lg text-center">Next Project details</button>
+            <button type="button" onclick="next('pro_node','pro')" class="next btn btn-primary btn-lg text-center">Next Project</button>
+
+            <!--PROJECTS CLOSED-->
 
 
 
 
+            <!--INTERSHIPS-->
 
-            <fieldset class="justify-content-center col-md-6 col-lg-12" id="int_node">
+            <fieldset class="justify-content-center col-lg-12" id="int_node">
                 <legend>
                     Internships:
                 </legend>
                 <dl>
                     <dt>
-                        <input type="text" placeholder="Title "> <input class="duration" type="text"
-                            placeholder="Sep-19 to Dec 19">
+                        <input type="text" placeholder="Title"> <br>
+                        <input class="duration" type="text" placeholder="Sep-19 to Dec 19">
                     <dd>
-                        <textarea maxlength="100" placeholder="Details"></textarea>
+                        <textarea maxlength="100" placeholder="Internship Description"></textarea>
                     </dd>
                     </dt>
-
                 </dl>
-                <button type="button" onclick="cancel()" class="cancel btn btn-danger btn-lg text-center">Remove Internship</button>
+                <button type="button" onclick="cancel('int')" class="cancel btn btn-danger btn-lg text-center">Remove Internship</button>
                 <span id="int"></span>
             </fieldset>
-            <button type="button" onclick="addint()" class="next  btn btn-primary btn-lg btn-md text-center">Next Internship details</button>
+
+            <input type="button" id="mybt" value="Next Internship" onclick="next('int_node','int')" class="next btn btn-primary btn-lg text-center">
+
+            <!--INTERNSHIPS CLOSED-->
+            <br><br>
+
+
+
+            <!--PROFILE LINKS-->
+
+            <fieldset>
+                <legend>
+                    Profile Links:
+                    <div id="URL">*These URLs will be used in digital resume only</div>
+                </legend>
+                Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br> Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
+            </fieldset>
+
+
+
+
+            <!--PROFILE LINKS CLOSED-->
+
+
         </div>
-        <fieldset>
-            <legend>
-                Profile Links
-                <div id="URL">*These URLs will be used in digital resume only</div>
-            </legend>
-            Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br><br>Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
+        <!--SUBMIT BUTTON-->
 
-        </fieldset>
-
-
-        <div class="text-center">
-            <input type="button" id="submit" value="Go get it!" class=" button btn btn-outline-success btn-lg text-center">
+        <div id="submit" class="text-center">
+            <input type="button" value="Go get it!" class="btn btn-success btn-lg text-center">
         </div>
+
     </form>
 
 
@@ -160,3 +192,19 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 </body>
 
 </html>
+
+<!--
+    THE DURATION AFTER TITLE OF PROJECT AND INTERSHIP SHOULD BE ON NEXT LINE FLOATING RIGHT
+    FIRST MAKE THIS PAGE BETTER AND RESPONSIVE AND DISPLAY ITS CONTENT MORE PRECISEY AND NEATLY
+    THEN TOMORROW WE WILL WORK ABOUT HOBBIES AND ACHIEVEMENTS SECTION
+    !!!!!!!!!!!!!!!!!!!CGPA FLOATING LEFT!!!!!!!!!!!!!!!
+    
+      
+    :)))
+    PAKAD RE MERE KO RAJUa
+    arrtey kehena kya chahate hoo??? toh seedhe seedhe bata nahi sakte the??
+
+    !!!!HOVER EFFECT!!
+    THEN FIRST WE SHOULD MAKE <NAV>
+    !!!!!!TEXT BOX SHADOWS !!!
+-->
