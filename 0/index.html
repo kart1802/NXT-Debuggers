@@ -72,27 +72,26 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <legend> Education:</legend>
                 <ol id="edu_node">
                     <li>
-                        <label for="ed1">Name of Institution :</label> <input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
+                        <label for="ed1">Name of Institution :</label><input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
                         <div class="row">
-                            <div class="col">
+                            <div class="col-6">
                                 <label for="ed2">Admission Year:</label>
                                 <input class="duration" type="date" id="ed2" placeholder="DD-MM-YYYY" required=""><br>
-                                <span class="grad_year"><label for="ed3">Year of Graduation(Or Expected):</label></span><span class="grad_input"><input type="date" class="duration" id="ed3" required></span><br>
+                                <label class="grad_year" for="ed3">Year of Graduation(Or Expected):</label><input type="date" class="duration" id="ed3" required><br>
                             </div>
-                            <div class="col">
+                            <div class="col-6">
                                 <label for="ed4">CGPA:</label> <input type="number " id="ed4" placeholder="Out Of 10" required><br></div>
                         </div>
                         <label for="ed5">Core Classes:</label> <textarea rows="2 " cols="100 " id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree" required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
                         <label for="ed6">Achievements:<span class="info">*Achievements under respective educational institute</span></label>
                         <textarea rows="2" id="ed6" placeholder=" " required class="col-lg-12"></textarea>
-                        <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
 
                     </li>
-                    <span id="edu"></span>
+
                 </ol>
 
             </fieldset>
-            <button type="button" onclick="next('edu_node','edu')" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
+            <button type="button" onclick="next('edu_node','Education')" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
 
             <!--EDUCATION CLOSED-->
 
@@ -105,10 +104,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Skills:
                 </legend>
                 <ol id="slist">
-                    <li><input type="text" class="col" placeholder="Show off your skills here"><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Skill</button></li>
-                    <span id="sitem"></span>
+                    <li><input type="text" class="col" placeholder="Show off your skills here"></li>
+
                 </ol>
-                <button type="button" onclick="next('slist','sitem')" class="next button btn btn-primary btn-lg text-center">More skills</button>
+                <button type="button" onclick="next('slist','Skill')" class="next button btn btn-primary btn-lg text-center">More skills</button>
             </fieldset>
 
             <!--SKILLS CLOSED-->
@@ -119,10 +118,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Hobbies:
                 </legend>
                 <ol id="hlist">
-                    <li><input type="text" class="col" placeholder="Show off your hobby here"><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Skill</button></li>
-                    <span id="hitem"></span>
+                    <li><input type="text" class="col" placeholder="Show off your hobby here"></li>
+
                 </ol>
-                <button type="button" onclick="next('hlist','hitem')" class="next button btn btn-primary btn-lg text-center">More hobbies</button>
+                <button type="button" onclick="next('hlist','Hobby')" class="next button btn btn-primary btn-lg text-center">More hobbies</button>
 
             </fieldset>
             <!--HOBBIES CLOSED-->
@@ -139,14 +138,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                             placeholder="Sep-19 to Dec 19 ">To<input type="text" placeholder="Sep-19 to Dec 19 "></span>
 
                         <textarea maxlength="100" placeholder="Project Description"></textarea>
-                        <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Remove Project</button>
                     </li>
-                    <span id="pro"></span>
                 </ol>
-
-
             </fieldset>
-            <button type="button" onclick="next('pro_node','pro')" class="next btn btn-primary btn-lg text-center">Next Project</button>
+            <button type="button" onclick="next('pro_node','Project')" class="next btn btn-primary btn-lg text-center">Next Project</button>
 
             <!--PROJECTS CLOSED-->
 
@@ -163,17 +158,14 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     <li>
                         <input type="text" placeholder="Title"> <br>
                         <span class="duration"><input type="text" placeholder="Sep-19 to Dec 19 ">To<input type="text" placeholder="Sep-19 to Dec 19 "></span>
-
                         <textarea maxlength="100" placeholder="Internship Description"></textarea>
-                        <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Remove Internship</button>
                     </li>
-                    <span id="int"></span>
                 </ol>
 
 
             </fieldset>
 
-            <input type="button" value="Next Internship" onclick="next('int_node','int')" class="next btn btn-primary btn-lg text-center">
+            <input type="button" value="Next Internship" onclick="next('int_node','Internship')" class="next btn btn-primary btn-lg text-center">
 
             <!--INTERNSHIPS CLOSED-->
 
@@ -185,10 +177,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Other Achievements:
                 </legend>
                 <ol id="alist">
-                    <li><input type="text" class="col" placeholder="Show off your achievements here"><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Achievement</button></li>
-                    <span id="aitem"></span>
+                    <li><input type="text" class="col" placeholder="Show off your achievements here"></li>
+
                 </ol>
-                <button type="button" onclick="next('alist','aitem')" class="next button btn btn-primary btn-lg text-center">More Achievement</button>
+                <button type="button" onclick="next('alist','Achievement')" class="next button btn btn-primary btn-lg text-center">More Achievement</button>
             </fieldset>
 
             <!--OTHER ACHIEVEMENTS CLOSED-->
@@ -196,12 +188,12 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
             <!--PROFILE LINKS-->
 
-            <fieldset>
+            <fieldset class="col-lg-12">
                 <legend>
                     Profile Links:
 
                 </legend>
-                <span class="info">*These URLs will be used in digital resume only</span> Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br> Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
+                <span class="info">*These URLs will be used in digital resume only</span> <br> Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br> Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
             </fieldset>
 
             <!--PROFILE LINKS CLOSED-->

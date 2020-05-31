@@ -9,23 +9,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 }
                 /**/
                 
-                .skill {
-                    float: left;
-                    clear: both;
-                }
-                
-                .container {
-                    margin: auto;
-                }
-                
-                 ::-webkit-input-placeholder {
-                    text-align: center;
-                    font-size: 1.2em;
-                }
-                
-                div .address {
-                    margin: auto;
-                    justify-content: center;
+                fieldset {
+                    margin: 2%;
+                    padding: 3%;
+                    width: 100%;
                 }
                 
                 legend {
@@ -36,9 +23,9 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     color: #19a2da;
                 }
                 
-                .duration,
-                .cancel {
-                    float: right;
+                label {
+                    display: inline;
+                    font-size: 1.3em;
                 }
                 
                 input,
@@ -59,19 +46,30 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     text-align: center;
                 }
                 
-                textarea {
-                    width: 100%;
+                fieldset,
+                li,
+                .btn {
+                    animation: slide-up 0.60s ease-in-out;
                 }
                 
-                label {
-                    display: inline;
-                    font-size: 1.3em;
+                div .address {
+                    margin: auto;
+                    justify-content: center;
                 }
                 
-                fieldset {
-                    margin: 2%;
-                    padding: 3%;
-                    width: 100%;
+                .skill {
+                    float: left;
+                    clear: both;
+                }
+                
+                 ::-webkit-input-placeholder {
+                    text-align: center;
+                    font-size: 1.2em;
+                }
+                
+                .duration,
+                .cancel {
+                    float: right;
                 }
                 
                 .info {
@@ -94,10 +92,22 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     width: 100%;
                 }
                 
-                .grad_input {
-                    float: right;
-                }
-                
                 .grad_year {
                     float: left;
+                }
+                
+                #submit {
+                    margin-bottom: 5vh;
+                }
+                /*ANIMATIONS*/
+                
+                @keyframes slide-up {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(25px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
                 }
