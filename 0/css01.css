@@ -9,6 +9,11 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 }
                 /**/
                 
+                .skill {
+                    float: left;
+                    clear: both;
+                }
+                
                 .container {
                     margin: auto;
                 }
@@ -64,16 +69,15 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 }
                 
                 fieldset {
-                    display: block;
                     margin: 2%;
                     padding: 3%;
                     width: 100%;
                 }
                 
-                #URL {
-                    font-size: 0.4em;
+                .info {
+                    font-size: 14px;
                     font-variant: small-caps;
-                    color: black;
+                    color: darkblue;
                     text-indent: 3%;
                 }
                 

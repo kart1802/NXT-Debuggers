@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<!--   
+RESUME MAKER MAIN PAGE
+REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
+-->
 
 <head>
     <title>
@@ -70,12 +74,16 @@
                 <label for="ed1">Name of Institution :</label> <input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
                 <div class="row">
                     <div class="col">
-                        <label for="ed2">Year of Graduation(Or Expected) :</label> <input type="date" id="ed2" placeholder="DD-MM-YYYY" required><br>
+                        <label for="ed2">Admission Year:</label>
+                        <input class="duration" type="date" id="ed2" placeholder="DD-MM-YYYY" required=""><br>
+                        <label for="ed3">Graduated Year(Or Expected):</label> <input type="date" class="duration" id="ed3" placeholder="DD-MM-YYYY" required><br>
                     </div>
                     <div class="col">
-                        <label for="ed3">CGPA :</label> <input type="number " id="ed3" placeholder="Out Of 10" required><br></div>
+                        <label for="ed4">CGPA:</label> <input type="number " id="ed4" placeholder="Out Of 10" required><br></div>
                 </div>
-                <label for="ed4">Core Classes :</label> <textarea rows="2 " cols="100 " id="ed4" placeholder=" " required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
+                <label for="ed5">Core Classes:</label> <textarea rows="2 " cols="100 " id="ed5" placeholder="Thermodynamics for mechanical degree" required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
+                <label for="ed6">Achievements: <span class="info">*Achievements under respective educational institute</span></label>
+                <textarea rows="2" id="ed6" placeholder=" " required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
                 <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
                 <span id="edu"></span>
 
@@ -92,14 +100,28 @@
                 <legend>
                     Skills:
                 </legend>
-                <textarea rows="3" cols="100" placeholder="Show off your skills here" class="col-sm-9 col-md-6 col-lg-12 "></textarea>
+                <ol id="slist">
+                    <li><input type="text" class="col" placeholder="Show off your skills here"><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Skill</button></li>
+                    <span id="sitem"></span>
+                </ol>
+                <button type="button" onclick="next('slist','sitem')" class="next button btn btn-primary btn-lg text-center">More skills</button>
             </fieldset>
-
 
             <!--SKILLS CLOSED-->
 
+            <!--HOBBIES-->
+            <fieldset class="justify-content-center col-lg-12">
+                <legend>
+                    Hobbies:
+                </legend>
+                <ol id="hlist">
+                    <li><input type="text" class="col" placeholder="Show off your hobby here"><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Skill</button></li>
+                    <span id="hitem"></span>
+                </ol>
+                <button type="button" onclick="next('hlist','hitem')" class="next button btn btn-primary btn-lg text-center">More hobbies</button>
 
-
+            </fieldset>
+            <!--HOBBIES CLOSED-->
 
             <!--PROJECTS-->
 
@@ -109,8 +131,8 @@
 
                 <dl>
                     <dt>
-                        <input   type="text" placeholder="Project name"> <br><input   class="duration" type="text"
-                            placeholder="Sep-19 to Dec 19 ">
+                        <input   type="text" placeholder="Project name"> <br><span class="duration"><input    type="text"
+                            placeholder="Sep-19 to Dec 19 ">To<input type="text" placeholder="Sep-19 to Dec 19 "></span>
                     <dd>
                         <textarea maxlength="100" placeholder="Project Description"></textarea>
                     </dd>
@@ -136,7 +158,8 @@
                 <dl>
                     <dt>
                         <input type="text" placeholder="Title"> <br>
-                        <input class="duration" type="text" placeholder="Sep-19 to Dec 19">
+                        <span class="duration"><input    type="text"
+                            placeholder="Sep-19 to Dec 19 ">To<input type="text" placeholder="Sep-19 to Dec 19 "></span>
                     <dd>
                         <textarea maxlength="100" placeholder="Internship Description"></textarea>
                     </dd>
@@ -149,8 +172,6 @@
             <input type="button" id="mybt" value="Next Internship" onclick="next('int_node','int')" class="next btn btn-primary btn-lg text-center">
 
             <!--INTERNSHIPS CLOSED-->
-            <br><br>
-
 
 
             <!--PROFILE LINKS-->
@@ -158,16 +179,12 @@
             <fieldset>
                 <legend>
                     Profile Links:
-                    <div id="URL">*These URLs will be used in digital resume only</div>
+                    <span class="info">*These URLs will be used in digital resume only</span>
                 </legend>
                 Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br> Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
             </fieldset>
 
-
-
-
             <!--PROFILE LINKS CLOSED-->
-
 
         </div>
         <!--SUBMIT BUTTON-->
@@ -175,33 +192,8 @@
         <div id="submit" class="text-center">
             <input type="button" value="Go get it!" class="btn btn-success btn-lg text-center">
         </div>
-
     </form>
-
-
-    <!--   
-RESUME MAKER MAIN PAGE
-REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
--->
-
     <script src="js01.js"></script>
-
 </body>
 
 </html>
-
-<!--
-    THE DURATION AFTER TITLE OF PROJECT AND INTERSHIP SHOULD BE ON NEXT LINE FLOATING RIGHT
-    FIRST MAKE THIS PAGE BETTER AND RESPONSIVE AND DISPLAY ITS CONTENT MORE PRECISEY AND NEATLY
-    THEN TOMORROW WE WILL WORK ABOUT HOBBIES AND ACHIEVEMENTS SECTION
-    !!!!!!!!!!!!!!!!!!!CGPA FLOATING LEFT!!!!!!!!!!!!!!!
-    
-      
-    :)))
-    PAKAD RE MERE KO RAJUa
-    arrtey kehena kya chahate hoo??? toh seedhe seedhe bata nahi sakte the??
-
-    !!!!HOVER EFFECT!!
-    THEN FIRST WE SHOULD MAKE <NAV>
-    !!!!!!TEXT BOX SHADOWS !!!
--->
