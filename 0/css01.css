@@ -93,3 +93,11 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 input[type="url"] {
                     width: 100%;
                 }
+                
+                .grad_input {
+                    float: right;
+                }
+                
+                .grad_year {
+                    float: left;
+                }
