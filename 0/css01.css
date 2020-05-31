@@ -1,113 +1,123 @@
-                /* 1 first css file
+/* 1 first css file
 You may make differnt files for differnt purposes.
 REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED.*/
-                
-                body {
-                    font-family: 'Karla', sans-serif;
-                    font-size: 1.3em;
-                    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-                }
-                /**/
-                
-                fieldset {
-                    margin: 2%;
-                    padding: 3%;
-                    width: 100%;
-                }
-                
-                legend {
-                    display: block;
-                    font-family: 'Bree Serif', serif;
-                    font-size: 40px;
-                    margin: auto;
-                    color: #19a2da;
-                }
-                
-                label {
-                    display: inline;
-                    font-size: 1.3em;
-                }
-                
-                input,
-                textarea {
-                    margin: 10px;
-                    border: 1px solid black;
-                    border-radius: 5px;
-                    color: black;
-                    background-color: #ffffff;
-                    justify-content: center;
-                }
-                
-                textarea {
-                    width: 100%;
-                }
-                
-                input {
-                    text-align: center;
-                }
-                
-                fieldset,
-                li,
-                .btn {
-                    animation: slide-up 0.60s ease-in-out;
-                }
-                
-                div .address {
-                    margin: auto;
-                    justify-content: center;
-                }
-                
-                .skill {
-                    float: left;
-                    clear: both;
-                }
-                
-                 ::-webkit-input-placeholder {
-                    text-align: center;
-                    font-size: 1.2em;
-                }
-                
-                .duration,
-                .cancel {
-                    float: right;
-                }
-                
-                .info {
-                    font-size: 14px;
-                    font-variant: small-caps;
-                    color: darkblue;
-                    text-indent: 3%;
-                }
-                
-                .links {
-                    clear: both;
-                    float: left;
-                }
-                
-                .next {
-                    margin: auto;
-                }
-                
-                input[type="url"] {
-                    width: 100%;
-                }
-                
-                .grad_year {
-                    float: left;
-                }
-                
-                #submit {
-                    margin-bottom: 5vh;
-                }
-                /*ANIMATIONS*/
-                
-                @keyframes slide-up {
-                    0% {
-                        opacity: 0;
-                        transform: translateY(25px);
-                    }
-                    100% {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.3em;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+
+/*MAIN TAGS*/
+
+fieldset {
+    margin: 2%;
+    padding: 3%;
+    width: 100%;
+}
+
+legend {
+    display: block;
+    font-family: 'Bree Serif', serif;
+    font-size: 40px;
+    margin: auto;
+    color: #19a2da;
+}
+
+label {
+    display: inline;
+    font-size: 1.3em;
+}
+
+input,
+textarea {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: #ffffff;
+    justify-content: center;
+}
+
+textarea {
+    width: 100%;
+}
+
+input {
+    text-align: center;
+}
+
+fieldset,
+li,
+.btn {
+    animation: slide-up 0.60s ease-in-out;
+}
+
+input[type="url"] {
+    width: 100%;
+}
+
+div .address {
+    margin: auto;
+    justify-content: center;
+}
+
+
+/*CLASSES*/
+
+.skill {
+    float: left;
+    clear: both;
+}
+
+ ::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.duration,
+.cancel {
+    float: right;
+}
+
+.info {
+    font-size: 14px;
+    font-variant: small-caps;
+    color: darkblue;
+    text-indent: 3%;
+}
+
+.links {
+    clear: both;
+    float: left;
+}
+
+.next {
+    margin: auto;
+}
+
+.grad_year {
+    float: left;
+}
+
+
+/*IDs*/
+
+#submit {
+    margin-bottom: 5vh;
+}
+
+
+/*ANIMATIONS*/
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
