@@ -76,7 +76,7 @@
                         <label for="ed3">CGPA :</label> <input type="number " id="ed3" placeholder="Out Of 10" required><br></div>
                 </div>
                 <label for="ed4">Core Classes :</label> <textarea rows="2 " cols="100 " id="ed4" placeholder=" " required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
-                <button type="button" onclick="cancel('edu')" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
+                <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center ">Remove Education</button>
                 <span id="edu"></span>
 
             </fieldset>
@@ -117,7 +117,7 @@
                     </dt>
 
                 </dl>
-                <button type="button" onclick="cancel('pro')" class="cancel btn btn-danger btn-lg text-center">Remove Project</button>
+                <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Remove Project</button>
                 <span id="pro"></span>
             </fieldset>
             <button type="button" onclick="next('pro_node','pro')" class="next btn btn-primary btn-lg text-center">Next Project</button>
@@ -142,7 +142,7 @@
                     </dd>
                     </dt>
                 </dl>
-                <button type="button" onclick="cancel('int')" class="cancel btn btn-danger btn-lg text-center">Remove Internship</button>
+                <button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Remove Internship</button>
                 <span id="int"></span>
             </fieldset>
 
