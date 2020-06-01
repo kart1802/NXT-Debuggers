@@ -6,10 +6,16 @@ function cancel(e) {
 }
 
 function copy(copy, name) {
-    var z = document.getElementById(copy).firstElementChild
-    var a = z.cloneNode(true)
+    const z = document.getElementById(copy).firstElementChild
+    const a = z.cloneNode(true)
     a.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete ' + name + '</button><br><br>'
     document.getElementById(copy).appendChild(a)
+}
+
+function achievement(e) {
+    var x = e.parentNode.firstElementChild.cloneNode(true)
+    x.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete </button><br><br>'
+    e.parentNode.insertBefore(x, e.parentNode.lastChild)
 }
 
 var i = 0
@@ -23,9 +29,15 @@ function nextfield() {
     if (i > 0) {
         document.getElementById('back').removeAttribute('hidden', true)
     }
-    if (i === 6) {
+    if (i === 5) {
         document.getElementById('submit').removeAttribute('hidden', true)
         document.getElementById('next').setAttribute('hidden', true)
+    }
+    var list = document.getElementsByTagName('input')
+    for (var num = 0; num < list.length; num++) {
+        if (!list[num].value) {
+            $('.cancel').trigger('click');
+        }
     }
 }
 
@@ -42,8 +54,14 @@ function prefield() {
     } else {
         document.getElementById('back').setAttribute('hidden', true)
     }
-    if (i < 6) {
+    if (i < 5) {
         document.getElementById('submit').setAttribute('hidden', true)
         document.getElementById('next').removeAttribute('hidden', true)
+    }
+    var list = document.getElementsByTagName('input')
+    for (var num = 0; num < list.length; num++) {
+        if (!list[num].value) {
+            $('.cancel').trigger('click');
+        }
     }
 }
