@@ -45,16 +45,16 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <label for="Address">Address:</label><br>
                 <address><input   type="text" placeholder="Street" class="col-md-12"> 
                 <br><div class="address row" >
-                    <label for="City" hidden>City</label><input   type="text" class="col" placeholder="City" >
-                    <label for="State" hidden> State</label><input   type="text" class="col" placeholder="State" >
-                    <label for="Country" hidden>Country</label><input   type="text" class="col" placeholder="Country">
+                    <label for="City" hidden > City</label><input   type="text" class="col" placeholder="City" >
+                    <label for="State" hidden > State</label><input   type="text" class="col" placeholder="State" >
+                    <label for="Country" hidden> Country</label><input   type="text" class="col" placeholder="Country">
                     </div>
                 </address>
             </fieldset>
             <!--PERSONAL DETAILS  CLOSED-->
 
             <!--OBJECTIVE-->
-            <fieldset class="justify-content-center col-lg-12">
+            <fieldset class="justify-content-center col-lg-12" hidden>
                 <legend>Objective:</legend>
 
                 <textarea placeholder="Not more than 250 characters" maxlength="250"></textarea>
@@ -68,9 +68,9 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
             <!--EDUCATION-->
 
-            <fieldset class="justify-content-center col-lg-12">
+            <fieldset class="justify-content-center col-lg-12" hidden>
                 <legend> Education:</legend>
-                <ol id="edu_node">
+                <ol id="edunode">
                     <li>
                         <label for="ed1">Name of Institution :</label><input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
                         <div class="row">
@@ -80,18 +80,18 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                                 <label class="grad_year" for="ed3">Year of Graduation(Or Expected):</label><input type="date" class="duration" id="ed3" required><br>
                             </div>
                             <div class="col-6">
-                                <label for="ed4">CGPA:</label> <input type="number " id="ed4" placeholder="Out Of 10" required><br></div>
+                                <label for="ed4">CGPA:</label> <input type="number" id="ed4" placeholder="Out Of 10" required><br></div>
                         </div>
-                        <label for="ed5">Core Classes:</label> <textarea rows="2 " cols="100 " id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree" required class="col-sm-9 col-md-6 col-lg-12 "></textarea>
+                        <label for="ed5">Core Classes:</label> <textarea rows="2" cols="100" id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree" required class="col-sm-9 col-md-6 col-lg-12"></textarea>
                         <label for="ed6">Achievements:<span class="info">*Achievements under respective educational institute</span></label>
                         <textarea rows="2" id="ed6" placeholder=" " required class="col-lg-12"></textarea>
 
                     </li>
 
                 </ol>
+                <button type="button" onclick="copy('edunode', 'Education')" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
 
             </fieldset>
-            <button type="button" onclick="next('edu_node','Education')" class="next button btn btn-primary btn-lg text-center">Next Education details</button>
 
             <!--EDUCATION CLOSED-->
 
@@ -99,7 +99,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <!--SKILLS-->
 
 
-            <fieldset class="justify-content-center col-lg-12">
+            <fieldset class="justify-content-center col-lg-12" hidden>
                 <legend>
                     Skills:
                 </legend>
@@ -107,13 +107,9 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     <li><input type="text" class="col" placeholder="Show off your skills here"></li>
 
                 </ol>
-                <button type="button" onclick="next('slist','Skill')" class="next button btn btn-primary btn-lg text-center">More skills</button>
-            </fieldset>
-
-            <!--SKILLS CLOSED-->
-
-            <!--HOBBIES-->
-            <fieldset class="justify-content-center col-lg-12">
+                <button type="button" onclick="copy('slist','Skill')" class="next button btn btn-primary btn-lg text-center">More skills</button>
+                <!--SKILLS CLOSED-->
+                <!--HOBBIES-->
                 <legend>
                     Hobbies:
                 </legend>
@@ -121,14 +117,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     <li><input type="text" class="col" placeholder="Show off your hobby here"></li>
 
                 </ol>
-                <button type="button" onclick="next('hlist','Hobby')" class="next button btn btn-primary btn-lg text-center">More hobbies</button>
-
+                <button type="button" onclick="copy('hlist','Hobby')" class="next button btn btn-primary btn-lg text-center">More hobbies</button>
+                <!--HOBBIES CLOSED-->
             </fieldset>
-            <!--HOBBIES CLOSED-->
 
             <!--PROJECTS-->
 
-            <fieldset class="justify-content-center col-lg-12">
+            <fieldset class="justify-content-center col-lg-12 " hidden>
                 <legend> Projects:
                 </legend>
 
@@ -140,17 +135,18 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                         <textarea maxlength="100" placeholder="Project Description"></textarea>
                     </li>
                 </ol>
+                <button type="button" onclick="copy('pro_node','Project')" class="next btn btn-primary btn-lg text-center">Next Project</button>
+
             </fieldset>
-            <button type="button" onclick="next('pro_node','Project')" class="next btn btn-primary btn-lg text-center">Next Project</button>
 
             <!--PROJECTS CLOSED-->
 
 
 
 
-            <!--INTERSHIPS-->
+            <!--INTERNSHIPS-->
 
-            <fieldset class="justify-content-center col-lg-12">
+            <fieldset class="justify-content-center col-lg-12 " hidden>
                 <legend>
                     Internships:
                 </legend>
@@ -162,17 +158,17 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     </li>
                 </ol>
 
+                <input type="button" value="Next Internship" onclick="copy('int_node','Internship')" class="next btn btn-primary btn-lg text-center">
 
             </fieldset>
 
-            <input type="button" value="Next Internship" onclick="next('int_node','Internship')" class="next btn btn-primary btn-lg text-center">
 
             <!--INTERNSHIPS CLOSED-->
 
 
 
             <!--OTHER ACHIEVEMENTS-->
-            <fieldset class="justify-content-center col-lg-12">
+            <fieldset class="justify-content-center col-lg-12 " hidden>
                 <legend>
                     Other Achievements:
                 </legend>
@@ -180,30 +176,30 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     <li><input type="text" class="col" placeholder="Show off your achievements here"></li>
 
                 </ol>
-                <button type="button" onclick="next('alist','Achievement')" class="next button btn btn-primary btn-lg text-center">More Achievement</button>
-            </fieldset>
-
-            <!--OTHER ACHIEVEMENTS CLOSED-->
-
-
-            <!--PROFILE LINKS-->
-
-            <fieldset class="col-lg-12">
+                <button type="button" onclick="copy('alist','Achievement')" class="next button btn btn-primary btn-lg text-center">More Achievement</button>
+                <!--OTHER ACHIEVEMENTS CLOSED-->
+                <!--PROFILE LINKS-->
                 <legend>
                     Profile Links:
 
                 </legend>
                 <span class="info">*These URLs will be used in digital resume only</span> <br> Github Profile: <input type="url" placeholder="Add GitHub Profile link"> <br> Linkedin Profile: <input type="url" placeholder="Add LinkedIn Profile link">
+                <!--PROFILE LINKS CLOSED-->
+
             </fieldset>
 
-            <!--PROFILE LINKS CLOSED-->
+            <!--OTHER ACHIEVEMENTS CLOSED-->
+
+
 
         </div>
         <!--SUBMIT BUTTON-->
 
-        <div id="submit" class="text-center">
+        <div id="submit" hidden class="text-center ">
             <input type="submit" value="Go get it!" class="btn btn-success btn-lg text-center">
         </div>
+        <button type="button" id="next" onclick="nextfield()" class="duration button btn btn-primary btn-lg text-center">Next</button>
+        <button type="button" id="back" hidden onclick="prefield()" class=" button btn btn-primary btn-lg text-center">Back</button>
     </form>
     <script src="js01.js"></script>
 </body>

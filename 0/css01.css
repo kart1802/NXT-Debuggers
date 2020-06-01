@@ -44,7 +44,8 @@ textarea {
     width: 100%;
 }
 
-input {
+input,
+textarea {
     text-align: center;
 }
 
@@ -114,10 +115,10 @@ div .address {
 @keyframes slide-up {
     0% {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateX(25px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
