@@ -15,7 +15,7 @@ function copy(copy, name) {
 function achievement(e) {
     var x = e.parentNode.firstElementChild.cloneNode(true)
     x.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete </button><br><br>'
-    e.parentNode.insertBefore(x, e.parentNode.lastChild)
+    e.parentNode.insertBefore(x, e)
 }
 
 var i = 0
@@ -33,10 +33,10 @@ function nextfield() {
         document.getElementById('submit').removeAttribute('hidden', true)
         document.getElementById('next').setAttribute('hidden', true)
     }
-    var list = document.getElementsByTagName('input')
+    var list = document.getElementsByTagName('cancel').previousSibling
     for (var num = 0; num < list.length; num++) {
-        if (!list[num].value) {
-            $('.cancel').trigger('click');
+        if (list[num].value == 0) {
+            $('.cancel').trigger('click')
         }
     }
 }
@@ -60,8 +60,8 @@ function prefield() {
     }
     var list = document.getElementsByTagName('input')
     for (var num = 0; num < list.length; num++) {
-        if (!list[num].value) {
-            $('.cancel').trigger('click');
+        if (list[num].value == 0) {
+            $('.cancel').trigger('click')
         }
     }
 }
