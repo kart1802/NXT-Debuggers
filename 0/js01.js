@@ -8,13 +8,13 @@ function cancel(e) {
 function copy(copy, name) {
     const z = document.getElementById(copy).firstElementChild
     const a = z.cloneNode(true)
-    a.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete ' + name + '</button><br><br>'
+    a.innerHTML += '<br><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete ' + name + '</button><br>'
     document.getElementById(copy).appendChild(a)
 }
 
 function achievement(e) {
     var x = e.parentNode.firstElementChild.cloneNode(true)
-    x.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete </button><br><br>'
+    x.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-md text-center">Delete Achievement</button>'
     e.parentNode.insertBefore(x, e)
 }
 
@@ -33,7 +33,7 @@ function nextfield() {
         document.getElementById('submit').removeAttribute('hidden', true)
         document.getElementById('next').setAttribute('hidden', true)
     }
-    var list = document.getElementsByTagName('cancel').previousSibling
+    var list = document.getElementsByTagName('input')
     for (var num = 0; num < list.length; num++) {
         if (list[num].value == 0) {
             $('.cancel').trigger('click')

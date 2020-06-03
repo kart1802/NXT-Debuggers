@@ -85,12 +85,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                             <li class="firstlistitem"><input type="text" id="ed6" placeholder=" Achievement" required class="col-lg-12">
 
                             </li>
-                            <button type="button" onclick="achievement(this)" class="next rotate button btn btn-primary btn-lg text-center achbtn">Next Achievement</button>
-                        </ol>
+                            <button type="button" onclick="achievement(this)" class="next rotate button btn btn-secondary btn-md text-center achbtn">&crarr;Add Achievement</button>
+                            <br>
+                        </ol><br>
 
                     </li>
-                </ol><br>
-                <button type="button" onclick="copy('edunode', 'Education')" class="next rotate button btn btn-primary btn-lg text-center align-middle cbtn">Next Education details</button>
+                </ol>
+                <button type="button" onclick="copy('edunode', 'Education')" class="next rotate button btn btn-primary btn-lg text-center  cbtn">Next Education details</button>
             </fieldset>
 
             <!--EDUCATION CLOSED-->
@@ -131,14 +132,14 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
             <!--PROJECTS-->
 
-            <fieldset class="justify-content-center col-lg-12 vetical-center " hidden>
+            <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
                 <legend> Projects:
                 </legend>
 
                 <ol id="pro_node">
                     <li>
                         <input type="text" placeholder="Project name"> <br><span class="duration"><input    type="text"
-                            placeholder="Sep-19 to Dec 19 ">To<input type="text" placeholder="Sep-19 to Dec 19 "></span>
+                            placeholder="Sep-19">To<input type="text" placeholder="Dec-19 "></span>
 
                         <textarea maxlength="100" placeholder="Project Description"></textarea>
                     </li>
@@ -206,8 +207,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
         </div>
 
 
-        <button type="button" id="next" onclick="nextfield()" class="rotate duration button btn btn-primary btn-lg text-center">Next</button>
-        <button type="button" id="back" hidden onclick="prefield()" class="rotate button btn btn-primary btn-lg text-center">Back</button>
+        <button type="button" id="next" onclick="nextfield()" class="rotate duration button btn btn-primary btn-lg text-center">Next &raquo;</button>
+        <button type="button" id="back" hidden onclick="prefield()" class="rotate button btn btn-primary btn-lg text-center">&laquo; Back</button>
 
 
         <!--SUBMIT BUTTON-->
