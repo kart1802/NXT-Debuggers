@@ -8,13 +8,13 @@ function cancel(e) {
 function copy(copy, name) {
     const z = document.getElementById(copy).firstElementChild
     const a = z.cloneNode(true)
-    a.innerHTML += '<br><button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-lg text-center">Delete ' + name + '</button><br>'
+    a.innerHTML += '<br><button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center">Delete ' + name + '</button><br>'
     document.getElementById(copy).appendChild(a)
 }
 
 function achievement(e) {
     var x = e.parentNode.firstElementChild.cloneNode(true)
-    x.innerHTML += '<button type="button" onclick="cancel(this)" class="cancel btn btn-danger btn-md text-center">Delete Achievement</button>'
+    x.innerHTML += '<button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-md text-center">Delete Achievement</button>'
     e.parentNode.insertBefore(x, e)
 }
 

@@ -33,7 +33,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <!--PERSONAL DETAILS-->
 
             <fieldset class="justify-content-center col-lg-12 align-middle">
-                <legend>Personal Details:</legend>
+                <legend class="rotate">Personal Details:</legend>
                 <div class="row">
                     <div class="col-lg-6">
                         <label for="fname"> First Name :</label><br> <input type="text" id="fname" size="30" placeholder="First name" required><br></div>
@@ -43,7 +43,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <label for="num"> Contact Number:</label> <br><input type="tel" max="13" size="30" id="num" placeholder="Phone number" required><br>
+                        <label for="num"> Contact Number:</label> <br><input type="tel" maxlength="13" size="30" id="num" placeholder="Phone number" required><br>
                     </div>
                     <div class="col-lg-6">
                         <label for="mail"> Email ID:</label><br> <input type="email" id="mail" size="30" placeholder="mymail@example.com" required>
@@ -66,7 +66,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <!--EDUCATION-->
 
             <fieldset class="justify-content-center col-lg-12 align-middle text-centre" hidden>
-                <legend> Education:</legend>
+                <legend class="rotate"> Education:</legend>
                 <ol id="edunode">
                     <li>
                         <label for="ed1">Name of Institution :</label><input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
@@ -103,13 +103,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <fieldset class="justify-content-center col-lg-12" hidden>
                 <!--OBJECTIVE-->
 
-                <legend>Objective:</legend>
+                <legend class="rotate">Objective:</legend>
 
                 <textarea placeholder="Why do you want to join? (Not more than 250 characters)" maxlength="250"></textarea>
                 <!--OBJECTIVE CLOSED-->
 
                 <!--SKILLS-->
-                <legend>
+                <legend class="rotate">
                     Skills:
                 </legend>
                 <ol id="slist">
@@ -119,7 +119,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <button type="button" onclick="copy('slist','Skill')" class="next rotate button btn btn-primary btn-lg text-center cbtn">More skills</button>
                 <!--SKILLS CLOSED-->
                 <!--HOBBIES-->
-                <legend>
+                <legend class="rotate">
                     Hobbies:
                 </legend>
                 <ol id="hlist">
@@ -133,13 +133,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <!--PROJECTS-->
 
             <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
-                <legend> Projects:
+                <legend class="rotate"> Projects:
                 </legend>
 
                 <ol id="pro_node">
                     <li>
                         <input type="text" placeholder="Project name"> <br><span class="duration"><input    type="text"
-                            placeholder="Sep-19">To<input type="text" placeholder="Dec-19 "></span>
+                            placeholder="Sep-19"><span class="to">To</span><input type="text" placeholder="Dec-19 "></span>
 
                         <textarea maxlength="100" placeholder="Project Description"></textarea>
                     </li>
@@ -156,13 +156,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <!--INTERNSHIPS-->
 
             <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
-                <legend>
+                <legend class="rotate">
                     Internships:
                 </legend>
                 <ol id="int_node">
                     <li>
                         <input type="text" placeholder="Title"> <br>
-                        <span class="duration"><input type="text" placeholder="Sep-19">To<input type="text" placeholder="Dec 19"></span>
+                        <span class="duration"><input type="text" placeholder="Sep-19"><span class="to">To</span><input type="text" placeholder="Dec 19"></span>
                         <textarea maxlength="100" placeholder="Internship Description"></textarea>
                     </li>
                 </ol>
@@ -178,7 +178,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
             <!--OTHER ACHIEVEMENTS-->
             <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
-                <legend>
+                <legend class="rotate">
                     Other Achievements:
                 </legend>
                 <ol id="alist">
@@ -191,7 +191,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
                 <!--OTHER ACHIEVEMENTS CLOSED-->
                 <!--PROFILE LINKS-->
-                <legend>
+                <legend class="rotate">
                     Profile Links:
 
                 </legend>
@@ -215,7 +215,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
 
         <div id="submit" hidden class="text-center ">
-            <input type="submit" value="Go get it!" class="btn btn-success btn-lg text-center">
+            <input type="submit" value="Go get it!" class="rotate btn btn-success btn-lg text-center">
         </div>
     </form>
     <script src="js01.js"></script>

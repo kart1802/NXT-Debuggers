@@ -21,16 +21,13 @@ fieldset {
     position: relative;
 }
 
-.button {
-    margin: auto;
-}
-
 legend {
     display: block;
     font-family: 'Bree Serif', serif;
     font-size: 40px;
     margin: auto;
     color: #19a2da;
+    text-shadow: 0.2vw 0.2vh 0.5vw dimgray;
 }
 
 label {
@@ -47,6 +44,12 @@ textarea {
     color: black;
     background-color: #ffffff;
     justify-content: center;
+}
+
+input:focus,
+textarea:focus {
+    outline: none !important;
+    background-color: white;
 }
 
 textarea {
@@ -70,6 +73,10 @@ ol li:before {
 input,
 textarea {
     text-align: center;
+    border: solid black 0.1vw;
+    background-color: lightgray;
+    box-shadow: 0.1vw 0.1vh 1vw black;
+    border-radius: 1vw;
 }
 
 fieldset,
@@ -97,11 +104,16 @@ div .address {
  ::-webkit-input-placeholder {
     text-align: center;
     font-size: 1.2em;
+    color: gray;
 }
 
 .duration,
 .cancel {
     float: right;
+}
+
+.to {
+    color: cyan;
 }
 
 .progress {
@@ -111,19 +123,22 @@ div .address {
 }
 
 .info {
-    font-size: 14px;
+    font-size: 0.7em;
     font-variant: small-caps;
     color: #58b3e7;
     text-indent: 3%;
 }
 
-.links {
-    clear: both;
+.grad_year {
     float: left;
 }
 
-.grad_year {
-    float: left;
+.btn {
+    margin: auto;
+    color: black;
+    border: solid black 0.1vw;
+    box-shadow: 1px 1px 1vw black;
+    border-radius: 2vw;
 }
 
 .rotate {
