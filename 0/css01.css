@@ -5,12 +5,12 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 body {
     font-family: 'Karla', sans-serif;
     font-size: 1.3em;
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);
     margin: auto;
     padding-top: 30%;
 }
 
-
+→
 /*MAIN TAGS*/
 
 fieldset {
@@ -36,6 +36,7 @@ legend {
 label {
     display: inline;
     font-size: 1.3em;
+    color: cyan;
 }
 
 input,
@@ -52,8 +53,18 @@ textarea {
     width: 100%;
 }
 
-li {
-    position: relative;
+ol {
+    counter-reset: item;
+}
+
+ol li {
+    display: block;
+}
+
+ol li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: cyan;
 }
 
 input,
@@ -93,10 +104,16 @@ div .address {
     float: right;
 }
 
+.progress {
+    position: absolute;
+    top: 0;
+    left: auto;
+}
+
 .info {
     font-size: 14px;
     font-variant: small-caps;
-    color: darkblue;
+    color: #58b3e7;
     text-indent: 3%;
 }
 
