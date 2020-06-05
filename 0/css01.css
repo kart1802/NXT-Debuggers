@@ -5,12 +5,11 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 body {
     font-family: 'Karla', sans-serif;
     font-size: 1.3em;
-    background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);
+    background-image: linear-gradient( #29323c 0%, #485563 100%);
     margin: auto;
-    padding-top: 30%;
 }
 
-→
+
 /*MAIN TAGS*/
 
 fieldset {
@@ -117,7 +116,7 @@ div .address {
 }
 
 .progress {
-    position: absolute;
+    position: relative;
     top: 0;
     left: auto;
 }
