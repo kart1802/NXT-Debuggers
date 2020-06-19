@@ -1,12 +1,14 @@
 /* 1 first css file
 You may make differnt files for differnt purposes.
 REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED.*/
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Karla', sans-serif;
     font-size: 1.3em;
-    background-image: linear-gradient( #29323c 0%, #485563 100%);
     margin: auto;
+    background-image: url(input_background_2.jpg);
 }
 
 
@@ -106,7 +108,7 @@ div .address {
     color: gray;
 }
 
-.duration,
+
 .cancel {
     float: right;
 }
@@ -128,9 +130,7 @@ div .address {
     text-indent: 3%;
 }
 
-.grad_year {
-    float: left;
-}
+
 
 .btn {
     margin: auto;
@@ -172,6 +172,7 @@ div .address {
 }
 
 #next {
+    float: right;
     margin-right: 5vw;
     margin-bottom: 5vh;
 }

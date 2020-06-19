@@ -9,7 +9,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         Resume Builder
-    </title>
+    </title> <link rel="icon" type="image/jgp" href="Dummy_logo.jpg">
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css01.css">
@@ -20,44 +21,64 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 
-    <!--progress bar-->
-    <div class="progress" style="height: 30px;">
-        <div class="" style="width:25%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        <div class="" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    <!--end of progress bar-->
+    
 </head>
 
-<body class="container align-middle">
-    <form class="form-horizontal">
+<body class="container align-middle p-1">
+    <!--progress bar--><p></p><br>
+<div >
+</div>
+<!--end of progress bar-->
+    <form class="form-horizontal container">
         <div class="form-group row">
             <!--PERSONAL DETAILS-->
 
             <fieldset class="justify-content-center col-lg-12 align-middle">
                 <legend class="rotate">Personal Details:</legend>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="w-65 p-3">
                         <label for="fname"> First Name :</label><br> <input type="text" id="fname" size="30" placeholder="First name" required><br></div>
-                    <div class="col-lg-6">
+                    <div class="w-65 p-3">
                         <label for="lname"> Last Name :</label><br> <input type="text" id="lname" size="30" placeholder="Last name" required><br></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <label for="num"> Contact Number:</label> <br><input type="tel" maxlength="13" size="30" id="num" placeholder="Phone number" required><br>
                     </div>
-                    <div class="col-lg-6">
+
+                    <div class="row">
+                    <div class="w-65 p-3">
+                        <label for="num"> Contact Number:</label> <br><input type="tel" maxlength="14" size="30" id="num" placeholder="+91 1234567890" required><br>
+                    </div><br>
+                    <div class="w-65 p-3">
                         <label for="mail"> Email ID:</label><br> <input type="email" id="mail" size="30" placeholder="mymail@example.com" required>
                     </div>
-                </div>
-                <label for="Address">Address:</label><br>
-                <address><input   type="text" placeholder="Street" class="col-md-12"> 
-                <br><div class="address row" >
-                    <label for="City" hidden > City</label><input   type="text" class="col" placeholder="City" >
-                    <label for="State" hidden > State</label><input   type="text" class="col" placeholder="State" >
-                    <label for="Country" hidden> Country</label><input   type="text" class="col" placeholder="Country">
                     </div>
-                </address>
+                
+                    <div class="row">
+                    <div class="w-65 p-3">
+                        <label for="Address">Address:</label><br>
+                        <span class="text-light" style="font-size: medium;">The place you would want to recieve the response(as mail) to your application</span><br>
+                        <div class="w-65 p-3">
+                        <label for="House no. and street" hidden>Flat,House no.,Building,Road</label>
+                        <input  size="140" type="text" class="col container" placeholder="B-5 Fortress of solitude,Road Number-1">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row container">
+                        <div class="w-65 p-3">
+                    <label for="City" hidden>City</label><input  size="25" type="text" class="col" placeholder="Town/City" > 
+                    </div>
+                    <div class="w-65 p-3">  
+                    <label for="State" hidden>State</label><input size="25"  type="text" class="col" placeholder="State" >
+                    </div>
+                    <div class="w-65 p-3">
+                        <label for="Country" hidden>Country</label><input  size="25" type="text" class="col" placeholder="Country">
+                    </div>
+                    <div class="w-65 p-3">
+                        <label for="Pincode" hidden>Pincode</label><input maxlength="6" size="30" type="number" class="col" placeholder="Pincode">
+                    </div>
+                </div>
+                    
+            
+               
+                   
             </fieldset>
             <!--PERSONAL DETAILS  CLOSED-->
 
@@ -70,20 +91,25 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <legend class="rotate"> Education:</legend>
                 <ol id="edunode">
                     <li>
-                        <label for="ed1">Name of Institution :</label><input type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
+                        <label for="ed1">Name of Institution :</label><input class="container" size="50" type="text" id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required class="col-sm-9 col-md-6 col-lg-12"> <br>
                         <div class="row">
-                            <div class="col-6">
-                                <label for="ed2">Admission Year:</label>
-                                <input class="duration" type="date" id="ed2" placeholder="DD-MM-YYYY" required=""><br>
-                                <label class="grad_year" for="ed3">Year of Graduation(Or Expected):</label><input type="date" class="duration" id="ed3" required><br>
+                            <div class="w-65 p-3">
+                                <span><label for="ed2">Admission Year:</label><br>
+                                <input class="duration" type="date" id="ed2" placeholder="DD-MM-YYYY" required=""></span><br>
+                                <span><label class="grad_year" for="ed3">Year of Graduation(Or Expected):</label><br><input type="date" class="duration" id="ed3" required></span>
+                            </div><br>
+                            <div class="w-65 p-3">
+                                <label for="ed4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If not applicable enter  " - "</span><br><input type="number" id="ed4" placeholder="Out Of 10"><br>
+                                <label for="ed7">Percentage</label><br><span class="text-light" style="font-size: medium;">If not applicable enter  " - "</span><br><input type="number" id="ed7" placeholder="91%"><br>
                             </div>
-                            <div class="col-6">
-                                <label for="ed4">CGPA:</label> <input type="number" id="ed4" placeholder="Out Of 10" required><br></div>
                         </div>
-                        <label for="ed5">Core Classes:</label> <textarea rows="2" cols="100" id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree" required class="col-sm-9 col-md-6 col-lg-12"></textarea>
-                        <label for="ed6">Achievements:</label><br><span class="info">*Achievements under respective educational institute</span>
-                        <ol class="eduachieve">
-                            <li class="firstlistitem"><input type="text" id="ed6" placeholder=" Achievement" required class="col-lg-12">
+                        <label for="ed5">Core Classes:</label><br>
+                        <span class="text-light" style="font-size: medium;">This input field is only for undergraduate/graduate courses or beyond</span>
+                        <textarea class="container" rows="2" cols="100" size="55" id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"class="col-sm-9 col-md-6 col-lg-12"></textarea>
+                        <label for="ed6">Associtations     /Committees:</label><br>
+                        <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken in a particular association in college</span><br>
+                        <ol class="eduachieve container">
+                            <li class="firstlistitem"><textarea rows="2" cols="100" id="ed6" placeholder="Achievement" class="col-sm-9 col-md-6 col-lg-12"></textarea>
 
                             </li>
                             <button type="button" onclick="achievement(this)" class="next rotate button btn btn-secondary btn-md text-center achbtn">&crarr;Add Achievement</button>
@@ -105,16 +131,17 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <!--OBJECTIVE-->
 
                 <legend class="rotate">Objective:</legend>
-
-                <textarea placeholder="Why do you want to join? (Not more than 250 characters)" maxlength="250"></textarea>
+                <span class="text-light" style="font-size: medium;">Main motive behind your application</span>
+                <textarea rows="3" placeholder="Why do you want to apply?/What is this resume for? (Not more than 250 characters)" maxlength="250"></textarea>
                 <!--OBJECTIVE CLOSED-->
 
                 <!--SKILLS-->
                 <legend class="rotate">
-                    Skills:
+                   Relevant Skills:
                 </legend>
-                <ol id="slist">
-                    <li><input type="text" class="col" placeholder="Show off your skills here"></li>
+                <span class="text-light" style="font-size: medium;">skills specific to that post/field, that you posses</span>
+                <ol id="slist" class="row">
+                    <li><input  type="text" class="col" placeholder="Skill"></li>
 
                 </ol>
                 <button type="button" onclick="copy('slist','Skill')" class="next rotate button btn btn-primary btn-lg text-center cbtn">More skills</button>
@@ -123,7 +150,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <legend class="rotate">
                     Hobbies:
                 </legend>
-                <ol id="hlist">
+                <ol id="hlist" class="row">
                     <li><input type="text" class="col" placeholder="Show off your hobby here"></li>
 
                 </ol>
@@ -196,7 +223,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Profile Links:
 
                 </legend>
-                <span class="info">*These URLs will be used in digital resume only</span> <br> <label>Github Profile: </label><input type="url" placeholder="Add GitHub Profile link"> <br> <label>Linkedin Profile:</label> <input type="url" placeholder="Add LinkedIn Profile link">
+                <label>Github Profile: </label><input type="url" placeholder="Add GitHub Profile link"> <br> <label>Linkedin Profile:</label> <input type="url" placeholder="Add LinkedIn Profile link">
                 <!--PROFILE LINKS CLOSED-->
 
             </fieldset>
@@ -208,7 +235,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
         </div>
 
 
-        <button type="button" id="next" onclick="nextfield()" class="rotate duration button btn btn-primary btn-lg text-center">Next &raquo;</button>
+        <button type="button" id="next" onclick="nextfield()" class="rotate button btn btn-primary btn-lg text-center">Next &raquo;</button>
         <button type="button" id="back" hidden onclick="prefield()" class="rotate button btn btn-primary btn-lg text-center">&laquo; Back</button>
 
 

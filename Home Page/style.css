@@ -1,39 +1,6 @@
-/* CSS Reset */
-
-
 html{
     scroll-behavior: smooth;
 }
-
-
-/* Navigation Bar */
-#navbar{
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-}
-#navbar::before{
-    content: "";
-    background-color: black;
-    position: absolute;
-    height: 100%;
-    width: 1600px;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-    opacity: 0.4;
-
-}
-
-/*Navigation bar: Logo and Image */
-#logo{
-    margin: 15px 20px;
-}
-#logo img{
-    height: 70px;
-    margin: 10px 20px;
-} 
 
 
 
