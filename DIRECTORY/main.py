@@ -19,11 +19,12 @@ app.config['MYSQL_DB'] = 'pythonlogin'
 mysql = MySQL(app)
 
 
-@app.route('/pythonlogin/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     
-    msg = ''
-    
+    msg1 = ''
+    command = 'logged out'
+    modal=''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
     
         username = request.form['username']
@@ -43,16 +44,20 @@ def login():
             return redirect(url_for('home'))
         else:
             
-            msg = 'Incorrect username/password!'
-    return render_template('signin.html', msg=msg)
+            msg1 = 'Incorrect username/password!'
+            modal = 'login'
+            command = 'logging'
+    return render_template('website.html', msg1=msg1,command=command,modal=modal)
 
 
 
-@app.route('/pythonlogin/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
 
-    msg = ''
-
+    msg2 = ''
+    modal = ''
+    command = 'logging'
+    signupsuccess = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         
         username = request.form['username']
@@ -65,40 +70,45 @@ def register():
         account = cursor.fetchone()
         
         if account:
-            msg = 'Account already exists!'
+            msg2 = 'Account already exists!'
+            modal = 'signup'
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-            msg = 'Invalid email address!'
+            msg2 = 'Invalid email address!'
+            modal = 'signup'
         elif not re.match(r'[A-Za-z0-9]+', username):
-            msg = 'Username must contain only characters and numbers!'
+            msg2 = 'Username must contain only characters and numbers!'
+            modal = 'signup'
         elif password != cpassword:
-            msg = 'confirm your password again'    
+            msg2 = 'confirm your password again'
+            modal = 'signup'    
         elif not username or not password or not email:
-            msg = 'Please fill out the form!'
+            msg2 = 'Please fill out the form!'
+            modal = 'signup'
         else:
     
             cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
-            msg = 'You have successfully registered. Now you can log in!'
+            signupsuccess = 'You have successfully registered. Now you can log in!'
     elif request.method == 'POST':
         
-        msg = 'Please fill out the form'
-    
-    return render_template('index.html',msg=msg)
+        msg2 = 'Please fill out the form'
+        modal = 'signup'
+    return render_template('website.html',msg2=msg2,command=command,modal=modal,signupsuccess=signupsuccess)
 
 
     
-@app.route('/pythonlogin/home')
+@app.route('/home')
 def home():
     
     if 'loggedin' in session:
     
-        return render_template('home.html', username=session['username'])
+        return render_template('website.html', username=session['username'],command='logged in')
     
     return redirect(url_for('login'))    
 
 
 
-@app.route('/pythonlogin/logout')
+@app.route('/logout')
 def logout():
      return redirect(url_for('login'))  
 
