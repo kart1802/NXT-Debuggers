@@ -1,0 +1,202 @@
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.3em;
+    background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);
+    margin: auto;
+    padding-top: 30%;
+}
+
+
+/*MAIN TAGS*/
+
+fieldset {
+    margin: 0 auto;
+    padding: 3%;
+    width: 100%;
+    align-self: middle;
+    position: relative;
+}
+
+.button {
+    margin: auto;
+}
+
+legend {
+    display: block;
+    font-family: 'Bree Serif', serif;
+    font-size: 40px;
+    margin: auto;
+    color: #19a2da;
+}
+
+label {
+    display: inline;
+    font-size: 1.3em;
+    color: aqua;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol li {
+    display: block;
+}
+
+ol li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+   
+}
+
+input,
+textarea {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: #ffffff;
+    justify-content: center;
+}
+
+textarea {
+    width: 100%;
+}
+
+li {
+    position: relative;
+}
+
+input,
+textarea {
+    text-align: center;
+    background-color: #c2e9fb;
+}
+
+fieldset,
+li {
+    animation: slide-up 0.60s ease-in-out;
+}
+
+input[type="url"] {
+    width: 100%;
+}
+
+div .address {
+    margin: auto;
+    justify-content: center;
+}
+
+
+/*CLASSES*/
+
+.skill {
+    float: left;
+    clear: both;
+}
+
+ ::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 1.2em;
+    color: darkslategrey;
+}
+
+.duration,
+.cancel {
+    float: right;
+}
+
+.info {
+    font-size: 14px;
+    font-variant: small-caps;
+    color: cornsilk;
+    text-indent: 3%;
+}
+
+.links {
+    clear: both;
+    float: left;
+}
+
+.grad_year {
+    float: left;
+}
+
+.rotate {
+    animation: rotate 0.60s ease-in-out
+}
+
+.disappear {
+    animation: disappear 0.60s ease-in-out
+}
+
+.cbtn {
+    display: block;
+    margin: 3vh auto;
+}
+
+.btn {
+    color: black;
+}
+
+.achbtn {
+    display: block;
+    float: right;
+    margin-right: 3vw;
+}
+
+.cancel {
+    display: block;
+    float: right;
+}
+
+
+/*IDs*/
+
+#submit {
+    margin-bottom: 5vh;
+}
+
+#next {
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+}
+
+#back {
+    margin-left: 5vw;
+    margin-bottom: 5vh;
+}
+
+
+/*ANIMATIONS*/
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(180deg)
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}

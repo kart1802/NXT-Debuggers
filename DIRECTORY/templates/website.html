@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script>{% if command=='login' %} 
+<script>{% if modal=='login' %} 
     $(document).ready(function(){
         $("#Login_modal").modal('show');
     });{% endif %}
 </script>
-<script>{% if command=='signup' %} 
+<script>{% if modal=='signup' %} 
     $(document).ready(function(){
-        $("#Login_modal").modal('show');
+        $("#Sign_Up_modal").modal('show');
     });{% endif %}
 </script>
     <!-- CSS only -->
@@ -26,8 +26,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
     </style>
     <title>NXT: Resume Maker</title>
-    <link rel="icon" type="image/jgp" href="Dummy_logo.jpg">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jgp" href="{{ url_for('static',filename='Dummy_logo.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
 <body style=" background:url(Hpme2.jpg);
@@ -37,14 +37,14 @@ background-size:150%;">
     <nav class="navbar navbar-expand-lg navbar-light container-fluid dark"
         style="position: fixed; z-index: 2; background-color: rgb(223, 223, 223);">
         <a class="navbar-brand" href="#">
-            <img  src="Dummy_logo.jpg" width="30" height="30"  class="d-inline block align-top border border-white rounded" alt="Dummy_logo.pdf"><br>
+            <img src="{{ url_for('static',filename='Dummy_logo.jpg') }}" width="30" height="30"  class="d-inline block align-top border border-white rounded" alt="Dummy_logo.pdf">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="nav nav-pills" role="tablist">
+        <div class="align-top collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="nav nav-pills mb-3" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a {% if command=='logged out' %}class="nav-link active" {% else %}class='nav-link'{% endif %} data-toggle="pill" href="#Home" id="Home-tab" role="tab" aria-controls="Home" aria-selected="true">Home</a>
                 </li>
@@ -74,8 +74,7 @@ background-size:150%;">
     <div {% if command=='logged out' %}class="tab-pane fade show active" {% else %}class='tab-pane fade'{% endif %} id="Home" role="tabpanel" aria-labelledby="Home-tab">
         <section id="basic_font_and_centering">
             <h1 style="text-align:center ;font-family: 'Odibee Sans', cursive; font-size: 5.5rem;
-    padding: 5px; font: outline;">Welcome to NXT:<br>Resume Maker</h1>
-            <h3 style="text-align:center ;font-family: 'Odibee Sans', cursive; padding: 12px; font: outline;">Your destination for simple,professional resume.</h3>
+    padding: 12px; font: outline;">Welcome to NXT:<br>Resume Maker</h1>
             <p style="font:x-large bolder ">Here are our templates for the resumes:</p>
     
             <!--Template - SlideShow -->
@@ -89,25 +88,25 @@ background-size:150%;">
                 </ol>
                 <div class="carousel-inner p-3">
                     <div class="carousel-item active">
-                        <img src="Template-1.jpg" class="container" alt="Template-1.jpg">
+                        <img src="{{ url_for('static',filename='Template-1.jpg') }}" class="container" alt="Template-1.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Template 1</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="Template-2.jpg" class="container"  alt="Template-2.jpg">
+                        <img src="{{ url_for('static',filename='Template-2.jpg') }}" class="container"  alt="Template-2.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Template 2</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="Template-3.jpg" class="container" alt="Template-3.jpg">
+                        <img src="{{ url_for('static',filename='Template-3.jpg') }}" class="container" alt="Template-3.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Template 3</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="Template-4.jpg" class="container" alt="Template-4.jpg">
+                        <img src="{{ url_for('static',filename='Template-4.jpg') }}" class="container" alt="Template-4.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Template 4</h5>
                         </div>
@@ -156,12 +155,13 @@ background-size:150%;">
 
 
 
-    <div class="tab-pane fade" id="My_Resume" role="tabpanel" aria-labelledby="My_Resume-tab">
+    <div {% if command=='logging' %}class="tab-pane fade show active"{% else %}class="tab-pane fade"{% endif %} id="My_Resume" role="tabpanel" aria-labelledby="My_Resume-tab">
         <h1 style="font-family: 'Odibee Sans', cursive; font-size: 5.5rem;
         padding: 12px;">My Resume</h1>
         <p id="basic_font_and_centering" style="font-size: large;">To access this feature ,you will have to login.</p>
         <div id="basic_font_and_centering" class="container w-80 p-5 border border-sucess" style="background: white;">
             <div id="MR_login" class="d-flex justify-content-center container w-80 p-5" style="background: white;">
+                <div>{{ signupsuccess }}</div>
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Login_modal"
                     style=" font-size: 1.5rem;  cursor: pointer; border-radius: 15px; border: 10px solid white">Login</button>
             </div>
@@ -194,49 +194,49 @@ background-size:150%;">
             <div  class="card-group row row-cols-2 row-cols-md-4"
             style="font-family: 'Ubuntu', sans-serif;">
             <div id="card" class="card border border-sucess">
-                <img src="Dummy_logo.jpg" class="card-img-top rounded-lg" alt="Photo of Member">
+                <img src="{{ url_for('static',filename='Dummy_logo.jpg') }}" class="card-img-top rounded-lg" alt="Photo of Member">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p id="text" class="card-text">This is a wider card with supporting text below as a natural lead-in
                         to additional content. This content is a little bit longer.</p>
 
                     <div style="margin: 40%;">
-                        <a target="blank" href=""><img src="LinkedIn.jpg" class="card-img-bottom" alt="LinkedIn Profile"></a> </div>
+                        <a target="blank" href=""><img src="{{ url_for('static',filename='LinkedIn.jpg') }}" class="card-img-bottom" alt="LinkedIn Profile"></a> </div>
                 </div>
             </div>
 
             <div id="card" class="card border border-sucess">
-                <img src="Dummy_logo.jpg" class="card-img-top rounded-lg" alt="Photo of Member">
+                <img src="{{ url_for('static',filename='Dummy_logo.jpg') }}" class="card-img-top rounded-lg" alt="Photo of Member">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p id="text" class="card-text">This card has supporting text below as a natural lead-in to
                         additional content.</p>
                     <div style="margin: 40%;">
-                        <a target="blank" href=""><img src="LinkedIn.jpg" class="card-img-bottom" alt="LinkedIn Profile"></a>
+                        <a target="blank" href=""><img src="{{ url_for('static',filename='LinkedIn.jpg') }}" class="card-img-bottom" alt="LinkedIn Profile"></a>
                     </div>
                 </div>
             </div>
             <div id="card" class="card border border-sucess">
-                <img src="Dummy_logo.jpg" class="card-img-top rounded-lg" alt="Photo of Member">
+                <img src="{{ url_for('static',filename='Dummy_logo.jpg') }}" class="card-img-top rounded-lg" alt="Photo of Member">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p id="text" class="card-text">This card has supporting text below as a natural lead-in to
                         additional content.</p>
                     <div style="margin: 40%;">
-                        <a target="blank" href=""><img src="LinkedIn.jpg" class="card-img" alt="LinkedIn Profile"></a>
+                        <a target="blank" href=""><img src="{{ url_for('static',filename='LinkedIn.jpg') }}" class="card-img" alt="LinkedIn Profile"></a>
                     </div>
                 </div>
             </div>
 
             <div id="card" class="card border border-sucess">
-                <img src="about_p.jpg" class="card-img-top rounded-lg" alt="Photo of Member">
+                <img src="{{ url_for('static',filename='about_p.jpg') }}" class="card-img-top rounded-lg" alt="Photo of Member">
                 <div class="card-body">
                     <h5 class="card-title">Prahlad Amudan</h5>
                     <p id="text" class="card-text">Hi! My name is Prahlad and I am currently pursuing my undergrad
                         in mechanical engineering.Hope you like our Resume Maker and get the resume you always
                         wanted!
                     <div style="margin: 40%;">
-                        <a target="blank" href="https://www.linkedin.com/in/prahlad-amudan-060598155/"><img src="LinkedIn.jpg"
+                        <a target="blank" href="https://www.linkedin.com/in/prahlad-amudan-060598155/"><img src="{{ url_for('static',filename='LinkedIn.jpg') }}"
                                 class="card-img" alt="LinkedIn Profile"></a>
                         <div>
                             </p>
@@ -249,7 +249,7 @@ background-size:150%;">
             <br><br>
             <div class="text-center">
             <p style=" font-family: 'Ubuntu', sans-serif; font-size: x-large;">Finally we would like to say :</p>
-                <img src="about_meme.jpg" class="rounded" alt="It ain't much,but it's honest work :)">
+                <img src="{{ url_for('static',filename='about_meme.jpg') }}" class="rounded" alt="It ain't much,but it's honest work :)">
             </div>
         </div>
   
@@ -292,7 +292,7 @@ background-size:150%;">
                 <small class="text-muted">Kindly Remember your password till the time we add the "Forgot Password" feature.</small>
                 <br>
              
-              {{ msg }}
+              {{ msg1 }}
         </div>
         <div class="modal-footer d-flex justify-content-between">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -328,7 +328,7 @@ background-size:150%;">
                   <small class="text-muted">Kindly Remember your password till the time we add the "Forgot Password" feature.</small>
                 </div><br>
               
-              {{ msg }}
+              {{ msg2 }}
         </div>
         <div class="modal-footer d-flex justify-content-between">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
