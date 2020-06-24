@@ -1,49 +1,348 @@
 <!DOCTYPE html>
 <html>
+<!--   
+RESUME MAKER MAIN PAGE
+REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
+-->
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Log In page
+        Resume Builder
     </title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css01.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital@1&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    </style>
+ <link rel="stylesheet" href="css01.css">
 </head>
+<body class="container align-middle p-1">
+    <h1 style="text-align:center ;font-family: 'Odibee Sans', cursive; font-size: 5.5rem;color: #19a2da;
+    padding: 5px; font: outline;">About Yourself</h1>
+    <!--progress bar-->
+    <p></p><br>
+   <div class="">
+        <div id="myProgress" style="width: 100%;
+        background-color: #ddd; border-radius:15px;">
+        <div id="myBar" style="width: 0%;
+        height: 30px;
+        background: #53df5a; border-radius: 15px;"></div>
+    </div><br> 
+    <!--end of progress bar-->
+    <form class="form-horizontal container was-validated" novalidate>
+        <div class="form-group row">
+            <!--PERSONAL DETAILS-->
 
-<body>
-    <!--
-        IT IS HOME PAGE.
-        WE ARE GOING TO WORK ON IT LATER.
-        OPEN FOLDER '0' TO START WORKING AND SAVE FILES IN IT.
-        REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
--->
-    <a href="0/index.html">
-        <div class="fornow"><span>This page is under construction. Please, click here to visit site.</span></div>
-    </a>
-    <section>
-        <div class="container">
-
-            
-                <div class="user signupBx">
-
-                    <div class="formBx">
-                        <form>
-                            <h2>Create An Account</h2>
-                            <input type="text" name="" placeholder="User Name">
-                            <input type="email" name="" placeholder="youremail@example.com">
-                            <input type="password" name="" placeholder="Create Password">
-                            <input type="password" name="" placeholder="Confirm Password">
-                            <input type="submit" name="" value="Sign Up">
-                            <p class="signup"> Already have an account ? <a href="signin.html">Sign In.</a></p>
-                        </form>
-                    </div>
-                    <div class="imgbox"><img src="login.jpg" title="Go get it!"></div>
+            <fieldset class="justify-content-center col-lg-12 align-middle">
+                <legend class="rotate">Personal Details:</legend>
+                <div class="row">
+                    <div class="w-65 p-3">
+                        <label for="fname"> First Name :</label><br><input onchange="removeAlert()" class="form-control is-invalid" type="text" id="fname" size="30"
+                            placeholder="First name" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert1" class="invalid-feedback">Please provide First Name</span>
+                            <br></div>
+                    <div class="w-65 p-3">
+                        <label for="lname"> Last Name :</label><br><input onchange="removeAlert()" type="text" id="lname" size="30"  class="form-control is-invalid"
+                            placeholder="Last name" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert2" class="invalid-feedback">Please provide First Name</span>
+                            <br></div>
                 </div>
-               
-            </div>
-    </section>
+
+                <div class="row">
+                    <div class="w-65 p-3">
+                        <label for="cnum"> Contact Number:</label> <br><input onchange="removeAlert()"  type="number" maxlength="14" size="30"  class="form-control is-invalid"
+                            id="cnum" placeholder="+911234567890" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert3" class="invalid-feedback">Please provide First Name</span>
+                            <br></div><br>
+                    <div class="w-65 p-3">
+                        <label for="mail"> Email ID:</label><br><input onchange="removeAlert()"  type="email" id="mail" size="30"  class="form-control is-invalid"
+                            placeholder="mymail@example.com" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert4" class="invalid-feedback">Please provide First Name</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="w-65 p-3">
+                        <label for="Address">Address:</label><br>
+                        <span class="text-light" style="font-size: medium;">The place you would want to recieve the
+                            response(as mail) to your application</span><br>
+                        <div class="w-65 p-3">
+                            <label for="House no. and street" hidden>Flat,House no.,Building,Road</label>
+                            <input onchange="removeAlert()"  size="140" type="text" class="col container form-control is-invalid" id="HnS"
+                                placeholder="B-5 Fortress of solitude,Road Number-1" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert5" class="invalid-feedback">Please provide First Name</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container">
+                    <div class="w-65 p-3">
+                        <label for="City" hidden>City</label><input onchange="removeAlert()"  size="25" type="text" id="City" class="col form-control is-invalid"
+                            placeholder="Town/City" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert6" class="invalid-feedback">Please provide First Name</span>
+                    </div>
+                    <div class="w-65 p-3">
+                        <label for="State" hidden>State</label><input onchange="removeAlert()"  size="25" type="text" id="State" class="col form-control is-invalid"
+                            placeholder="State" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert7" class="invalid-feedback">Please provide First Name</span>
+                    </div>
+                    <div class="w-65 p-3">
+                        <label for="Country" hidden>Country</label><input onchange="removeAlert()"  size="25" type="text" id="Country" class="col form-control is-invalid"
+                            placeholder="Country" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert8" class="invalid-feedback">Please provide First Name</span>
+                    </div>
+                    <div class="w-65 p-3">
+                        <label for="Pincode" hidden>Pincode</label><input onchange="removeAlert()"  maxlength="6" size="30" type="number"
+                           id="Pin" class="col form-control is-invalid" placeholder="Pincode" required>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert9" class="invalid-feedback">Please provide First Name</span>
+
+
+</fieldset>
+            <!--PERSONAL DETAILS  CLOSED-->
 
 
 
-    <script src="home.js"></script>
+
+            <!--EDUCATION-->
+
+            <fieldset class="justify-content-center col-lg-12" hidden>
+                <legend class="rotate"> Education:</legend>
+                <ol id="edunode">
+                    <li>
+                        <label for="ed1">Name of Institution:</label><input onchange="removeAlert()" class="container-fluid form-control is-invalid" size="50" type="text"
+                            id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required
+                            class="col-sm-9 col-md-6">
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert10" class="invalid-feedback">Please provide First Name</span>
+                            <br>
+
+                            <div class="row">
+                            <div class="w-65 p-3">
+                                <span><label for="ed2">Admission Year:</label><br><span class="text-light"
+                                    style="font-size: medium;"></span><br>
+                                    <input onchange="removeAlert()" class="duration form-control is-invalid" type="date" id="ed2" placeholder="DD-MM-YYYY"  
+                                        required></span>
+                                        <div class="valid-feedback">Looks Good!</div>
+                                <span id="val_alert11" class="invalid-feedback">Please provide First Name</span>
+                                        <br>
+                                <span><label class="grad_year" for="ed3">Year of Graduation(Or
+                                        Expected):</label><br><span class="text-light"
+                                        style="font-size: medium;"></span><br><input onchange="removeAlert()" type="date" class="duration form-control is-invalid" id="ed3"
+                                        required>
+                                        <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert12" class="invalid-feedback">Please provide First Name</span>    
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-65 p-3">
+                                <label for="ed4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If
+                                    not applicable enter " - "</span><br><input type="text" id="ed4" 
+                                    placeholder="Out Of 10" max="10" maxlength="2"><br>
+                                <label for="ed7">Percentage</label><br><span class="text-light"
+                                    style="font-size: medium;">If not applicable enter " - "</span><br><input
+                                     type="text" id="ed7" placeholder="91%"><br>
+                            </div>
+                        </div>
+                        <label for="ed5">Core Classes:</label><br>
+                        <span class="text-light" style="font-size: medium;">This input field is only for
+                            undergraduate/graduate courses or beyond</span>
+                        <textarea onchange="removeAlert()" class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed5"
+                            placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
+                            class="col-sm-9 col-md-6 col-lg-12" required></textarea>
+                            <div class="valid-feedback">Looks Good!</div>
+                            <span id="val_alert13" class="invalid-feedback">Please provide First Name</span>
+                        <label for="ed6">Associations /Committees:</label><br>
+                        <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
+                            in a particular association in college</span><br>
+                        <ol class="eduachieve container">
+                            <li class="firstlistitem"><textarea rows="2" cols="100" id="ed6" placeholder="Achievement"
+                                    class="col-sm-9 col-md-6 col-lg-12"></textarea>
+
+                            </li>
+                            <button type="button" onclick="achievement(this)"
+                                class="next rotate button btn btn-secondary btn-md text-center achbtn m-1">&crarr;Add
+                                Achievement</button>
+                            <br>
+                        </ol><br>
+
+                    </li>
+                </ol>
+                <button type="button" onclick="edu_copy('edunode', 'Education')"
+                    class="next rotate button btn btn-primary btn-lg text-center  cbtn container">Next Education details</button>
+            </fieldset>
+
+            <!--EDUCATION CLOSED-->
+
+
+            <!--SKILLS-->
+
+
+            <fieldset class="justify-content-center col-lg-12" hidden>
+                <!--OBJECTIVE-->
+
+                <legend for="obj" class="rotate">Objective:</legend>
+                <span class="text-light" style="font-size: medium;">Main motive behind your application</span>
+                <textarea onchange="removeAlert()" rows="3" class="form-control is-invalid" id="obj"
+                    placeholder="Why do you want to apply?/What is this resume for? (Not more than 250 characters)"
+                    maxlength="250" required></textarea>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <span id="val_alert14" class="invalid-feedback">Please provide First Name</span>
+
+                <!--OBJECTIVE CLOSED-->
+
+                <!--SKILLS-->
+                <legend class="rotate">
+                    Relevant Skills:
+                </legend>
+                <span class="text-light" style="font-size: medium;">skills specific to that post/field, that you
+                    posses</span>
+                <ol id="slist" class="row">
+                    <li id="skill0"><input type="text" class="col" placeholder="Skill"></li>
+                    <li id="skill1" hidden><input type="text" class="col" placeholder="Skill"></li>
+                    <li id="skill2" hidden><input type="text" class="col" placeholder="Skill"></li>
+                    <li id="skill3" hidden><input type="text" class="col" placeholder="Skill"></li>
+                    <li id="skill4" hidden><input type="text" class="col" placeholder="Skill"></li>
+                    <li id="skill5" hidden><input type="text" class="col" placeholder="Skill"></li>
+                </ol>
+                <button type="button" onclick="add_skill()"
+                    class="next rotate button btn btn-primary btn-lg text-center cbtn container m-1">Add skill</button>
+                <!--SKILLS CLOSED-->
+                <!--HOBBIES-->
+                <legend class="rotate">
+                    Hobbies:
+                </legend>
+                <ol id="hlist" class="row">
+                    <li><input type="text" class="col" placeholder="Enter your hobby here"></li>
+
+                </ol>
+                <button type="button" onclick="copy('hlist','Hobby')"
+                    class="next rotate button btn btn-primary btn-lg text-center cbtn container m-1">Add hobby</button>
+                <!--HOBBIES CLOSED-->
+            </fieldset>
+
+            <!--PROJECTS-->
+
+            <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
+                <legend class="rotate"> Projects:
+                </legend>
+
+                <ol id="pro_node">
+                    <li><br>
+                        <input type="text" placeholder="Project name"> <br><span class="duration"><input type="text"
+                                placeholder="Sep-19"><span class="to container p-6">To</span><input type="text"
+                                placeholder="Dec-19 "></span>
+
+                        <textarea maxlength="100" placeholder="Project Description"></textarea>
+                    </li>
+                </ol>
+                <button type="button" onclick="copy('pro_node','Project')"
+                    class="next rotate btn btn-primary btn-lg text-center cbtn container m-1">Next Project</button>
+
+            </fieldset>
+
+            <!--PROJECTS CLOSED-->
+
+
+
+
+            <!--INTERNSHIPS-->
+
+            <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
+                <legend class="rotate">
+                    Internships:
+                </legend>
+                <ol id="int_node">
+                    <li><br>
+                        <input type="text" placeholder="Title"><br>
+                        <span class="duration"><input type="text" placeholder="Sep-19"><span
+                                class="to container p-8">To</span><input type="text" placeholder="Dec 19"></span>
+                        <textarea maxlength="100" placeholder="Internship Description"></textarea>
+                    </li>
+                </ol>
+
+                <input type="button" value="Next Internship" onclick="copy('int_node','Internship')"
+                    class="container next rotate btn btn-primary btn-lg text-center cbtn m-1">
+
+            </fieldset>
+
+
+            <!--INTERNSHIPS CLOSED-->
+
+
+
+            <!--OTHER ACHIEVEMENTS-->
+            <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
+                <legend class="rotate">
+                   Other Achievements:
+                </legend>
+                <span class="text-light" style="font-size: medium;">Allocades achieved in competetions/events other than the ones conducted by college associations</span>
+                <ol id="alist">
+                    <li><br>
+                    <input type="text" class="col" placeholder="achievements/allocades"></li>
+
+                </ol>
+
+                <button type="button" onclick="copy('alist','Achievement')"
+                    class="next rotate button btn btn-primary btn-lg text-center cbtn container m-1">Add Achievements</button>
+
+
+                <!--OTHER ACHIEVEMENTS CLOSED-->
+                <!--PROFILE LINKS-->
+                <legend class="rotate">
+                    Profile Links:
+
+                </legend>
+                <label>Github Profile: </label><input type="url" placeholder="Add GitHub Profile link"> <br>
+                <label>Linkedin Profile:</label> <input type="url" placeholder="Add LinkedIn Profile link">
+                <!--PROFILE LINKS CLOSED-->
+
+            </fieldset>
+
+            <!--OTHER ACHIEVEMENTS CLOSED-->
+
+
+
+        </div>
+
+
+        <button type="button" id="next"  onclick="validAll();"
+            class="rotate button btn btn-primary btn-lg text-center">Next &raquo;</button>
+        <button type="button" id="back" onclick="prefield()"
+            class="rotate button btn btn-primary btn-lg text-center" hidden>&laquo; Back</button>
+
+
+        <!--SUBMIT BUTTON-->
+
+
+        <div id="submit" class="text-center container p-5" hidden>
+            <a href=""><input type="submit" value="Submit & Select Template"
+                    class="rotate btn btn-success btn-lg text-center"></a>
+        </div>
+    </form>
+
+
+    <script src="js01.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>

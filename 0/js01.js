@@ -91,13 +91,14 @@ function copy_edu_achieve(eduachieve, achievement) {
     document.getElementById(eduachieve).appendChild(node2)
 }*/
 
-/*var y = `<input type="text" class="col" placeholder="Skill">
-<button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center m-3">Delete Skill</button><br>`
-function add_slist(slist,skill){
-    const node2 = document.createElement("LI")
-    node2.innerHTML = y 
-    document.getElementById(slist).appendChild(node2)
-}*/
+/*var y = `<input type="text" class="col" placeholder="Skill"><br>
+<button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center m-3">Delete Skill</button><br>`*/
+var s = 1;
+function add_skill(){
+document.getElementById("skill"+ s).removeAttribute('hidden',true);
+s++
+window.y = y ;
+}
 
 
 function copy(copy, name) {

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+
+	#myBar {
+		width: 0%;
+		height: 30px;
+		background: #4caf51;
+	}
+
+	/*animation: nextStep 1s;
+    animation-fill-mode: forwards;
+}	
+@keyframes nextStep {
+	0% { width: 0%; }
+
+	100% { width: 10%; }
+}*/
+</style>
+
+<body>
+	<h1>PROgress Bar</h1>
+<div class="progress" >
+		<div id="myProgress" style="width: 100%;
+		background-color: #ddd;">
+		<div id="myBar" style="width: 0%;
+		height: 30px;
+		background: #4caf51;"></div>
+	</div>
+	<br>
+	<button id="next_button" onclick="move()" >Next</button>
+	<button id="back_button" onclick="back()" disabled>back</button>
+	<script>
+		
+		var num = 0;
+		var width = 0;
+		function move() {
+			if (width==0){
+			document.getElementById("back_button").removeAttribute('disabled',true)
+			}
+			else if (width==80||width==100){
+			document.getElementById("next_button").setAttribute('disabled',true)
+			}
+			else{
+				document.getElementById("next_button").removeAttribute('disabled',true)
+				
+			}
+			num += 1
+			var id = setInterval(fun, 10);
+
+			var ele = document.getElementById("myBar");
+			function fun() {
+
+
+				if (width == 20 * num) {
+					clearInterval(id)
+
+				}
+				else {
+
+					width++
+					ele.style.width = width + '%';
+
+				}
+			}
+
+
+		}
+
+
+
+		function back() {
+			if (width==100){
+			document.getElementById("next_button").setAttribute('disabled',true)
+			}
+			else if (width==20){
+			document.getElementById("back_button").setAttribute('disabled',true)
+			}
+			else{
+				document.getElementById("next_button").removeAttribute('disabled',true)
+				
+			}
+			var ele = document.getElementById("myBar");
+			num -= 1
+			var id = setInterval(fun, 10);
+			function fun() {
+
+				if (width == 20 * num) {
+					clearInterval(id)
+
+				}
+				else {
+
+					width--;
+					ele.style.width = width + '%';
+
+				}
+			}
+
+		}
+
+
+
+	</script>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
