@@ -232,26 +232,6 @@ function nextfield() {
         }
     }
 
-    /*Increase Progress bar */
-    if (width == 0) {
-        document.getElementById("back").removeAttribute('disabled', true)
-    }
-    else {
-        document.getElementById("next").removeAttribute('disabled', true)
-
-    }
-    nex += 1
-    var id = setInterval(fun, 10);
-    var ele = document.getElementById("myBar")
-    function fun() {
-        if (width == 20 * nex) {
-            clearInterval(id)
-        }
-        else {
-            width++
-            ele.style.width = width + '%'
-        }
-    }
 
 }
 
@@ -289,23 +269,7 @@ function prefield() {
             $('.cancel').trigger('click')
         }
     }
-    /*decrease progress bar*/
-    var ele = document.getElementById("myBar")
-    nex -= 1
-    var id = setInterval(fun, 10)
-    function fun() {
-
-        if (width == 20 * nex) {
-            clearInterval(id)
-
-        }
-        else {
-
-            width--
-            ele.style.width = width + '%'
-
-        }
-    }
+  
 
 }
 
