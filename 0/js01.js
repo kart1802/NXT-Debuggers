@@ -93,16 +93,18 @@ function copy_edu_achieve(eduachieve, achievement) {
 
 /*var y = `<input type="text" class="col" placeholder="Skill"><br>
 <button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center m-3">Delete Skill</button><br>`*/
-var s = 0;
+var s = 1;
 function add_skill(){
 document.getElementById("skill"+ s).removeAttribute('hidden',true);
-s++
-window.s = s
+s++;
+
 }
 
 const removeSkill = (skill) => {
-    document.getElementById(skill).remove();
-    window.s = s;
+    document.getElementById(skill).setAttribute('hidden',true);
+    document.getElementById(skill).firstChild.value = "";
+    s--;
+   
 }
 
 function copy(copy, name) {
