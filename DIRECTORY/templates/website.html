@@ -49,7 +49,7 @@ background-size:150%;">
                     <a {% if command=='logged out' %}class="nav-link active" {% else %}class='nav-link'{% endif %} data-toggle="pill" href="#Home" id="Home-tab" role="tab" aria-controls="Home" aria-selected="true">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" >Make Resume</a>
+                    <a class="nav-link" href="{{ url_for('template') }}" >Make Resume</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a {% if command =='logged in' %}class="nav-link active"{% else %}class='nav-link'{% endif %}  href="#My_Resume" data-toggle="pill" id="My_Resume-tab" role="tab" aria-controls="My_Resume" aria-selected="false">My Resume</a>
