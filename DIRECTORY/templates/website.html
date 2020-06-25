@@ -283,7 +283,7 @@ background-size:150%;">
             <form action="{{ url_for('login') }}" method="POST">
                
                   <label for="exampleInputEmail1">Username</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="username" value="{{ lusername }}" aria-describedby="emailHelp">
                   
                 
                 
@@ -316,9 +316,9 @@ background-size:150%;">
             <form action="{{ url_for('register') }}" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username"
+                    <input type="text" class="form-control" name="username" value="{{ susername }}">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{ email }}" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
