@@ -49,7 +49,7 @@ background-size:150%;">
                     <a {% if command=='logged out' %}class="nav-link active" {% else %}class='nav-link'{% endif %} data-toggle="pill" href="#Home" id="Home-tab" role="tab" aria-controls="Home" aria-selected="true">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" >Make Resume</a>
+                    <a class="nav-link" href="{{ url_for('template') }}" >Make Resume</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a {% if command =='logged in' %}class="nav-link active"{% else %}class='nav-link'{% endif %}  href="#My_Resume" data-toggle="pill" id="My_Resume-tab" role="tab" aria-controls="My_Resume" aria-selected="false">My Resume</a>
@@ -283,7 +283,7 @@ background-size:150%;">
             <form action="{{ url_for('login') }}" method="POST">
                
                   <label for="exampleInputEmail1">Username</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="username" value="{{ lusername }}" aria-describedby="emailHelp">
                   
                 
                 
@@ -316,9 +316,9 @@ background-size:150%;">
             <form action="{{ url_for('register') }}" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username"
+                    <input type="text" class="form-control" name="username" value="{{ susername }}">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{ email }}" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>

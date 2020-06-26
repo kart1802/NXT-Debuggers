@@ -20,92 +20,162 @@ const perc = document.getElementById('ed7');
 const core_class = document.getElementById('ed5');
 const objec = document.getElementById('obj');
 
-
-
-
-
-function cancel(e) {
-    e.parentNode.parentNode.removeChild(e.parentNode)
+//Add Education
+var Edu = 0;
+function addEduSub(){
+    document.getElementById(`education${Edu}`).removeAttribute('hidden' , true);
+    Edu++;
 }
 
-var x = `
-<label for="ed1">Name of Institution :</label><input class="container" size="50" type="text"
-    id="ed1" placeholder="Veermata Jijabai Technological Institute" size="100" required
-    class="col-sm-9 col-md-6 col-lg-12"> <br>
-<div class="row">
-    <div class="w-65 p-3">
-        <span><label for="ed2">Admission Year:</label><br>
-            <input class="duration" type="date" id="ed2" placeholder="DD-MM-YYYY"
-                required=""></span><br>
-        <span><label class="grad_year" for="ed3">Year of Graduation(Or
-                Expected):</label><br><input type="date" class="duration" id="ed3"
-                required></span>
-    </div><br>
-    <div class="w-65 p-3">
-        <label for="ed4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If
-            not applicable enter " - "</span><br><input type="number" id="ed4"
-            placeholder="Out Of 10"><br>
-        <label for="ed7">Percentage</label><br><span class="text-light"
-            style="font-size: medium;">If not applicable enter " - "</span><br><input
-            type="number" id="ed7" placeholder="91%"><br>
-    </div>
-</div>
-<label for="ed5">Core Classes:</label><br>
-<span class="text-light" style="font-size: medium;">This input field is only for
-    undergraduate/graduate courses or beyond</span>
-<textarea class="container" rows="2" cols="100" size="55" id="ed5"
-    placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
-    class="col-sm-9 col-md-6 col-lg-12"></textarea>
-<label for="ed6">Associtations /Committees:</label><br>
-<span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
-    in a particular association in college</span><br>
-<ol class="eduachieve container">
-    <li class="firstlistitem"><textarea rows="2" cols="100" id="ed6" placeholder="Achievement"
-            class="col-sm-9 col-md-6 col-lg-12"></textarea>
+//Remove Education
+const removeEduSub = (education, id) =>{
+    document.getElementById(education).setAttribute('hidden',true);
+    var rmEdu = document.getElementById(education).childNodes ;
+    rmEdu[2].value = ""; rmEdu[8].value = ""; rmEdu[15].value = ""; rmEdu[23].value = ""; rmEdu[30].value = ""; rmEdu[38].value = "";
+   
+    Edu--;
 
-    </li>
-    <button type="button" onclick="achievement(this)"
-        class="next rotate button btn btn-secondary btn-md text-center achbtn container m-1">&crarr;Add
-        Achievement</button>
-    <br>
-</ol><br>
-<br><button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center m-3">Delete Education</button><br>`
-
-function edu_copy(edu_copy, education) {
-    const node1 = document.createElement("LI")
-    node1.innerHTML = x
-    document.getElementById(edu_copy).appendChild(node1)
-
-}
-/*var y = `<li class="firstlistitem"><textarea rows="2" cols="100" id="ed6" placeholder="Achievement"
-    class="col-sm-9 col-md-6 col-lg-12"></textarea>
-</li> 
-<button type="button" onclick="achievement(this)"
-class="next rotate button btn btn-secondary btn-md text-center achbtn m-1">&crarr;Add
-Achievement</button>
-<button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-md text-center m-1">Delete Achievement</button>`
-
-function copy_edu_achieve(eduachieve, achievement) {
-    const node2 = document.createElement("LI")
-    node2.innerHTML = y
-    document.getElementById(eduachieve).appendChild(node2)
-}*/
-
-/*var y = `<input type="text" class="col" placeholder="Skill"><br>
-<button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center m-3">Delete Skill</button><br>`*/
-var s = 1;
-function add_skill(){
-document.getElementById("skill"+ s).removeAttribute('hidden',true);
-s++;
-
+    const abc = document.getElementsByClassName("abc");
+    console.log(abc);
+    for (let i = 0; i < abc.length; i++) {
+        abc[i].value = "";
+    }
 }
 
+
+
+
+
+//Add Achievement for first list item in education
+var eduA1 = 0;
+function addEduAchieve1(){
+    document.getElementById("eduAchievement"+ eduA1).removeAttribute('hidden',true);
+    eduA1++;
+}
+// Remove Achievement for first list item in education
+const removeEduAchieve1 = (eduAchieve1) =>{
+    document.getElementById(eduAchieve1).setAttribute('hidden',true);
+    document.getElementById(eduAchieve1).firstChild.value = "";
+    eduA1--;
+}
+
+//Add Achievement for second list item in education
+var eduA2 = 3;
+function addEduAchieveSub0(){
+    document.getElementById("eduAchievement"+ eduA2).removeAttribute('hidden',true);
+    eduA2++;
+}
+// Remove Achievement for second list item in education
+const removeEduAchieveSub0 = (eduAchieve2) =>{
+    document.getElementById(eduAchieve2).setAttribute('hidden',true);
+    document.getElementById(eduAchieve2).firstChild.value = "";
+    eduA2--;
+}
+
+//Add Achievement for third list item in education
+var eduA3 = 6;
+function addEduAchieveSub1(){
+    document.getElementById("eduAchievement"+ eduA3).removeAttribute('hidden',true);
+    eduA3++;
+}
+// Remove Achievement for third list item in education
+const removeEduAchieveSub1 = (eduAchieve3) =>{
+    document.getElementById(eduAchieve3).setAttribute('hidden',true);
+    document.getElementById(eduAchieve3).firstChild.value = "";
+    eduA3--;
+}
+
+//Add Achievement for fourth list item in education
+var eduA4 = 9;
+function addEduAchieveSub2(){
+    document.getElementById("eduAchievement"+ eduA4).removeAttribute('hidden',true);
+    eduA4++;
+}
+// Remove Achievement for fourth list item in education
+const removeEduAchieveSub2 = (eduAchieve4) =>{
+    document.getElementById(eduAchieve4).setAttribute('hidden',true);
+    document.getElementById(eduAchieve4).firstChild.value = "";
+    eduA4--;
+}
+
+
+
+
+//Add Skill
+var sId = 0;
+function addSkill(){
+document.getElementById("skill"+ sId).removeAttribute('hidden',true);
+sId++;
+
+}
+//Delete Skill
 const removeSkill = (skill) => {
     document.getElementById(skill).setAttribute('hidden',true);
     document.getElementById(skill).firstChild.value = "";
-    s--;
+    sId--;
    
 }
+//Add Hobby
+var hId = 0 ;
+function addHobby(){
+    document.getElementById("hobby" + hId).removeAttribute('hidden',true);
+    hId++;
+}
+//Delete Hobby
+const removeHobby = (hobby) => {
+    document.getElementById(hobby).setAttribute('hidden',true);
+    document.getElementById(hobby).firstChild.value = "";
+    hId--;
+}
+
+
+//Add Project
+var pId = 0 ;
+function addProject(){
+    document.getElementById("Project" + pId).removeAttribute('hidden',true);
+    pId++;
+}
+//Remove Project
+const removeProject = (Project) => {
+    document.getElementById(Project).setAttribute('hidden',true);
+    var rP = document.getElementById(Project).childNodes ;
+    rP[2].value =""
+    rP[4].value =""
+    rP[6].value =""
+    rP[8].value =""
+    pId--;
+}
+
+//Add Internship
+var iId = 0;
+function addInternship(){
+    document.getElementById("Internship" + iId).removeAttribute('hidden',true);
+    iId++;
+} 
+//Remove Internship
+const removeInternship = (Internship) => {
+    document.getElementById(Internship).setAttribute('hidden',true);
+    var rP = document.getElementById(Internship).childNodes ;
+    rP[2].value =""
+    rP[4].value =""
+    rP[6].value =""
+    rP[8].value =""
+    iId--;
+}
+
+//Add Achievement
+var aId = 0 ;
+function addAchieve(){
+    document.getElementById("Achievement" + aId).removeAttribute('hidden',true);
+    aId++;
+}
+//Remove Achievement
+const removeAchieve = (Achievement) => {
+    document.getElementById(Achievement).setAttribute('hidden',true);
+    document.getElementById(Achievement).firstChild.value = "";
+    aId--;
+}
+
 
 function copy(copy, name) {
     const z = document.getElementById(copy).firstElementChild

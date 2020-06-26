@@ -25,13 +25,14 @@ def login():
     msg1 = ''
     command = 'logged out'
     modal=''
+    lusername =''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
     
-        username = request.form['username']
+        lusername = request.form['username']
         password = request.form['password']
                 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password,))
+        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (lusername, password,))
         
         account = cursor.fetchone()
                 
@@ -47,7 +48,7 @@ def login():
             msg1 = 'Incorrect username/password!'
             modal = 'login'
             command = 'logging'
-    return render_template('website.html', msg1=msg1,command=command,modal=modal)
+    return render_template('website.html', msg1=msg1,command=command,modal=modal,lusername=lusername)
 
 
 
@@ -58,15 +59,17 @@ def register():
     modal = ''
     command = 'logging'
     signupsuccess = ''
+    susername =''
+    email =''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         
-        username = request.form['username']
+        susername = request.form['username']
         password = request.form['password']
         cpassword = request.form['cpassword']
         email = request.form['email']
             
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = %s', (username,))
+        cursor.execute('SELECT * FROM accounts WHERE username = %s', (susername,))
         account = cursor.fetchone()
         
         if account:
@@ -75,25 +78,25 @@ def register():
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             msg2 = 'Invalid email address!'
             modal = 'signup'
-        elif not re.match(r'[A-Za-z0-9]+', username):
+        elif not re.match(r'[A-Za-z0-9]+', susername):
             msg2 = 'Username must contain only characters and numbers!'
             modal = 'signup'
         elif password != cpassword:
             msg2 = 'confirm your password again'
             modal = 'signup'    
-        elif not username or not password or not email:
+        elif not susername or not password or not email:
             msg2 = 'Please fill out the form!'
             modal = 'signup'
         else:
     
-            cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username, password, email,))
+            cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (susername, password, email,))
             mysql.connection.commit()
             signupsuccess = 'You have successfully registered. Now you can log in!'
     elif request.method == 'POST':
         
         msg2 = 'Please fill out the form'
         modal = 'signup'
-    return render_template('website.html',msg2=msg2,command=command,modal=modal,signupsuccess=signupsuccess)
+    return render_template('website.html',msg2=msg2,command=command,modal=modal,signupsuccess=signupsuccess,susername=susername,email=email)
 
 
     
@@ -106,7 +109,13 @@ def home():
     
     return redirect(url_for('login'))    
 
+@app.route('/choose-template')
+def template():
+    return render_template('template.html')
 
+@app.route('/input')
+def input():
+    return render_template("index.html")
 
 @app.route('/logout')
 def logout():
