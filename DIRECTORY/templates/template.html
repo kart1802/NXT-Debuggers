@@ -12,11 +12,11 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='template.css') }}">
     <title>Templates</title>
 </head>
 
-<body style="background: url(NXT_theme.jpg);">
+<body style="background: url({{ url_for('static',filename='NXT_theme.jpg') }});">
     <h1 style="text-align:center ;font-family: 'Odibee Sans', cursive; font-size: 8rem;
     padding: 12px; font: outline; color: white;" class="container">Select your Template!</h1><br><p></p>
 
@@ -24,7 +24,7 @@
     <div class="container">
         <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp1">
             <div class="card-body">
-                <img src="Template-1.jpg" class="card-img" alt="Template 1">
+                <img src="{{ url_for('static',filename='Template-1.jpg') }}" class="card-img" alt="Template 1">
 
             </div>
             <div class="card-footer">Template 1</div>
@@ -32,7 +32,7 @@
 
         <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp3">
             <div class="card-body">
-                <img src="Template-3.jpg" class="card-img" alt="Template 3">
+                <img src="{{ url_for('static',filename='Template-3.jpg') }}" class="card-img" alt="Template 3">
 
             </div>
             <div class="card-footer">Template 3</div>
@@ -41,7 +41,7 @@
      <div class="container">
         <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp2">
             <div class="card-body">
-                <img src="Template-2.jpg" class="card-img" alt="Template 2">
+                <img src="{{ url_for('static',filename='Template-2.jpg') }}" class="card-img" alt="Template 2">
 
             </div>
             <div class="card-footer">Template 2</div>
@@ -49,7 +49,7 @@
 
         <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp4">
             <div class="card-body">
-                <img src="Template-4.jpg" class="card-img" alt="Template 4">
+                <img src="{{ url_for('static',filename='Template-4.jpg') }}" class="card-img" alt="Template 4">
 
             </div>
             <div class="card-footer">Template 4</div>
@@ -73,11 +73,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="Template-1.jpg" class="card-img" alt="Template 1">
+                    <img src="{{ url_for('static',filename='Template-1.jpg') }}" class="card-img" alt="Template 1">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Select this template</button>
+                    <a href="{{ url_for('input') }}" class="btn btn-success">Select this template</a>
                 </div>
             </div>
         </div>
@@ -95,11 +95,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="Template-2.jpg" class="card-img" alt="Template 2">
+                    <img src="{{ url_for('static',filename='Template-2.jpg') }}" class="card-img" alt="Template 2">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Select this template</button>
+                    <a href="{{ url_for('input') }}" class="btn btn-success">Select this template</a>
                 </div>
             </div>
         </div>
@@ -117,11 +117,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="Template-3.jpg" class="card-img" alt="Template 3">
+                    <img src="{{ url_for('static',filename='Template-3.jpg') }}" class="card-img" alt="Template 3">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Select this template</button>
+                    <a href="{{ url_for('input') }}" class="btn btn-success">Select this template</a>
                 </div>
             </div>
         </div>
@@ -139,11 +139,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="Template-4.jpg" class="card-img" alt="Template 4">
+                    <img src="{{ url_for('static',filename='Template-4.jpg') }}" class="card-img" alt="Template 4">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Select this template</button>
+                    <a href="{{ url_for('input') }}" class="btn btn-success">Select this template</a>
                 </div>
             </div>
         </div>
