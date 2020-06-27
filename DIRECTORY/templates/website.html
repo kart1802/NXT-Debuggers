@@ -26,7 +26,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
     </style>
     <title>NXT: Resume Maker</title>
-    <link rel="icon" type="image/jgp" href="{{ url_for('static',filename='Dummy_logo.jpg') }}">
+    <link rel="icon" type="image/jgp" href="{{ url_for('static',filename='final_logo(3).jfif') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
@@ -37,7 +37,7 @@ background-size:150%;">
     <nav class="navbar navbar-expand-lg navbar-light container-fluid dark"
         style="position: fixed; z-index: 2; background-color: rgb(223, 223, 223);">
         <a class="navbar-brand" href="#">
-            <img src="{{ url_for('static',filename='Dummy_logo.jpg') }}" width="30" height="30"  class="d-inline block align-top border border-white rounded" alt="Dummy_logo.pdf">
+            <img src="{{ url_for('static',filename='final_logo(3).jfif') }}" width="70" height="70"  class="d-inline block align-top border border-white rounded" alt="Dummy_logo.pdf">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,9 +124,9 @@ background-size:150%;">
         <br>
         <div id="button1" class="d-flex justify-content-center container w-80 p-2 border border-sucess"
         style="background: white;">
-        <button class="btn btn-info "
+        <a class="btn btn-info " href="{{ url_for('template') }}"
         style=" font-size: 1.5rem;  cursor: pointer; border-radius: 20px; border: 10px solid white ; opacity: 100%;">Make
-        your Professional Resume Now!</button>
+        your Professional Resume Now!</a>
         </div>
         </section>
     </div>

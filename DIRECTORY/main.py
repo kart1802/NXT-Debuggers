@@ -109,13 +109,19 @@ def home():
     
     return redirect(url_for('login'))    
 
+
+
 @app.route('/choose-template')
 def template():
     return render_template('template.html')
 
+
+
 @app.route('/input')
 def input():
     return render_template("index.html")
+
+
 
 @app.route('/logout')
 def logout():
