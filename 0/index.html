@@ -127,6 +127,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
             <fieldset class="justify-content-center col-lg-12" hidden>
                 <legend class="rotate m-1"> Education:</legend>
+                <span class="text-light" style="font-size: medium;">Maximum 4 education fields and 4 achievements for each education</span>
                 <ol id="edunode">
                     <!--unchangable-->
                     <li>
@@ -146,7 +147,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                         <input onchange="removeAlert()" class="duration form-control is-invalid" type="date" id="ed3"
                             placeholder="DD-MM-YYYY" required>
                         <div class="valid-feedback">Looks Good!</div>
-                        <span id="val_alert12" class="invalid-feedback">Please provide Admission Year</span>
+                        <span id="val_alert12" class="invalid-feedback">Please provide Year of Graduation</span>
                         <br>
                         <label for="ed4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If not
                             applicable enter " - "</span><br><input type="text" id="ed4" placeholder="Out Of 10"
@@ -157,11 +158,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                         <label for="ed5">Core Classes:</label><br>
                         <span class="text-light" style="font-size: medium;">This input field is only for
                             undergraduate/graduate courses or beyond</span>
-                        <textarea onchange="removeAlert()" class="container form-control is-invalid" rows="2" cols="100"
+                        <textarea onchange="removeAlert()"  rows="2" cols="100" class="col-sm-9 col-md-6 col-lg-12 container form-control is-invalid"
                             size="55" id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
-                            class="col-sm-9 col-md-6 col-lg-12" required></textarea>
-                        <div class="valid-feedback">Looks Good!</div>
-                        <span id="val_alert13" class="invalid-feedback">Please provide ore Classes</span>
+                          required></textarea>
+                        <span id="val_alert13" class="invalid-feedback">Please provide Core Classes</span>
                         <label for="ed6">Associations /Committees:</label><br>
                         <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
                             in a particular association in college</span><br>
@@ -371,8 +371,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <legend class="rotate">
                     Relevant Skills:
                 </legend>
-                <span class="text-light" style="font-size: medium;">skills specific to that post/field, that you
-                    posses</span>
+                <span class="text-light" style="font-size: medium;">Skills specific to that post/field, that you
+                    posses(Maximum 10)</span>
                 <ol id="slist">
                     <li><input type="text" class="container-fluid" placeholder="Skill"></li>
                     <li id="skill0" hidden><input type="text" class="container-fluid" placeholder="Skill"><span
@@ -410,6 +410,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <legend class="rotate">
                     Hobbies:
                 </legend>
+                <span class="text-light" style="font-size: medium;">Maximum 10</span>
                 <ol id="hlist" class="">
                     <li><input type="text" class="container-fluid" placeholder="Enter your hobby here"></li>
                     <li id="hobby0" hidden><input type="text" class="container-fluid"
@@ -459,7 +460,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
             <fieldset class="justify-content-center col-lg-12 vetical-center" hidden>
                 <legend class="rotate"> Projects:
                 </legend>
-
+                <span class="text-light" style="font-size: medium;">Maximum 4</span>
                 <ol id="pro_node">
                     <li><br>
                         <input type="text" placeholder="Project name"><br><input type="text" placeholder="Sep-19"><span
@@ -507,6 +508,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <legend class="rotate">
                     Internships:
                 </legend>
+                <span class="text-light" style="font-size: medium;">Maximum 4</span>
                 <ol id="int_node">
                     <li><br>
                         <input type="text" placeholder="Title"><br><input type="text" placeholder="Sep-19"><span
@@ -556,26 +558,26 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Other Achievements:
                 </legend>
                 <span class="text-light" style="font-size: medium;">Allocades achieved in competetions/events other than
-                    the ones conducted by college associations</span>
+                    the ones conducted by college associations(Maximum 5)</span>
                 <ol id="alist">
                     <br>
                     <li><input type="text" class="container-fluid" placeholder="achievements/allocades"></li>
                     <li id="Achievement0" hidden><input type="text" class="container-fluid"
                             placeholder="achievements/allocades"><br><button type="button"
                             class="rotate btn button btn-danger btn-lg text-center m-3"
-                            onclick="removeAchieve('Achievement0')">Remove Hobby</button></li>
+                            onclick="removeAchieve('Achievement0')">Remove Achievement</button></li>
                     <li id="Achievement1" hidden><input type="text" class="container-fluid"
                             placeholder="achievements/allocades"><br><button type="button"
                             class="rotate btn button btn-danger btn-lg text-center m-3"
-                            onclick="removeAchieve('Achievement1')">Remove Hobby</button></li>
+                            onclick="removeAchieve('Achievement1')">Remove Achievement</button></li>
                     <li id="Achievement2" hidden><input type="text" class="container-fluid"
                             placeholder="achievements/allocades"><br><button type="button"
                             class="rotate btn button btn-danger btn-lg text-center m-3"
-                            onclick="removeAchieve('Achievement2')">Remove Hobby</button></li>
+                            onclick="removeAchieve('Achievement2')">Remove Achievement</button></li>
                     <li id="Achievement3" hidden><input type="text" class="container-fluid"
                             placeholder="achievements/allocades"><br><button type="button"
                             class="rotate btn button btn-danger btn-lg text-center m-3"
-                            onclick="removeAchieve('Achievement3')">Remove Hobby</button></li>
+                            onclick="removeAchieve('Achievement3')">Remove Achievement</button></li>
                 </ol>
 
                 <button type="button" onclick="addAchieve()"
@@ -602,7 +604,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
         </div>
 
 
-        <button type="button" id="next" onclick="nextfield()"
+        <button type="button" id="next" onclick="validAll()"
             class="rotate button btn btn-primary btn-lg text-center">Next &raquo;</button>
         <button type="button" id="back" onclick="prefield()" class="rotate button btn btn-primary btn-lg text-center"
             hidden>&laquo; Back</button>
@@ -612,7 +614,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
 
         <div id="submit" class="text-center container p-5" hidden>
-            <a href=""><input type="submit" value="Submit & Select Template"
+            <a href=""><input type="submit" value="Go Get It!"
                     class="rotate btn btn-success btn-lg text-center"></a>
         </div>
     </form>

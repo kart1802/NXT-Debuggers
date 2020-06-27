@@ -253,9 +253,6 @@ function validAll() {
         else if (!Grad_Year.value) {
             document.getElementById("val_alert12").removeAttribute('hidden', true);
         }
-        //else if (!cgpa.value || !perc.value) {
-        //  document.getElementById("val_alert13").removeAttribute('hidden',true);
-        //}
         else if (!core_class.value) {
             document.getElementById("val_alert13").removeAttribute('hidden', true);
         }
