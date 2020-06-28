@@ -168,7 +168,7 @@ def home():
                 shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
         var = var + 1
         return redirect('/pdf')
-    return render_template('index.html')
+    return render_template('input.html')
 
 @app.route('/pdf')
 def pdf():
