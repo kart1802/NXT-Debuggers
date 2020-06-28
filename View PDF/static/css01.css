@@ -1,0 +1,216 @@
+/* 1 first css file
+You may make differnt files for differnt purposes.
+REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED.*/
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.3em;
+    background-image: url(input_background_2.jpg);
+}
+
+
+/*MAIN TAGS*/
+
+fieldset {
+    margin: 0 auto;
+    padding: 3%;
+    width: 100%;
+    align-self: middle;
+    position: relative;
+}
+
+legend {
+    display: block;
+    font-family: 'Bree Serif', serif;
+    font-size: 40px;
+    margin: auto;
+    color: #19a2da;
+    text-shadow: 0.2vw 0.2vh 0.5vw dimgray;
+}
+
+label {
+    display: inline;
+    font-size: 1.3em;
+    color: cyan;
+}
+
+input,
+textarea {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: #ffffff;
+    justify-content: center;
+}
+
+input:focus,
+textarea:focus {
+    outline: none !important;
+    background-color: white;
+}
+
+textarea {
+    width: 100%;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol li {
+    display: block;
+}
+
+ol li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: cyan;
+}
+
+input,
+textarea {
+    text-align: center;
+    border: solid black 0.1vw;
+    background-color: lightgray;
+    box-shadow: 0.1vw 0.1vh 1vw black;
+    border-radius: 1vw;
+}
+
+fieldset,
+li {
+    animation: slide-up 0.60s ease-in-out;
+}
+
+input[type="url"] {
+    width: 100%;
+}
+
+div .address {
+    margin: auto;
+    justify-content: center;
+}
+
+
+/*CLASSES*/
+
+.skill {
+    float: left;
+    clear: both;
+}
+
+ ::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 1.2em;
+    color: gray;
+}
+
+
+.cancel {
+    float: right;
+}
+
+.to {
+    color: cyan;
+}
+
+.progress {
+    position: relative;
+    top: 0;
+    left: auto;
+}
+
+.info {
+    font-size: 0.7em;
+    font-variant: small-caps;
+    color: #58b3e7;
+    text-indent: 3%;
+}
+
+
+
+.btn {
+    margin: auto;
+    color: black;
+    border: solid black 0.1vw;
+    box-shadow: 1px 1px 1vw black;
+    border-radius: 2vw;
+}
+
+.rotate {
+    animation: rotate 0.60s ease-in-out
+}
+
+.disappear {
+    animation: disappear 0.60s ease-in-out
+}
+
+.cbtn {
+    display: block;
+    margin: 3vh auto;
+}
+
+.achbtn {
+    display: block;
+    float: right;
+    margin-right: 3vw;
+}
+
+.cancel {
+    display: block;
+    float: right;
+}
+
+
+/*IDs*/
+
+#submit {
+    margin-bottom: 5vh;
+}
+
+#next {
+    float: right;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+}
+
+#back {
+    margin-left: 5vw;
+    margin-bottom: 5vh;
+}
+
+
+/*ANIMATIONS*/
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(180deg)
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
