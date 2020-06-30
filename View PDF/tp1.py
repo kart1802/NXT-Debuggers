@@ -70,10 +70,10 @@ def home():
                  'percent' : request.form['percent1'],
                  'core' : request.form['core1'],
                  'association' : {
-                  'asso0' :  request.form['association0'],
-                  'asso1' :  request.form['association1'],
-                  'asso2' :  request.form['association2'],
-                  'asso3' :  request.form['association3']
+                  'asso0' :  request.form['association4'],
+                  'asso1' :  request.form['association5'],
+                  'asso2' :  request.form['association6'],
+                  'asso3' :  request.form['association7']
         }}
         edu.append(edu1)
         edu2 = { 'college' : request.form['college2'],
@@ -83,10 +83,10 @@ def home():
                  'percent' : request.form['percent2'],
                  'core' : request.form['core2'],
                  'association' : {
-                   'asso0' : request.form['association0'],
-                   'asso1' : request.form['association1'],
-                   'asso2' : request.form['association2'],
-                   'asso3' : request.form['association3']
+                   'asso0' : request.form['association8'],
+                   'asso1' : request.form['association9'],
+                   'asso2' : request.form['association10'],
+                   'asso3' : request.form['association11']
         }}
         edu.append(edu2)
         edu3 = { 'college' : request.form['college3'],
@@ -96,10 +96,10 @@ def home():
                  'percent' : request.form['percent3'],
                  'core' : request.form['core3'],
                  'association' : {
-                   'asso0' : request.form['association0'],
-                   'asso1' : request.form['association1'],
-                   'asso2' : request.form['association2'],
-                   'asso3' : request.form['association3']
+                   'asso0' : request.form['association12'],
+                   'asso1' : request.form['association13'],
+                   'asso2' : request.form['association14'],
+                   'asso3' : request.form['association15']
         }}
         edu.append(edu3)
         print(edu)
@@ -167,6 +167,9 @@ def home():
             if fname.lower().endswith('.pdf'):
                 shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
         var = var + 1
+        items.clear()
+        edu.clear()
+        ship.clear()
         return redirect('/pdf')
     return render_template('input.html')
 

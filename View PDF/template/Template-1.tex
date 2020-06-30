@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
@@ -33,11 +35,31 @@ urlcolor = red
 
 \pagestyle{fancy}
 \fancyhf{}
-\chead{{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\chead{
+\BLOCK{ if linkedin != '' and github == '' }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
 \small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
-\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\  \faLinkedinSquare\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}}\hspace{5mm} \faGithubSquare\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} }}
-
-
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faLinkedinSquare\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}} }}
+ 
+\BLOCK{ elif github != '' and linkedin == '' }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faGithubSquare\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} }}
+ 
+\BLOCK{ elif (linkedin != '') and (github != '') }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faLinkedinSquare\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}}
+\hspace{5mm}
+\faGithubSquare\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} }}
+\BLOCK{ else }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact} }}
+\BLOCK{ endif }
 \begin{document}
 
 \section*{\large{\uppercase{education}}}
@@ -49,8 +71,14 @@ urlcolor = red
 	\BLOCK{ if i['college'] != '' }
 
 {\large{\textbf{\VAR{i['college']}}}}\hfill {\textbf{From}}: \VAR{i['adyear']} - \VAR{i['gradyear']}\\
-{\textbf{CGPA}}: \VAR{i['cgpa']} \hspace{30mm} {\textbf{Percentage}}: \VAR{i['percent']} \\
+{\textbf{CGPA}}: \VAR{i['cgpa']} \hspace{30mm} 
+\BLOCK{ if i['percent'] == '-' }
+{\textbf{Percentage}}: \VAR{i['percent']} \\
+\BLOCK{ else }
+{\textbf{Percentage}}: \VAR{i['percent']}\% \\
+\BLOCK{ endif }
 {\textbf{Course Work}} : \VAR{i['core']}\\
+\BLOCK{ if i['association']['asso0'] != '' }
 {\textbf{\underline{Professional Associations}}}:
 \begin{itemize}[noitemsep,nolistsep]
 \BLOCK{if i['association']['asso0'] != '' }
@@ -67,17 +95,19 @@ urlcolor = red
 \BLOCK{ endif }
 \end{itemize}
 \BLOCK{ endif }
+\BLOCK{ endif }
+\vspace{3pt}
 \BLOCK{ endfor }
 
 }
  
-\vspace{3pt}
+
 \section*{\large{\uppercase{objective}}}
 \hrule
 \vspace{3pt}
 \VAR{objective}
 \vspace{3pt}
-
+\BLOCK{ if skill[0] != '' }
 \section*{\large{\uppercase{Skills}}}
 \hrule
 \vspace{3pt}
@@ -89,8 +119,9 @@ urlcolor = red
 		
 \BLOCK{ endfor }
 \end{itemize}
+\BLOCK{ endif }
 \vspace{3pt}
-
+\BLOCK{ if hobby[0] != '' }
 \section*{\large{\uppercase{Hobbies}}}
 \hrule
 \vspace{3pt}
@@ -101,8 +132,9 @@ urlcolor = red
 	\BLOCK{ endif }
 \BLOCK{ endfor }	
 \end{itemize}
-
+\BLOCK{ endif }
 \vspace{3pt}
+\BLOCK{ if items[0]['proname'] != '' }
 \section*{\large{\uppercase{projects}}}
 \hrule
 \vspace{3pt}
@@ -115,8 +147,9 @@ urlcolor = red
 	\BLOCK{ endif }
 \BLOCK{ endfor }
 \end{enumerate}
-	
+\BLOCK{ endif }
 \vspace{3pt}
+\BLOCK{ if ship[0]['intitle'] != '' }
 \section*{\large{\uppercase{Internship}}}
 \hrule
 \vspace{3pt}
@@ -128,9 +161,9 @@ urlcolor = red
 	\BLOCK{ endif }
 \BLOCK{ endfor }
 \end{enumerate}
-
+\BLOCK{ endif }
 \vspace{3pt}
-
+\BLOCK{ if achievement[0] != '' }
 \section*{\large{\uppercase{achievements}}}
 \hrule
 \vspace{3pt}
@@ -141,6 +174,6 @@ urlcolor = red
 	\BLOCK{ endif }
 \BLOCK{ endfor }
 \end{itemize}
-
+\BLOCK{ endif }
 \vspace{3pt}
 \end{document}
