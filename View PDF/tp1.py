@@ -156,7 +156,7 @@ def home():
         achievement = request.form.getlist('achievement')
         github = request.form.get('github')
         linkedin = request.form.get('linkedin')
-        template = latex_jinja_env.get_template('template/Template-3.tex')
+        template = latex_jinja_env.get_template('template/Template-5.tex')
         right = template.render(fname = fname, lname = lname, contact = contact ,email = email, address = address, city = city, state = state, country = country, pincode = pincode,  edu = edu, objective = objective, skill = skill, hobby = hobby, items = items,  ship = ship, achievement = achievement, github = github, linkedin = linkedin )
         with open('test'+ str(var) +'.tex','w') as f :
             f.write(right)
