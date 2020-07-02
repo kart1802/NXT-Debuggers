@@ -52,7 +52,7 @@ background-size:150%;">
                     <a class="nav-link" href="{{ url_for('template') }}" >Make Resume</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a {% if command =='logged in' %}class="nav-link active"{% else %}class='nav-link'{% endif %}  href="#My_Resume" data-toggle="pill" id="My_Resume-tab" role="tab" aria-controls="My_Resume" aria-selected="false">My Resume</a>
+                    <a {% if command =='logged in' %}class="nav-link active"{% else %}class='nav-link'{% endif %}  href="#My_Resume" data-toggle="pill" id="My_Resume-tab" role="tab" aria-controls="My_Resume" aria-selected="false" aria-disabled="true">My Resume</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="#About" data-toggle="pill" id="About-tab" role="tab" aria-controls="About" aria-selected="false">About Us</a>
@@ -249,7 +249,7 @@ background-size:150%;">
             <br><br>
             <div class="text-center">
             <p style=" font-family: 'Ubuntu', sans-serif; font-size: x-large;">Finally we would like to say :</p>
-                <img src="{{ url_for('static',filename='about_meme.jpg') }}" class="rounded p-1" alt="It ain't much,but it's honest work :)">
+                <div class="m-2"><img src="{{ url_for('static',filename='about_meme.jpg') }}" width="80%" alt="It ain't much,but it's honest work :)"></div>
             </div>
         </div>
   
