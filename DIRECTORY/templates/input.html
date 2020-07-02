@@ -30,7 +30,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     <!--progress bar-->
     <p></p>
     <!--end of progress bar-->
-    <form class="form-horizontal container was-validated" action="/" method="POST" novalidate>
+    <form class="form-horizontal container was-validated" {% if tex=='1' %}action="{{ url_for('input1') }}"{% endif %}{% if tex=='2' %}action="{{ url_for('input2') }}"{% endif %}{% if tex=='3' %}action="{{ url_for('input3') }}"{% endif %}{% if tex=='4' %}action="{{ url_for('input4') }}"{% endif %} method="POST" novalidate>
         <div class="form-group row">
             <!--PERSONAL DETAILS-->
 

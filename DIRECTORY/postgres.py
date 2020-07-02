@@ -158,7 +158,7 @@ def template():
 
 @app.route('/inputfortemplate1',methods = ['GET','POST'])
 def input1():
-    tex = ''
+    tex = '1'
     if (request.method == 'POST') :  
         global var
         global cp
@@ -296,7 +296,7 @@ def input1():
         edu.clear()
         ship.clear()
         return redirect('/pdf')
-    return render_template("input.html",tex='1')
+    return render_template("input.html",tex=tex)
 
 
 
