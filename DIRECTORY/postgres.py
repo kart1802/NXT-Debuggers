@@ -12,8 +12,8 @@ from jinja2.loaders import FileSystemLoader
 from pdflatex import PDFLaTeX,pdflatex
 import subprocess
 import webbrowser
-SOURCE_DIR = r"C:\Users\aptep\Desktop\git repository\NXT-Debuggers\DIRECTORY"
-DEST_DIR = r"C:\Users\aptep\Desktop\git repository\NXT-Debuggers\DIRECTORY\static"
+SOURCE_DIR = "/Users/Swami/Desktop/DIRECTORY"
+DEST_DIR = "/Users/Swami/Desktop/DIRECTORY/static"
 
 latex_jinja_env = jinja2.Environment(
     block_start_string = '\BLOCK{',
@@ -306,7 +306,7 @@ def input1():
 
 @app.route('/inputfortemplate2',methods = ['GET','POST'])
 def input2():
-    tex = ''
+    tex = '2'
     if (request.method == 'POST') :  
         global var
         global cp
@@ -429,7 +429,7 @@ def input2():
         achievement = request.form.getlist('achievement')
         github = request.form.get('github')
         linkedin = request.form.get('linkedin')
-        template = latex_jinja_env.get_template('templats/Template-2.tex')
+        template = latex_jinja_env.get_template('templates/Template-2.tex')
         right = template.render(fname = fname, lname = lname, contact = contact ,email = email, address = address, city = city, state = state, country = country, pincode = pincode,  edu = edu, objective = objective, skill = skill, hobby = hobby, items = items,  ship = ship, achievement = achievement, github = github, linkedin = linkedin )
         with open('test'+ str(var) +'.tex','w') as f :
             f.write(right)
@@ -444,7 +444,7 @@ def input2():
         edu.clear()
         ship.clear()
         return redirect('/pdf')
-    return render_template("input.html",tex = '2')
+    return render_template("input.html",tex = tex)
 
 
 
@@ -453,7 +453,7 @@ def input2():
 
 @app.route('/inputfortemplate3',methods = ['GET','POST'])
 def input3():
-    tex = ''
+    tex = '3'
     if (request.method == 'POST') :  
         global var
         global cp
@@ -591,7 +591,7 @@ def input3():
         edu.clear()
         ship.clear()
         return redirect('/pdf')
-    return render_template("input.html",tex = '3')
+    return render_template("input.html",tex = tex)
 
 
 
@@ -600,7 +600,7 @@ def input3():
 
 @app.route('/inputfortemplate4',methods = ['GET','POST'])
 def input4():
-    tex = ''
+    tex = '4'
     if (request.method == 'POST') :  
         global var
         global cp
@@ -723,7 +723,7 @@ def input4():
         achievement = request.form.getlist('achievement')
         github = request.form.get('github')
         linkedin = request.form.get('linkedin')
-        template = latex_jinja_env.get_template('templates/Template-4.tex')
+        template = latex_jinja_env.get_template('templates/Template-5.tex')
         right = template.render(fname = fname, lname = lname, contact = contact ,email = email, address = address, city = city, state = state, country = country, pincode = pincode,  edu = edu, objective = objective, skill = skill, hobby = hobby, items = items,  ship = ship, achievement = achievement, github = github, linkedin = linkedin )
         with open('test'+ str(var) +'.tex','w') as f :
             f.write(right)
@@ -738,7 +738,7 @@ def input4():
         edu.clear()
         ship.clear()
         return redirect('/pdf')
-    return render_template("input.html",tex = '4')
+    return render_template("input.html",tex = tex)
 
 
 

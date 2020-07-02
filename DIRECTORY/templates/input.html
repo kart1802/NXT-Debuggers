@@ -14,7 +14,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     <link rel="stylesheet" href="{{url_for('static',filename='css01.css')}}">
 
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital@1&display=swap" rel="stylesheet">
-    
+    <link rel="icon" type="image/jgp" href="{{ url_for('static',filename='final_logo().jpg') }}">
+
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
@@ -24,7 +25,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     </style>
 
 </head>
-<body class="container align-middle p-1">
+<body class="container align-middle p-1" style="background: url({{ url_for('static',filename='input_background_2.jpg') }});"  >
     <h1 style="text-align:center ;font-family: 'Odibee Sans', cursive; font-size: 5.5rem;color: #19a2da;
     padding: 5px; font: outline;">About Yourself</h1>
     <!--progress bar-->
