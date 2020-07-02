@@ -186,7 +186,7 @@ background-size:150%;">
         padding: 12px;">About the creators:</h1> <br>
         <div class="jumbotron border border-success" id="basic_font_and_centering">
             <h1 class="display-4">Hey There Awesome Human!</h1>
-            <p class="lead">We are NXT-Debuggers : A team of four first-year students from Veermata Jijabai Technological Institute-Mumbai, aiming to give you a simple and easy to use Resume Maker web-app.This web-app was made as a project for the competetion "Inheritance-2020" organised by the "Community of Coders-VJTI". We thank our mentors at COC VJTI for the guidance and  overseeing our project. Special thanks to <a target="blank" href="https://www.linkedin.com/in/shubham-nazare-a23535190">Shubham Nazare</a> for the help and guidance.</p>
+            <p class="lead">We are NXT-Debuggers : A team of four first-year students from Veermata Jijabai Technological Institute-Mumbai, aiming to give you a simple and easy to use Resume Maker web-app.This web-app was made as a project for the competetion "Inheritance-2020" organised by the "Community of Coders-VJTI".</p>
             <a class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#creators_info"
                 aria-expanded="false" aria-controls="collapseExample">More about the creators</a>
         </div>
@@ -205,11 +205,10 @@ background-size:150%;">
             </div>
 
             <div id="card" class="card border border-sucess">
-                <img src="Dummy_logo.jpg" class="card-img-top rounded-lg" alt="Photo of Member">
+                <img src="{{ url_for('static',filename='about_k.jpg') }}"  class="card-img-top rounded-lg" alt="Photo of Member">
                 <div class="card-body">
                     <h5 class="card-title">Karthik Swaminathan</h5>
-                    <p id="text" class="card-text">This card has supporting text below as a natural lead-in to
-                        additional content.</p>
+                    <p id="text" class="card-text">Hi There!My name is Karthik.I am currently studying Mechanical Engineering at VJTI.I hope no bugs bite you ;)</p>
                     <div style="margin: 40%;">
                         <a target="blank" href="https://www.linkedin.com/in/karthik-swaminathan-24644a1a2"><img src="{{ url_for('static',filename='LinkedIn.jpg') }}" class="card-img-bottom" alt="LinkedIn Profile"></a>
                     </div>
@@ -219,8 +218,7 @@ background-size:150%;">
                 <img src="Dummy_logo.jpg" class="card-img-top rounded-lg" alt="Photo of Member">
                 <div class="card-body">
                     <h5 class="card-title">Chaitanya Apte</h5>
-                    <p id="text" class="card-text">This card has supporting text below as a natural lead-in to
-                        additional content.</p>
+                    <p id="text" class="card-text">My name is Chaitanya and I'm a freshman studying Mechanical Engineering.I hope you have a great experience with our app!</p>
                     <div style="margin: 40%;">
                         <a target="blank" href="https://www.linkedin.com/in/chaitanya-apte-a0b2821a3"><img src="{{ url_for('static',filename='LinkedIn.jpg') }}" class="card-img" alt="LinkedIn Profile"></a>
                     </div>
@@ -232,7 +230,7 @@ background-size:150%;">
                 <div class="card-body">
                     <h5 class="card-title">Prahlad Amudan</h5>
                     <p id="text" class="card-text">Hi! My name is Prahlad and I am currently pursuing my undergrad
-                        in mechanical engineering.Hope you like our Resume Maker and get the resume you always
+                        in Mechanical Engineering.Hope you like our Resume Maker and get the resume you always
                         wanted!
                     <div style="margin: 40%;">
                         <a target="blank" href="https://www.linkedin.com/in/prahlad-amudan-060598155/"><img src="{{ url_for('static',filename='LinkedIn.jpg') }}"
@@ -248,7 +246,7 @@ background-size:150%;">
             <br><br>
             <div class="text-center">
             <p style=" font-family: 'Ubuntu', sans-serif; font-size: x-large;">Finally we would like to say :</p>
-                <img src="{{ url_for('static',filename='about_meme.jpg') }}" class="rounded" alt="It ain't much,but it's honest work :)">
+                <img src="{{ url_for('static',filename='about_meme.jpg') }}" class="rounded p-1" alt="It ain't much,but it's honest work :)">
             </div>
         </div>
   
