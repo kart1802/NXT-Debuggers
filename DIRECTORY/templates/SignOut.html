@@ -18,7 +18,7 @@
 </head>
 <body style=" background:url({{ url_for('static',filename='Hpme2.jpg')}});
 background-size:150%;" class="container-fluid">
-    <div class="d-flex" style="float: right;"><a id="SignOut" class="btn btn-outline-secondary" style="text-align: right;">Sign Out and/or Go To HomePage</a></div>
+    <div class="d-flex" style="float: right;"><a id="SignOut" href="{{ url_for('home') }}" class="btn btn-outline-secondary" style="text-align: right;">Sign Out and/or Go To HomePage</a></div>
 
     <h1 class="container-fluid center" style="text-align:center;font-family: 'Odibee Sans', cursive; font-size: 5.5rem;
     padding: 5px; font: outline;">Your Resume</h1>
