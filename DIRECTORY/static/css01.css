@@ -7,7 +7,7 @@ html{
 body {
     font-family: 'Karla', sans-serif;
     font-size: 1.3em;
-    background-image: url({{ url_for('static',filename='input_background_2.jpg') }});
+    
 }
 
 

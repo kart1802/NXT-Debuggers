@@ -13,16 +13,18 @@
 </style>
     <title>View Resume</title>
     <link rel="icon" type="image/jgp" href="final_logo().jpg">
-    
+    <link rel="icon" type="image/jgp" href="{{ url_for('static',filename='final_logo().jpg') }}">
+
 </head>
 <body style=" background:url({{ url_for('static',filename='Hpme2.jpg')}});
 background-size:150%;" class="container-fluid">
+    <div class="d-flex" style="float: right;"><a id="SignOut" href="{{ url_for('home') }}" class="btn btn-outline-secondary" style="text-align: right;">Sign Out and/or Go To HomePage</a></div>
+
     <h1 class="container-fluid center" style="text-align:center;font-family: 'Odibee Sans', cursive; font-size: 5.5rem;
     padding: 5px; font: outline;">Your Resume</h1>
     <embed class="container-fluid"  src="{{url_for('static',filename=value)}}" type="application/pdf" width="1520px" height="1200px">
     
 
-<footer class="p-5"><div class="d-flex justify-content-center"><a id="SignOut" class="btn btn-outline-secondary" style="text-align: center;">Sign Out and/or Go To HomePage</a></div></footer>
         <!-- JS, Popper.js, and jQuery -->
         <script>
            var sign =  document.getElementById('SignOut')

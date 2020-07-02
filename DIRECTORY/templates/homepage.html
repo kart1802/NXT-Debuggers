@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script>{% if command=='login' %} 
+<script>{% if modal=='login' %} 
     $(document).ready(function(){
         $("#Login_modal").modal('show');
     });{% endif %}
 </script>
-<script>{% if command=='signup' %} 
+<script>{% if modal=='signup' %} 
     $(document).ready(function(){
-        $("#Login_modal").modal('show');
+        $("#Sign_Up_modal").modal('show');
     });{% endif %}
 </script>
     <!-- CSS only -->
@@ -137,43 +137,46 @@ background-size:150%;">
     
     <!--My Resume-->
  <br>
-{% if command=='logged in' %}
-<div class="tab-pane fade show active" id="My_Resume">
-    <h2>Home Page</h2>
-    <p>Welcome back, {{ username }}!</p>
-    <section id="basic_font_and_centering" class=" container w-80 p-4 border border-warning"
-    style="background: white;">
-    <p style="font-size:xx-large; background: white;">You have no previously made resume.</p><br>
-    <button class="btn btn-info"
-        style=" font-size: 1.5rem;  cursor: pointer; border-radius: 20px; border: 10px solid white;">Make New
-        Resume</button>
-</section>
-</div>
+ {% if command=='logged in' %}
+ <div class="tab-pane fade show active" id="My_Resume">
+     <h2>Home Page</h2>
+     <p>Welcome back, {{ username }}!</p>
+     <section id="basic_font_and_centering" class=" container w-80 p-4 border border-warning"
+     style="background: white;">
+     <p style="font-size:xx-large; background: white;">You have no previously made resume.</p><br>
+     <a class="btn btn-info" href="{{ url_for('template') }}"
+         style=" font-size: 1.5rem;  cursor: pointer; border-radius: 20px; border: 10px solid white;">Make New
+         Resume</a>
+ </section>
+ </div>
+ 
+    {% else %}
+ 
+ 
+ 
+ 
+ 
+     <div {% if command=='logging' %}class="tab-pane fade show active"{% else %}class="tab-pane fade"{% endif %} id="My_Resume" role="tabpanel" aria-labelledby="My_Resume-tab">
+         <h1 style="font-family: 'Odibee Sans', cursive; font-size: 5.5rem;
+         padding: 12px;">My Resume</h1>
+         <p id="basic_font_and_centering" style="font-size: large;">To access this feature ,you will have to login.</p>
+         <div id="basic_font_and_centering" class="container w-80 p-5 border border-sucess" style="background: white;">
+            <div>{{ signupsuccess }}</div>
+             <div id="MR_login" class="d-flex justify-content-center container w-80 p-5" style="background: white;">
+        
+                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Login_modal"
+                     style=" font-size: 1.5rem;  cursor: pointer; border-radius: 15px; border: 10px solid white">Login</button>
+             </div>
+             <div style="font: bolder; font-size: 50px;background: white;" class="container w-80 p-5">Or</div>
+             <div id="MR_Sign_Up" class="d-flex justify-content-center container w-80 p-5" style="background: white;">
+                 <button class="btn btn-primary" data-toggle="modal" data-target="#Sign_Up_modal"
+                     style=" font-size: 1.5rem;  cursor: pointer; border-radius: 15px; border: 10px solid white">Sign Up
+                     Now</button>
+             </div>
+         </div></div><br>
+         <br>
+ {% endif %}
 
-   {% else %}
-
-
-
-
-
-    <div class="tab-pane fade" id="My_Resume" role="tabpanel" aria-labelledby="My_Resume-tab">
-        <h1 style="font-family: 'Odibee Sans', cursive; font-size: 5.5rem;
-        padding: 12px;">My Resume</h1>
-        <p id="basic_font_and_centering" style="font-size: large;">To access this feature ,you will have to login.</p>
-        <div id="basic_font_and_centering" class="container w-80 p-5 border border-sucess" style="background: white;">
-            <div id="MR_login" class="d-flex justify-content-center container w-80 p-5" style="background: white;">
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Login_modal"
-                    style=" font-size: 1.5rem;  cursor: pointer; border-radius: 15px; border: 10px solid white">Login</button>
-            </div>
-            <div style="font: bolder; font-size: 50px;background: white;" class="container w-80 p-5">Or</div>
-            <div id="MR_Sign_Up" class="d-flex justify-content-center container w-80 p-5" style="background: white;">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#Sign_Up_modal"
-                    style=" font-size: 1.5rem;  cursor: pointer; border-radius: 15px; border: 10px solid white">Sign Up
-                    Now</button>
-            </div>
-        </div></div><br>
-        <br>
-{% endif %}
         <!--After Login-->
 
     
@@ -280,7 +283,7 @@ background-size:150%;">
             <form action="{{ url_for('login') }}" method="POST">
                
                   <label for="exampleInputEmail1">Username</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="username"{% if command=='logging' %}value='{{ lusername }}'{% endif %} aria-describedby="emailHelp">
                   
                 
                 
@@ -289,7 +292,7 @@ background-size:150%;">
                 <small class="text-muted">Kindly Remember your password till the time we add the "Forgot Password" feature.</small>
                 <br>
              
-              {{ msg }}
+              {{ msg1 }}
         </div>
         <div class="modal-footer d-flex justify-content-between">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -313,9 +316,9 @@ background-size:150%;">
             <form action="{{ url_for('register') }}" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username">
+                    <input type="text" class="form-control" name="username"{% if command=='logging' %}value='{{ susername }}'{% endif %}>
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" {% if command=='logging' %}value='{{ email }}'{% endif %} aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
@@ -324,7 +327,7 @@ background-size:150%;">
                   <input type="password" class="form-control"name="cpassword" id="exampleInputPassword1">
                 </div><br>
               
-              {{ msg }}
+              {{ msg2 }}
         </div>
         <div class="modal-footer d-flex justify-content-between">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

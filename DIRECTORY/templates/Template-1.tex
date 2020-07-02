@@ -1,0 +1,179 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{nopageno}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{helvet}
+ \fontfamily{lmr}\selectfont
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks = true,
+linkcolor = blue,
+urlcolor = red
+}
+\geometry{
+ a4paper,
+ total={190mm,257mm},
+ left=10mm,
+ top=35mm,
+ headheight=20mm
+ }
+\newcommand{\VAR}[1]{}
+\newcommand{\BLOCK}[1]{}
+\urlstyle{same}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+\BLOCK{ if linkedin != '' and github == '' }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faLinkedinSquare\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}} }}
+ 
+\BLOCK{ elif github != '' and linkedin == '' }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faGithubSquare\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} }}
+ 
+\BLOCK{ elif (linkedin != '') and (github != '') }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faLinkedinSquare\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}}
+\hspace{5mm}
+\faGithubSquare\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} }}
+\BLOCK{ else }
+{\large{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
+\small{Address: \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
+\faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto: \VAR{email}}{\VAR{email}}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: \VAR{contact} }}
+\BLOCK{ endif }
+\begin{document}
+
+\section*{\large{\uppercase{education}}}
+\hrule
+\vspace{3pt}
+
+\flushleft{
+\BLOCK{ for i in edu } 
+	\BLOCK{ if i['college'] != '' }
+
+{\large{\textbf{\VAR{i['college']}}}}\hfill {\textbf{From}}: \VAR{i['adyear']} - \VAR{i['gradyear']}\\
+{\textbf{CGPA}}: \VAR{i['cgpa']} \hspace{30mm} 
+\BLOCK{ if i['percent'] == '-' }
+{\textbf{Percentage}}: \VAR{i['percent']} \\
+\BLOCK{ else }
+{\textbf{Percentage}}: \VAR{i['percent']}\% \\
+\BLOCK{ endif }
+{\textbf{Course Work}} : \VAR{i['core']}\\
+\BLOCK{ if i['association']['asso0'] != '' }
+{\textbf{\underline{Professional Associations}}}:
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{if i['association']['asso0'] != '' }
+	\item \VAR{i['association']['asso0']}
+\BLOCK{ endif }
+\BLOCK{if i['association']['asso1'] != '' }
+	\item \VAR{i['association']['asso1']}
+\BLOCK{ endif }
+\BLOCK{if i['association']['asso2'] != '' } 
+	\item \VAR{i['association']['asso2']}
+\BLOCK{ endif }
+\BLOCK{if i['association']['asso3'] != '' } 
+	\item \VAR{i['association']['asso3']}
+\BLOCK{ endif }
+\end{itemize}
+\BLOCK{ endif }
+\BLOCK{ endif }
+\vspace{3pt}
+\BLOCK{ endfor }
+
+}
+ 
+
+\section*{\large{\uppercase{objective}}}
+\hrule
+\vspace{3pt}
+\VAR{objective}
+\vspace{3pt}
+\BLOCK{ if skill[0] != '' }
+\section*{\large{\uppercase{Skills}}}
+\hrule
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{ for x in skill }
+	\BLOCK{ if x != '' }
+		\item \VAR{x}
+	\BLOCK{ endif }
+		
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+\vspace{3pt}
+\BLOCK{ if hobby[0] != '' }
+\section*{\large{\uppercase{Hobbies}}}
+\hrule
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{ for x in hobby }
+	\BLOCK{ if x != '' }
+		\item \VAR{x}
+	\BLOCK{ endif }
+\BLOCK{ endfor }	
+\end{itemize}
+\BLOCK{ endif }
+\vspace{3pt}
+\BLOCK{ if items[0]['proname'] != '' }
+\section*{\large{\uppercase{projects}}}
+\hrule
+\vspace{3pt}
+
+\begin{enumerate}[noitemsep,nolistsep]
+\BLOCK{ for i in items } 
+	\BLOCK{ if i['proname'] != '' }
+	\item {\textbf{\VAR{i['proname']}}}\hfill {\textbf{From}}: \VAR{i['profrom']} {\textbf{To}} \VAR{i['proto']}\\
+	\VAR{i['prodescription']}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{enumerate}
+\BLOCK{ endif }
+\vspace{3pt}
+\BLOCK{ if ship[0]['intitle'] != '' }
+\section*{\large{\uppercase{Internship}}}
+\hrule
+\vspace{3pt}
+\begin{enumerate}[noitemsep,nolistsep]
+\BLOCK{ for i in ship } 
+	\BLOCK{ if i['intitle'] != '' }
+	\item {\textbf{\VAR{i['intitle']}}}\hfill {\textbf{From}}: \VAR{i['infrom']} {\textbf{To}} \VAR{i['into']}\\
+	\VAR{i['indescription']}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{enumerate}
+\BLOCK{ endif }
+\vspace{3pt}
+\BLOCK{ if achievement[0] != '' }
+\section*{\large{\uppercase{achievements}}}
+\hrule
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{ for x in achievement }
+	\BLOCK{ if x != '' }
+		\item \VAR{x}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+\vspace{3pt}
+\end{document}
