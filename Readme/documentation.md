@@ -5,7 +5,7 @@
 ## Team members 
 * Sameep Kulkarni - kulsameep325@gmail.com
 * Karthik Swaminathan - karthikswami.1802@gmail.com
-* Chaitanya Apte - chaitanya902@gmail.com
+* Chaitanya Apte -  chaitanya902@gmail.com
 * Prahlad Amudan - prahlad2001a@gmail.com
 
 ## Mentors
@@ -15,7 +15,7 @@
 
 ## Description 
 
-Our project is a web-based app.This app aims to provide a simple and professional resume for the user.The app can be mainly divided into 4 pages : [Homepage](#Homepage) , [Template Page](#Template-Page) ,[Input Page](#Input-Page) , [Resume Viewing page](#Resume-Viewing-Page).
+### Our project is a web-based app.This app aims to provide a simple and professional resume for the user.The app can be mainly divided into 4 pages : [Homepage](#Homepage) , [Template Page](#Template-Page) ,[Input Page](#Input-Page) , [Resume Viewing page](#Resume-Viewing-Page).
 
 > ### Homepage
 
@@ -69,18 +69,29 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
 ## Technology Stack
 
-1. HTML
-1. CSS
-1. Javascript
-1. Bootstrap 4
-1. Python
-1. Flask
-1. LateX
-1. PostgreSQL
+* HTML
+* CSS
+* Javascript
+* Bootstrap 4
+* Python
+* Flask
+* LateX
+* PostgreSQL
 
 
 ## Project Setup
+    
+1. Download [MikTex](https://miktex.org/download) (Install all packages that are prompted by Texworks).
+2. Download [TexMaker](https://www.xm1math.net/texmaker/download.html) (Recommended Text-Editor) .
+3. Download [Python](https://www.python.org/downloads/) .
 
+    In the command prompt enter the follwing code
+    *  ` pip install Flask `
+    *  ` pip install jinja2 `
+    *  ` pip install pdfkit `
+    *  ` pip install pdflatex `
+    *  ` pip install psycopg2 `
+  
 
 
 
@@ -90,13 +101,13 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 1. **User enters the Homepage:**
     1. If you want to make a resume without login or signup:
     
-     * If on PC : Click on the "Make Resume" button in the navbar or the "Make your professional resume now!" button below the slideshow.
-     * If on Mobile: Open the collapsible navbar by clicking the button to the top-right corner after which click the "Make Resume" button or the "Make your professional resume now!" button below the slideshow.
+        * If on PC : Click on the "Make Resume" button in the navbar or the "Make your professional resume now!" button below the slideshow.
+        * If on Mobile: Open the collapsible navbar by clicking the button to the top-right corner after which click the "Make Resume" button or the "Make your professional resume now!" button below the slideshow.
 
-* If you want to know About the project and the creators
+    * If you want to know About the project and the creators
 
-    * If on PC :click on the "About Us" button in the navbar.A brief description about the project and the team will be displayed along with a button which opens a collapsible tab which on clicking will provide further information about the team.
-    * If on Mobile: Click the the button on the top-right corner of the homepage to open a collapsible navbar.Click on the "About Us" button and the same contents as above will be displayed.
+        * If on PC :click on the "About Us" button in the navbar.A brief description about the project and the team will be displayed along with a button which opens a collapsible tab which on clicking will provide further information about the team.
+        * If on Mobile: Click the the button on the top-right corner of the homepage to open a collapsible navbar.Click on the "About Us" button and the same contents as above will be displayed.
 ---
 2. **User enters the Template Page:**
     1. There will be four miniaturised versions of the resume temlpates which will be clickable.
@@ -130,9 +141,9 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
 
 ## Applications
->Our Resume Maker will be useful in providing simple and professional resumes to our users and to enable those users who have no idea about the format of a resume to also make a resume for themselves.
+>### Our Resume Maker will be useful in providing simple and professional resumes to our users and to enable those users who have no idea about the format of a resume to also make a resume for themselves.
 
 
 
 ## Future Scope
->Our project is primarily made for undergraduate or graduate students to help them make a professional resume. As of now, our Resume Maker app has 4 resume templates for the users. We would like to add more in future. Further, we are working on making the whole app more responsive,easy to use and giving the logged in users the opportunity to edit or download their previously made resumes.One of our future plans will be to have a feature which will ask the registered users to provide the companies they would like to send a particular resume to, and that resume would be sent to the respective company's mail id by our app.  
+>### Our project is primarily made for undergraduate or graduate students to help them make a professional resume. As of now, our Resume Maker app has 4 resume templates for the users. We would like to add more in future. Further, we are working on making the whole app more responsive,easy to use and giving the logged in users the opportunity to edit or download their previously made resumes.One of our future plans will be to have a feature which will ask the registered users to provide the companies they would like to send a particular resume to, and that resume would be sent to the respective company's mail id by our app.  
