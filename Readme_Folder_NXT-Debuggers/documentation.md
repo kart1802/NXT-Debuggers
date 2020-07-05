@@ -71,7 +71,7 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
 * Drive link : https://drive.google.com/file/d/1srH3y6iCzH47jSsj_mRIcSy3rPsRCZKc/view?usp=sharing
 
-* Website link : 
+ 
 
 ## Technology Stack
 
@@ -93,10 +93,7 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
     In the command prompt enter the follwing code
     *  ` pip install Flask `
-    *  ` pip install jinja2 `
-    *  ` pip install pdfkit `
-    *  ` pip install pdflatex `
-    *  ` pip install psycopg2 `
+    *  ` pip install -r requirements.txt `
   
 
 
@@ -105,7 +102,7 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
 ## Usage
 1. **User enters the Homepage:**
-    1. If you want to make a resume without login or signup:
+    1.To make a resume
     
         * If on PC : Click on the "Make Resume" button in the navbar or the "Make your professional resume now!" button below the slideshow.
         * If on Mobile: Open the collapsible navbar by clicking the button to the top-right corner after which click the "Make Resume" button or the "Make your professional resume now!" button below the slideshow.
@@ -147,13 +144,10 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
 
 ## Applications
->### Our Resume Maker will be useful in providing simple and professional resumes to our users and to enable those users who have no idea about the format of a resume to also make a resume for themselves.
+> Our Resume Maker will be useful in providing simple and professional resumes to our users and to enable those users who have no idea about the format of a resume to also make a resume for themselves.
 
 
 
 ## Future Scope
->### Our project is primarily made for undergraduate or graduate students to help them make a professional resume. As of now, our Resume Maker app has 4 resume templates for the users. We would like to add more in future. Further, we are working on making the whole app more responsive,easy to use and giving the logged in users the opportunity to edit or download their previously made resumes.One of our future plans will be to have a feature which will ask the registered users to provide the companies they would like to send a particular resume to, and that resume would be sent to the respective company's mail id by our app.  
+> Our project is primarily made for undergraduate or graduate students to help them make a professional resume. As of now, our Resume Maker app has 4 resume templates for the users. We would like to add more in future. Further, we are working on making the whole app more responsive,easy to use and giving the logged in users the opportunity to edit or download their previously made resumes.One of our future plans will be to have a feature which will ask the registered users to provide the companies they would like to send a particular resume to, and that resume would be sent to the respective company's mail id by our app.  
 
-## Screenshots
- 
-> ### The screenshots have been provided near the places where that specific feature is described
