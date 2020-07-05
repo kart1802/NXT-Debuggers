@@ -104,8 +104,8 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 1. **User enters the Homepage:**
     1.To make a resume
     
-        * If on PC : Click on the "Make Resume" button in the navbar or the "Make your professional resume now!" button below the slideshow.
-        * If on Mobile: Open the collapsible navbar by clicking the button to the top-right corner after which click the "Make Resume" button or the "Make your professional resume now!" button below the slideshow.
+    * If on PC : Click on the "Make Resume" button in the navbar or the "Make your professional resume now!" button below the slideshow.
+    * If on Mobile: Open the collapsible navbar by clicking the button to the top-right corner after which click the "Make Resume" button or the "Make your professional resume now!" button below the slideshow.
 
     * If you want to know About the project and the creators
 
