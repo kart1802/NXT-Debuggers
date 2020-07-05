@@ -21,7 +21,7 @@
 
 The Homepage mainly consists of:
 1. A navbar with four buttons(nav-pills) and the app icon.
-![Navbar](Navbar.png)
+![Navbar](Readme_Folder_NXT-Debuggers/Navbar.png)
     1. Home : Displays the homepage.
 
     2. Make Resume :This button will redirect the user the page to select templates.
@@ -30,41 +30,41 @@ The Homepage mainly consists of:
     
     4. About Us : It gives a brief description about the project and our motive.There is also a button "***More about the creators***" which opens four collapsible bootstrap cards which provide further information about the team members and a clickable icon of LinkedIn which will redirect the user to the LinkedIn profile of that particular team member,in another tab.
 
-    ![About us](About_us.png)
+    ![About us](Readme_Folder_NXT-Debuggers/About_us.png)
 
 1. A slideshow displaying the available resume templates.We currently have provided four resume templates.
-   ![Slideshow](Slideshow.png)
+   ![Slideshow](Readme_Folder_NXT-Debuggers/Slideshow.png)
 
 2. A footer containing the link to a google feedback form .
-    ![Feedback](Feedback.png)
+    ![Feedback](Readme_Folder_NXT-Debuggers/Feedback.png)
 
 > ### Template Page
 
 The Template page consists of four different templates      (which can be seen in the homepage as well) where you will have the miniaturised version of the templates which are clickable.On clicking you a readable version of the template will be displayed with a  "***Select Template***" button, a "***Close***" button and another button close button with the "**x**" symbol . After clicking on "***Select Template***" a collapsible button  "***go to input page***" wil appear which on clicking will direct you to the input page.
 
-![Template Page](Template%20Page.png)
+![Template Page](Readme_Folder_NXT-Debuggers/Template%20Page.png)
 
 > ### Input Page
 
 This is page where the user will provide details which he/she wants to be displayed in his/her resume.
-![Input Page](Input%20Page%201.png)
+![Input Page](Readme_Folder_NXT-Debuggers/Input%20Page%201.png)
 <br>
 <br>
-![Input Page end](Input%20Page%202.png)
+![Input Page end](Readme_Folder_NXT-Debuggers/Input%20Page%202.png)
 
 
 > ### Resume Viewing Page
  
 The LaTeX generated pdf of resume will be shown here with option to download and a button at the top to redirect you to the homepage after completing the downloading part.
 
-![View PDF](View_pdf.png)
+![View PDF](Readme_Folder_NXT-Debuggers/View_pdf.png)
 
 In the above image as you can see the "***Sign Out and/or Go to Home Page***" will redirect you to the homepage
 
-![Download](Download.png)
+![Download](Readme_Folder_NXT-Debuggers/Download.png)
 By Clicking on "**Download**" icon you would get a dialog box where you can save pdf on your device(*This is for the user who use Chrome browser*) 
 
-![Download2](Download2.png)
+![Download2](Readme_Folder_NXT-Debuggers/Download2.png)
 After downloading you get a box with downloaded pdf at the bottom of your page in Chrome
 
 * GitHub repo link : https://github.com/kart1802/NXT-Debuggers.git
