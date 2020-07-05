@@ -67,6 +67,12 @@ By Clicking on "**Download**" icon you would get a dialog box where you can save
 ![Download2](Download2.png)
 After downloading you get a box with downloaded pdf at the bottom of your page in Chrome
 
+* GitHub repo link : https://github.com/kart1802/NXT-Debuggers.git
+
+* Drive link : https://drive.google.com/file/d/1srH3y6iCzH47jSsj_mRIcSy3rPsRCZKc/view?usp=sharing
+
+* Website link : 
+
 ## Technology Stack
 
 * HTML
@@ -147,3 +153,7 @@ After downloading you get a box with downloaded pdf at the bottom of your page i
 
 ## Future Scope
 >### Our project is primarily made for undergraduate or graduate students to help them make a professional resume. As of now, our Resume Maker app has 4 resume templates for the users. We would like to add more in future. Further, we are working on making the whole app more responsive,easy to use and giving the logged in users the opportunity to edit or download their previously made resumes.One of our future plans will be to have a feature which will ask the registered users to provide the companies they would like to send a particular resume to, and that resume would be sent to the respective company's mail id by our app.  
+
+## Screenshots
+ 
+> ### The screenshots have been provided near the places where that specific feature is described
