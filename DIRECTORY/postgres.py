@@ -1,3 +1,4 @@
+
 import psycopg2
 import psycopg2.extras
 from flask import Flask, render_template, request, redirect, url_for, session,send_file
@@ -102,7 +103,7 @@ def register():
             msg2 = 'Account already exists!'
             modal = 'signup'
             command = 'logging'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+        elif not re.match(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+', email):
             msg2 = 'Invalid email address!'
             modal = 'signup'
             command = 'logging'
@@ -122,7 +123,7 @@ def register():
             
             cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
             
-            cur.execute('INSERT INTO userinfo VALUES ( 2, %s, %s, %s)', (susername, password, email,))
+            cur.execute('INSERT INTO userinfo VALUES (%s, %s, %s)', (susername, password, email,))
             conn.commit()
             conn.close()
             signupsuccess = 'You have successfully registered. Now you can log in!'
