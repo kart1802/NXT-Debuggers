@@ -13,8 +13,8 @@ from jinja2.loaders import FileSystemLoader
 from pdflatex import PDFLaTeX,pdflatex
 import subprocess
 import webbrowser
-SOURCE_DIR = "/Users/Swami/Desktop/DIRECTORY"
-DEST_DIR = "/Users/Swami/Desktop/DIRECTORY/static"
+SOURCE_DIR = "/Users/Swami/Desktop/NXT Debuggers/DIRECTORY"
+DEST_DIR = "/Users/Swami/Desktop/NXT Debuggers/DIRECTORY/static"
 
 latex_jinja_env = jinja2.Environment(
     block_start_string = '\BLOCK{',
