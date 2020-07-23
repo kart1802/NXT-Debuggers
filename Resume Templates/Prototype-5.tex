@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{ragged2e}
 \usepackage{array}
+\usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{geometry}
@@ -27,8 +28,8 @@ urlcolor = red
  a4paper,
  total={190mm,257mm},
  left=10mm,
- top=27mm,
- headheight=18mm,
+ top=40mm,
+ headheight=35mm,
  headsep=5mm
  }
 \setlength{\arrayrulewidth}{0.1mm}
@@ -38,10 +39,11 @@ urlcolor = red
 
 \pagestyle{fancy}
 \fancyhf{}
-\chead{{\large{\uppercase{\textbf{Prahlad Amudan}}}}\\
+\renewcommand{\headrulewidth}{0pt}
+\lhead{{\LARGE{\uppercase{\textbf{Prahlad Amudan}}}}\\
 \small{Address: 2nd Floor,Brahma Niwas,Near Pangong Tso Lake, Chembur,Mumbai-400089 \\ 
 \faEnvelopeO \hspace{1mm} E-mail:{\color{red}\underline{\href{mailto:prahlad2001a@gmail.com}{prahlad2001a@gmail.com}}} \hspace{5mm} \faPhone \hspace{1mm} Phone: +919833004100\\  \faLinkedinSquare\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{mailto:prahlad2001a@gmail.com}{www.linkedin.com/in/Prahlad-Amudan}}}\hspace{5mm} \faGithubSquare\hspace{1mm} Github: {\color{red}\underline{\href{mailto:prahlad2001a@gmail.com}{www.github.com/in/Prahlad-Amudan}}} }}
-
+\rhead{\fbox{\includegraphics[width=2.5cm, height=3cm]{Photo.jpg}}}
 \begin{document}
 
 \flushleft{
