@@ -48,7 +48,7 @@ def login():
             msg1 = 'Incorrect username/password!'
             modal = 'login'
             command = 'logging'
-    return render_template('templates/homepage.html', msg1=msg1,command=command,modal=modal,lusername=lusername)
+    return render_template('homepage.html', msg1=msg1,command=command,modal=modal,lusername=lusername)
 
 
 
@@ -96,7 +96,7 @@ def register():
         
         msg2 = 'Please fill out the form'
         modal = 'signup'
-    return render_template('templates/homepage.html',msg2=msg2,command=command,modal=modal,signupsuccess=signupsuccess,susername=susername,email=email)
+    return render_template('homepage.html',msg2=msg2,command=command,modal=modal,signupsuccess=signupsuccess,susername=susername,email=email)
 
 
     
@@ -105,7 +105,7 @@ def home():
     
     if 'loggedin' in session:
     
-        return render_template('templates/homepage.html', username=session['username'],command='logged in')
+        return render_template('homepage.html', username=session['username'],command='logged in')
     
     return redirect(url_for('login'))    
 
@@ -113,7 +113,7 @@ def home():
 
 @app.route('/choose-template')
 def template():
-    return render_template('template page/template.html')
+    return render_template('template.html')
 
 
 
