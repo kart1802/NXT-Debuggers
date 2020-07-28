@@ -1,2 +1,1 @@
-$ vim Procfile
-web: gunicorn DIRECTORY.main:app
+sweb: gunicorn DIRECTORY.main:app --log-file -
