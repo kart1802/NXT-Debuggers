@@ -1,1 +1,1 @@
-web: gunicorn DIRECTORY.main:app --log-file -
+web: gunicorn DIRECTORY.main:app
