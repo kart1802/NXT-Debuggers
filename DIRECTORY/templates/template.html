@@ -70,7 +70,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="Temp_label_1">Template 1</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" data-dismiss="modal" data-target="#selectTemp2"  data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false" aria-controls="selectTemp2">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -81,7 +81,9 @@
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp1">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp1">
-                    <div class="card card-body"><a class="btn btn-success" href="{{ url_for('input1') }}">Go to Input Page</a></div>
+                    <form action="" method="post" >
+                    <div class="card card-body"><input class="btn btn-success" type="submit" value="Go to Input Page" name="select1"></input></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -95,7 +97,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="Temp_label_2">Template 2</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" data-dismiss="modal" data-target="#selectTemp2"  data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false" aria-controls="selectTemp2">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -106,7 +108,9 @@
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp2">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp2">
-                    <div class="card card-body"><a class="btn btn-success" href="{{ url_for('input2') }}">Go to Input Page</a></div>
+                    <form action="" method="post" >
+                    <div class="card card-body"><input class="btn btn-success" value="Go to Input Page" name="select2" type="submit"></input></div>
+                </form>
                 </div>
             </div>
         </div>
@@ -120,7 +124,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="Temp_label_3">Template 3</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" data-dismiss="modal" data-target="#selectTemp2"  data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false" aria-controls="selectTemp2">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -131,7 +135,9 @@
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp3">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp3">
-                    <div class="card card-body"><a class="btn btn-success" href="{{ url_for('input3') }}">Go to Input Page</a></div>
+                    <form action="" method="post" >
+                    <div class="card card-body"><input class="btn btn-success" name="select3" value="Go to Input Page" type="submit" ></input></div>
+                </form>
                 </div>
             </div>
         </div>
@@ -145,7 +151,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="Temp_label_4">Template 4</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" data-dismiss="modal" data-target="#selectTemp2"  data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false" aria-controls="selectTemp2">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -156,7 +162,9 @@
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp4">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp4">
-                    <div class="card card-body"><a class="btn btn-success" href="{{ url_for('input4') }}">Go to Input Page</a></div>
+                    <form action="" method="post" >
+                    <div class="card card-body"><input class="btn btn-success" name="select4" value="Go to Input Page" type="submit" ></input></div>
+                </form>
                 </div>
             </div>
         </div>

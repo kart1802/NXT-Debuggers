@@ -10,8 +10,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     <title>
         Resume Builder
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static',filename='css01.css')}}">
 
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital@1&display=swap" rel="stylesheet">
@@ -26,18 +25,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     </style>
 
 </head>
-
-<body class="container align-middle p-1"
-    style="background: url({{ url_for('static',filename='input_background_2.jpg') }});">
+<body class="container align-middle p-1" style="background: url({{ url_for('static',filename='input_background_2.jpg') }});"  >
     <h1 style="text-align:center ;font-family: 'Odibee Sans', cursive; font-size: 5.5rem;color: #19a2da;
     padding: 5px; font: outline;">About Yourself</h1>
     <!--progress bar-->
     <p></p>
     <!--end of progress bar-->
-    <form class="form-horizontal container was-validated" {% if tex=='1' %}action="{{ url_for('input1') }}"
-        {% endif %}{% if tex=='2' %}action="{{ url_for('input2') }}"
-        {% endif %}{% if tex=='3' %}action="{{ url_for('input3') }}"
-        {% endif %}{% if tex=='4' %}action="{{ url_for('input4') }}" {% endif %} method="POST" novalidate>
+    <form class="form-horizontal container was-validated" method="POST" novalidate>
         <div class="form-group row">
             <!--PERSONAL DETAILS-->
 
@@ -46,16 +40,15 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 <div class="row">
                     <div class="w-65 p-3">
                         <label for="fname"> First Name :</label><br><input onchange="removeAlert()"
-                            class="form-control is-invalid" type="text" name="fname" id="fname" size="30"
-                            placeholder="First name" required>
+                            class="form-control is-invalid" type="text" name="fname" id="fname" size="30" placeholder="First name"
+                            required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert1" class="invalid-feedback">Please provide First Name</span>
                         <br>
                     </div>
                     <div class="w-65 p-3">
                         <label for="lname"> Last Name :</label><br><input onchange="removeAlert()" type="text"
-                            id="lname" size="30" class="form-control is-invalid" name="lname" placeholder="Last name"
-                            required>
+                            id="lname" size="30" class="form-control is-invalid" name="lname" placeholder="Last name" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert2" class="invalid-feedback">Please provide Last Name</span>
                         <br>
@@ -66,15 +59,14 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     <div class="w-65 p-3">
                         <label for="cnum"> Contact Number:</label> <br><input onchange="removeAlert()" type="number"
                             maxlength="10" size="30" class="form-control is-invalid" id="cnum" name="contact"
-                            placeholder="1234567890" required>
+                            placeholder="+911234567890" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert3" class="invalid-feedback">Please provide Contact Number</span>
                         <br>
                     </div><br>
                     <div class="w-65 p-3">
                         <label for="mail"> Email ID:</label><br><input onchange="removeAlert()" type="email" id="mail"
-                            size="30" class="form-control is-invalid" name="email" placeholder="mymail@example.com"
-                            required>
+                            size="30" class="form-control is-invalid" name="email" placeholder="mymail@example.com" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert4" class="invalid-feedback">Please provide Email Id</span>
                     </div>
@@ -111,15 +103,14 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     </div>
                     <div class="w-65 p-3">
                         <label for="Country" hidden>Country</label><input onchange="removeAlert()" size="25" type="text"
-                            id="Country" class="col form-control is-invalid" name="country" placeholder="Country"
-                            required>
+                            id="Country" class="col form-control is-invalid" name="country" placeholder="Country" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert8" class="invalid-feedback">Please provide Country Name</span>
                     </div>
                     <div class="w-65 p-3">
                         <label for="Pincode" hidden>Pincode</label><input onchange="removeAlert()" maxlength="6"
-                            size="30" type="number" id="Pin" class="col form-control is-invalid" name="pincode"
-                            placeholder="Pincode" required>
+                            size="30" type="number" id="Pin" class="col form-control is-invalid" name="pincode" placeholder="Pincode"
+                            required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert9" class="invalid-feedback">Please provide Pincode</span>
 
@@ -138,55 +129,55 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     <!--unchangable-->
                     <li>
                         <label for="ed1">Name of Institution:</label><input onchange="removeAlert()"
-                            class="container-fluid form-control is-invalid" size="50" type="text" id="ed1"
-                            name="college0" placeholder="Veermata Jijabai Technological Institute" size="100" required
+                            class="container-fluid form-control is-invalid" size="50" type="text" id="ed1" name="college0"
+                            placeholder="Veermata Jijabai Technological Institute" size="100" required
                             class="col-sm-9 col-md-6">
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert10" class="invalid-feedback">Please provide Name of Institution</span>
                         <br><label for="ed2">Admission Year:</label><br>
-                        <input onchange="removeAlert()" class="duration form-control is-invalid" type="date" id="ed2"
-                            name="adyear0" placeholder="DD-MM-YYYY" required>
+                        <input onchange="removeAlert()" class="duration form-control is-invalid" type="date" id="ed2" name="adyear0"
+                            placeholder="DD-MM-YYYY" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert11" class="invalid-feedback">Please provide Admission Year</span>
                         <br>
                         <label for="ed3">Year of Graduation:</label><br>
-                        <input onchange="removeAlert()" class="duration form-control is-invalid" type="date" id="ed3"
-                            name="gradyear0" placeholder="DD-MM-YYYY" required>
+                        <input onchange="removeAlert()" class="duration form-control is-invalid" type="date" id="ed3" name="gradyear0"
+                            placeholder="DD-MM-YYYY" required>
                         <div class="valid-feedback">Looks Good!</div>
-                        <span id="val_alert12" class="invalid-feedback">Please provide Year Graduation</span>
+                        <span id="val_alert12" class="invalid-feedback">Please provide Admission Year</span>
                         <br>
                         <label for="ed4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If not
-                            applicable enter " - "</span><br><input type="text" id="ed4" placeholder="Out Of 10"
-                            name="cgpa0" max="10" maxlength="2"><br>
+                            applicable enter " - "</span><br><input type="text" id="ed4" placeholder="Out Of 10" name="cgpa0"
+                            max="10" maxlength="3"><br>
                         <label for="ed7">Percentage</label><br><span class="text-light" style="font-size: medium;">If
-                            not applicable enter " - "</span><br><input type="text" id="ed7" maxlength="3"
-                            name="percent0" placeholder="91"><br>
+                            not applicable enter " - "</span><br><input type="text" id="ed7" maxlength="4" name="percent0"
+                            placeholder="91"><br>
                         <label for="ed5">Core Classes:</label><br>
                         <span class="text-light" style="font-size: medium;">This input field is only for
                             undergraduate/graduate courses or beyond</span>
-                        <textarea onchange="removeAlert()" class="container form-control is-invalid" rows="2" cols="100"
-                            name="core0" size="55" id="ed5"
-                            placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
+                        <textarea onchange="removeAlert()" class="container form-control is-invalid" rows="2" cols="100" name="core0"
+                            size="55" id="ed5" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
                             class="col-sm-9 col-md-6 col-lg-12" required></textarea>
+                        <div class="valid-feedback">Looks Good!</div>
                         <span id="val_alert13" class="invalid-feedback">Please provide Core Classes</span>
                         <label for="ed6">Associations /Committees:</label><br>
                         <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
                             in a particular association in college</span><br>
                         <ol id="eduAchieve">
-                            <li><textarea rows="2" cols="100" id="ed6" placeholder="Achievement" name="association0"
+                            <li><textarea rows="2" cols="100" id="ed6" placeholder="Association or Committees" name="association0"
                                     class="container-fluid"></textarea></li>
                             <li id="eduAchievement0" hidden><textarea rows="2" cols="100" id="ed6" name="association1"
                                     placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieve1('eduAchievement0')">Remove Achievement</span></li>
+                                    onclick="removeEduAchieve1('eduAchievement0')">Remove Association</span></li>
                             <li id="eduAchievement1" hidden><textarea rows="2" cols="100" id="ed6" name="association2"
                                     placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieve1('eduAchievement1')">Remove Achievement</span></li>
+                                    onclick="removeEduAchieve1('eduAchievement1')">Remove Association</span></li>
                             <li id="eduAchievement2" hidden><textarea rows="2" cols="100" id="ed6" name="association3"
                                     placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieve1('eduAchievement2')">Remove Achievement</span></li>
+                                    onclick="removeEduAchieve1('eduAchievement2')">Remove Association</span></li>
                         </ol>
                         <button type="button" onclick="addEduAchieve1()"
                             class="rotate button btn btn-secondary btn-md text-center container achbtn m-3">&crarr;Add
@@ -200,47 +191,44 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                             placeholder="Veermata Jijabai Technological Institute" size="100" required
                             class="col-sm-9 col-md-6">
                         <br><label for="ed1_2">Admission Year:</label><br>
-                        <input class="duration form-control is-invalid" type="date" id="ed1_2" placeholder="DD-MM-YYYY"
-                            name="adyear1" required>
+                        <input class="duration form-control is-invalid" type="date" id="ed1_2" placeholder="DD-MM-YYYY" name="adyear1"
+                            required>
                         <br>
                         <label for="ed1_3">Year of Graduation:</label><br>
-                        <input class="duration form-control is-invalid" type="date" id="ed1_3" placeholder="DD-MM-YYYY"
-                            name="gradyear1" required>
+                        <input class="duration form-control is-invalid" type="date" id="ed1_3" placeholder="DD-MM-YYYY" name="gradyear1"
+                            required>
                         <br>
                         <label for="ed1_4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If not
-                            applicable enter " - "</span><br><input type="text" id="ed1_4" placeholder="Out Of 10"
-                            name="cgpa1" max="10" maxlength="3"><br>
+                            applicable enter " - "</span><br><input type="text" id="ed1_4" placeholder="Out Of 10" name="cgpa1"
+                            max="10" maxlength="3"><br>
                         <label for="ed1_7">Percentage</label><br><span class="text-light" style="font-size: medium;">If
-                            not applicable enter " - "</span><br><input name="percent1" type="text" id="ed1_7"
-                            maxlength="4" placeholder="91"><br>
+                            not applicable enter " - "</span><br><input name="percent1" type="text" id="ed1_7" maxlength="4"
+                            placeholder="91"><br>
+                            
                         <label for="ed1_5">Core Classes:</label><br>
                         <span class="text-light" style="font-size: medium;">This input field is only for
                             undergraduate/graduate courses or beyond</span>
-                        <textarea class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed1_5"
-                            name="core1" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
+                        <textarea class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed1_5" name="core1"
+                            placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
                             class="col-sm-9 col-md-6 col-lg-12" required></textarea>
                         <label for="ed1_6">Associations /Committees:</label><br>
                         <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
                             in a particular association in college</span><br>
                         <ol id="eduAchieve_0">
-                            <li id="eduachievementFirst"><textarea rows="2" cols="100" id="ed1_6_0"
-                                    placeholder="Achievement" name="association4"
-                                    class="abc0 container-fluid"></textarea></li>
-                            <li id="eduAchievement3" hidden><textarea rows="2" cols="100" id="ed1_6_1"
-                                    name="association5" placeholder="Achievement"
-                                    class="abc0 container-fluid"></textarea><span
+                            <li id="eduachievementFirst"><textarea rows="2" cols="100" id="ed1_6_0" placeholder="Association or Committees" name="association4"
+                                    class="abc container-fluid"></textarea></li>
+                            <li id="eduAchievement3" hidden><textarea rows="2" cols="100" id="ed1_6_1" name="association5"
+                                    placeholder="Achievement" class="abc container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub0('eduAchievement3')">Remove Achievement</span></li>
-                            <li id="eduAchievement4" hidden><textarea rows="2" cols="100" id="ed1_6_2"
-                                    name="association6" placeholder="Achievement"
-                                    class="abc0 container-fluid"></textarea><span
+                                    onclick="removeEduAchieveSub0('eduAchievement3')">Remove Association</span></li>
+                            <li id="eduAchievement4" hidden><textarea rows="2" cols="100" id="ed1_6_2" name="association6"
+                                    placeholder="Achievement" class="abc container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub0('eduAchievement4')">Remove Achievement</span></li>
-                            <li id="eduAchievement5" hidden><textarea rows="2" cols="100" id="ed1_6_3"
-                                    name="association7" placeholder="Achievement"
-                                    class="abc0 container-fluid"></textarea><span
+                                    onclick="removeEduAchieveSub0('eduAchievement4')">Remove Association</span></li>
+                            <li id="eduAchievement5" hidden><textarea rows="2" cols="100" id="ed1_6_3" name="association7"
+                                    placeholder="Achievement" class="abc container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub0('eduAchievement5')">Remove Achievement</span></li>
+                                    onclick="removeEduAchieveSub0('eduAchievement5')">Remove Association</span></li>
                         </ol>
                         <button type="button" onclick="addEduAchieveSub0()"
                             class="rotate button btn btn-secondary btn-md text-center container-fluid achbtn m-3">&crarr;Add
@@ -256,47 +244,43 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                             placeholder="Veermata Jijabai Technological Institute" size="100" required
                             class="col-sm-9 col-md-6">
                         <br><label for="ed2_2">Admission Year:</label><br>
-                        <input class="duration form-control is-invalid" type="date" id="edv2" placeholder="DD-MM-YYYY"
-                            name="adyear2" required>
+                        <input class="duration form-control is-invalid" type="date" id="edv2" placeholder="DD-MM-YYYY" name="adyear2"
+                            required>
                         <br>
                         <label for="edv3">Year of Graduation:</label><br>
-                        <input class="duration form-control is-invalid" type="date" id="ed2_3" placeholder="DD-MM-YYYY"
-                            name="gradyear2" required>
+                        <input class="duration form-control is-invalid" type="date" id="ed2_3" placeholder="DD-MM-YYYY" name="gradyear2"
+                            required>
                         <br>
                         <label for="ed2_4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If not
-                            applicable enter " - "</span><br><input type="text" id="ed2_4" placeholder="Out Of 10"
-                            name="cgpa2" max="10" maxlength="3"><br>
+                            applicable enter " - "</span><br><input type="text" id="ed2_4" placeholder="Out Of 10" name="cgpa2"
+                            max="10" maxlength="3"><br>
                         <label for="ed2_7">Percentage</label><br><span class="text-light" style="font-size: medium;">If
-                            not applicable enter " - "</span><br><input name="percent2" type="text" id="ed2_7"
-                            maxlength="4" placeholder="91"><br>
+                            not applicable enter " - "</span><br><input name="percent2" type="text" id="ed2_7" maxlength="4"
+                            placeholder="91"><br>
                         <label for="ed2_5">Core Classes:</label><br>
                         <span class="text-light" style="font-size: medium;">This input field is only for
                             undergraduate/graduate courses or beyond</span>
-                        <textarea class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed2_5"
-                            name="core2" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
+                        <textarea class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed2_5" name="core2"
+                            placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
                             class="col-sm-9 col-md-6 col-lg-12" required></textarea>
                         <label for="ed2_6">Associations /Committees:</label><br>
                         <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
                             in a particular association in college</span><br>
                         <ol id="eduAchieve_1">
-                            <li id="eduachievementFirst"><textarea rows="2" cols="100" id="ed2_6_0"
-                                    placeholder="Achievement" name="association8"
-                                    class="abc1 container-fluid"></textarea></li>
-                            <li id="eduAchievement6" hidden><textarea rows="2" cols="100" id="ed2_6_1"
-                                    name="association9" placeholder="Achievement"
-                                    class="abc1 container-fluid"></textarea><span
+                            <li id="eduachievementFirst"><textarea rows="2" cols="100" id="ed2_6_0" placeholder="Association or Committees" name="association8"
+                                    class="container-fluid"></textarea></li>
+                            <li id="eduAchievement6" hidden><textarea rows="2" cols="100" id="ed2_6_1" name="association9"
+                                    placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub1('eduAchievement6')">Remove Achievement</span></li>
-                            <li id="eduAchievement7" hidden><textarea rows="2" cols="100" id="ed2_6_2"
-                                    name="association10" placeholder="Achievement"
-                                    class="abc1 container-fluid"></textarea><span
+                                    onclick="removeEduAchieveSub1('eduAchievement6')">Remove Association</span></li>
+                            <li id="eduAchievement7" hidden><textarea rows="2" cols="100" id="ed2_6_2" name="association10"
+                                    placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub1('eduAchievement7')">Remove Achievement</span></li>
-                            <li id="eduAchievement8" hidden><textarea rows="2" cols="100" id="ed2_6_3"
-                                    name="association11" placeholder="Achievement"
-                                    class="abc1 container-fluid"></textarea><span
+                                    onclick="removeEduAchieveSub1('eduAchievement7')">Remove Association</span></li>
+                            <li id="eduAchievement8" hidden><textarea rows="2" cols="100" id="ed2_6_3" name="association11"
+                                    placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub1('eduAchievement8')">Remove Achievement</span></li>
+                                    onclick="removeEduAchieveSub1('eduAchievement8')">Remove Association</span></li>
                         </ol>
                         <button type="button" onclick="addEduAchieveSub1()"
                             class="rotate button btn btn-secondary btn-md text-center container-fluid achbtn m-3">&crarr;Add
@@ -312,47 +296,43 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                             placeholder="Veermata Jijabai Technological Institute" size="100" required
                             class="col-sm-9 col-md-6">
                         <br><label for="ed3_2">Admission Year:</label><br>
-                        <input class="duration form-control is-invalid" type="date" id="ed3_2" placeholder="DD-MM-YYYY"
-                            name="adyear3" required>
+                        <input class="duration form-control is-invalid" type="date" id="ed3_2" placeholder="DD-MM-YYYY" name="adyear3"
+                            required>
                         <br>
                         <label for="ed_3">Year of Graduation:</label><br>
-                        <input class="duration form-control is-invalid" type="date" id="ed3_3" placeholder="DD-MM-YYYY"
-                            name="gradyear3" required>
+                        <input class="duration form-control is-invalid" type="date" id="ed3_3" placeholder="DD-MM-YYYY" name="gradyear3"
+                            required>
                         <br>
                         <label for="ed3_4">CGPA:</label><br><span class="text-light" style="font-size: medium;">If not
-                            applicable enter " - "</span><br><input type="text" id="ed3_4" placeholder="Out Of 10"
-                            name="cgpa3" max="10" maxlength="3"><br>
+                            applicable enter " - "</span><br><input type="text" id="ed3_4" placeholder="Out Of 10" name="cgpa3"
+                            max="10" maxlength="3"><br>
                         <label for="ed3_7">Percentage</label><br><span class="text-light" style="font-size: medium;">If
-                            not applicable enter " - "</span><br><input name="percent3" type="text" id="ed3_7"
-                            maxlength="4" placeholder="91"><br>
+                            not applicable enter " - "</span><br><input name="percent3" type="text" id="ed3_7" maxlength="4"
+                            placeholder="91"><br>
                         <label for="ed3_5">Core Classes:</label><br>
                         <span class="text-light" style="font-size: medium;">This input field is only for
                             undergraduate/graduate courses or beyond</span>
-                        <textarea class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed3_5"
-                            name="core3" placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
+                        <textarea class="container form-control is-invalid" rows="2" cols="100" size="55" id="ed3_5" name="core3"
+                            placeholder="Thermodynamics,Fluid Mechanics,etc. for mechanical degree"
                             class="col-sm-9 col-md-6 col-lg-12" required></textarea>
                         <label for="ed3_6">Associations /Committees:</label><br>
                         <span class="text-light" style="font-size: medium;">Activities done/reponsibilities undertaken
                             in a particular association in college</span><br>
                         <ol id="eduAchieve_2">
-                            <li id="eduachievementFirst"><textarea rows="2" cols="100" id="ed3_6_0"
-                                    placeholder="Achievement" name="association12"
-                                    class="abc2 container-fluid"></textarea></li>
-                            <li id="eduAchievement9" hidden><textarea rows="2" cols="100" id="ed3_6_1"
-                                    name="association13" placeholder="Achievement"
-                                    class="abc2 container-fluid"></textarea><span
+                            <li id="eduachievementFirst"><textarea rows="2" cols="100" id="ed3_6_0" placeholder="Association or Committees" name="association12"
+                                    class="container-fluid"></textarea></li>
+                            <li id="eduAchievement9" hidden><textarea rows="2" cols="100" id="ed3_6_1" name="association13"
+                                    placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub2('eduAchievement9')">Remove Achievement</span></li>
-                            <li id="eduAchievement10" hidden><textarea rows="2" cols="100" id="ed3_6_2"
-                                    name="association14" placeholder="Achievement"
-                                    class="abc2 container-fluid"></textarea><span
+                                    onclick="removeEduAchieveSub2('eduAchievement9')">Remove Association</span></li>
+                            <li id="eduAchievement10" hidden><textarea rows="2" cols="100" id="ed3_6_2" name="association14"
+                                    placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub2('eduAchievement10')">Remove Achievement</span></li>
-                            <li id="eduAchievement11" hidden><textarea rows="2" cols="100" id="ed3_6_3"
-                                    name="association15" placeholder="Achievement"
-                                    class="abc2 container-fluid"></textarea><span
+                                    onclick="removeEduAchieveSub2('eduAchievement10')">Remove Association</span></li>
+                            <li id="eduAchievement11" hidden><textarea rows="2" cols="100" id="ed3_6_3" name="association15"
+                                    placeholder="Achievement" class="container-fluid"></textarea><span
                                     class="rotate btn button btn-danger btn-lg text-center m-3"
-                                    onclick="removeEduAchieveSub2('eduAchievement11')">Remove Achievement</span></li>
+                                    onclick="removeEduAchieveSub2('eduAchievement11')">Remove Association</span></li>
                         </ol>
                         <button type="button" onclick="addEduAchieveSub2()"
                             class="rotate button btn btn-secondary btn-md text-center container-fluid achbtn m-3">&crarr;Add
@@ -394,32 +374,32 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     posses</span>
                 <ol id="slist">
                     <li><input type="text" class="container-fluid" name="skill" placeholder="Skill"></li>
-                    <li id="skill0" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill0" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill0')">Remove Skill</span></li>
-                    <li id="skill1" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill1" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill1')">Remove Skill</span></li>
-                    <li id="skill2" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill2" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill2')">Remove Skill</span></li>
-                    <li id="skill3" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill3" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill3')">Remove Skill</span></li>
-                    <li id="skill4" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill4" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill4')">Remove Skill</span></li>
-                    <li id="skill5" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill5" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill5')">Remove Skill</span></li>
-                    <li id="skill6" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill6" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill6')">Remove Skill</span></li>
-                    <li id="skill7" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill7" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill7')">Remove Skill</span></li>
-                    <li id="skill8" hidden><input type="text" class="container-fluid" name="skill"
-                            placeholder="Skill"><span class="rotate btn button btn-danger btn-lg text-center m-3"
+                    <li id="skill8" hidden><input type="text" class="container-fluid" name="skill" placeholder="Skill"><span
+                            class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeSkill('skill8')">Remove Skill</span></li>
                 </ol>
                 <button type="button" onclick="addSkill()"
@@ -430,8 +410,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Hobbies:
                 </legend>
                 <ol id="hlist" class="">
-                    <li><input type="text" class="container-fluid" name="hobby" placeholder="Enter your hobby here">
-                    </li>
+                    <li><input type="text" class="container-fluid" name="hobby" placeholder="Enter your hobby here"></li>
                     <li id="hobby0" hidden><input type="text" class="container-fluid" name="hobby"
                             placeholder="Enter your hobby here"><br><button type="button"
                             class="rotate btn button btn-danger btn-lg text-center m-3"
@@ -482,33 +461,29 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
                 <ol id="pro_node">
                     <li><br>
-                        <input type="text" name="proname0" placeholder="Project name"><br><input type="text"
-                            name="profrom0" placeholder="Sep-19"><span class="to container p-6">To</span><input
-                            type="text" name="proto0" placeholder="Dec-19 ">
+                        <input type="text" name="proname0" placeholder="Project name"><br><input type="text" name="profrom0" placeholder="Sep-19"><span
+                            class="to container p-6">To</span><input type="text" name="proto0" placeholder="Dec-19 ">
                         <textarea maxlength="200" name="prodescription0" placeholder="Project Description"></textarea>
                     </li>
                     <li id="Project0" hidden><br>
-                        <input type="text" name="proname1" placeholder="Project name"><br><input type="text"
-                            name="profrom1" placeholder="Sep-19"><span class="to container p-6">To</span><input
-                            type="text" name="proto1" placeholder="Dec-19 ">
+                        <input type="text" name="proname1" placeholder="Project name"><br><input type="text" name="profrom1" placeholder="Sep-19"><span
+                            class="to container p-6">To</span><input type="text" name="proto1" placeholder="Dec-19 ">
 
                         <textarea maxlength="200" name="prodescription1" placeholder="Project Description"></textarea>
                         <br><button type="button" class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeProject('Project0')">Remove Project</button>
                     </li>
                     <li id="Project1" hidden><br>
-                        <input type="text" name="proname2" placeholder="Project name"><br><input type="text"
-                            name="profrom2" placeholder="Sep-19"><span class="to container p-6">To</span><input
-                            type="text" name="proto2" placeholder="Dec-19 ">
+                        <input type="text" name="proname2" placeholder="Project name"><br><input type="text" name="profrom2" placeholder="Sep-19"><span
+                            class="to container p-6">To</span><input type="text" name="proto2" placeholder="Dec-19 ">
 
                         <textarea maxlength="200" name="prodescription2" placeholder="Project Description"></textarea>
                         <br><button type="button" class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeProject('Project1')">Remove Project</button>
                     </li>
                     <li id="Project2" hidden><br>
-                        <input type="text" name="proname3" placeholder="Project name"><br><input type="text"
-                            name="profrom3" placeholder="Sep-19"><span class="to container p-6">To</span><input
-                            type="text" name="proto3" placeholder="Dec-19 ">
+                        <input type="text" name="proname3" placeholder="Project name"><br><input type="text" name="profrom3" placeholder="Sep-19"><span
+                            class="to container p-6">To</span><input type="text" name="proto3" placeholder="Dec-19 ">
 
                         <textarea maxlength="200" name="prodescription3" placeholder="Project Description"></textarea>
                         <br><button type="button" class="rotate btn button btn-danger btn-lg text-center m-3"
@@ -533,34 +508,30 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                 </legend>
                 <ol id="int_node">
                     <li><br>
-                        <input type="text" name="intitle0" placeholder="Title"><br><input type="text" name="infrom0"
-                            placeholder="Sep-19"><span class="to container p-8">To</span><input type="text" name="into0"
-                            placeholder="Dec 19">
+                        <input type="text" name="intitle0" placeholder="Title"><br><input type="text" name="infrom0" placeholder="Sep-19"><span
+                            class="to container p-8">To</span><input type="text" name="into0" placeholder="Dec 19">
 
                         <textarea maxlength="200" name="indescription0" placeholder="Internship Description"></textarea>
                     </li>
                     <li id="Internship0" hidden><br>
-                        <input type="text" name="intitle1" placeholder="Title"><br><input type="text" name="infrom1"
-                            placeholder="Sep-19"><span class="to container p-8">To</span><input type="text" name="into1"
-                            placeholder="Dec 19">
+                        <input type="text" name="intitle1" placeholder="Title"><br><input type="text" name="infrom1" placeholder="Sep-19"><span
+                            class="to container p-8">To</span><input type="text" name="into1" placeholder="Dec 19">
 
                         <textarea maxlength="200" name="indescription1" placeholder="Internship Description"></textarea>
                         <br><button type="button" class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeInternship('Internship0')">Remove Internship</button>
                     </li>
                     <li id="Internship1" hidden><br>
-                        <input type="text" name="intitle2" placeholder="Title"><br><input type="text" name="infrom2"
-                            placeholder="Sep-19"><span class="to container p-8">To</span><input type="text" name="into2"
-                            placeholder="Dec 19">
+                        <input type="text" name="intitle2" placeholder="Title"><br><input type="text" name="infrom2" placeholder="Sep-19"><span
+                            class="to container p-8">To</span><input type="text" name="into2" placeholder="Dec 19">
 
                         <textarea maxlength="200" name="indescription2" placeholder="Internship Description"></textarea>
                         <br><button type="button" class="rotate btn button btn-danger btn-lg text-center m-3"
                             onclick="removeInternship('Internship1')">Remove Internship</button>
                     </li>
                     <li id="Internship2" hidden><br>
-                        <input type="text" name="intitle3" placeholder="Title"><br><input type="text" name="infrom3"
-                            placeholder="Sep-19"><span class="to container p-8">To</span><input type="text" name="into3"
-                            placeholder="Dec 19">
+                        <input type="text" name="intitle3" placeholder="Title"><br><input type="text" name="infrom3" placeholder="Sep-19"><span
+                            class="to container p-8">To</span><input type="text" name="into3" placeholder="Dec 19">
 
                         <textarea maxlength="200" name="indescription3" placeholder="Internship Description"></textarea>
                         <br><button type="button" class="rotate btn button btn-danger btn-lg text-center m-3"
@@ -587,8 +558,7 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     the ones conducted by college associations</span>
                 <ol id="alist">
                     <br>
-                    <li><input type="text" class="container-fluid" name="achievement"
-                            placeholder="achievements/allocades"></li>
+                    <li><input type="text" class="container-fluid" name="achievement" placeholder="achievements/allocades"></li>
                     <li id="Achievement0" hidden><input type="text" class="container-fluid" name="achievement"
                             placeholder="achievements/allocades"><br><button type="button"
                             class="rotate btn button btn-danger btn-lg text-center m-3"
@@ -609,8 +579,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
 
                 <button type="button" onclick="addAchieve()"
                     class="next rotate button btn btn-primary btn-lg text-center cbtn container m-1">Add
-                    Achievement</button>
-
+                    Achievements</button>
+                
 
                 <!--OTHER ACHIEVEMENTS CLOSED-->
                 <!--PROFILE LINKS-->
@@ -618,10 +588,8 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
                     Profile Links:
 
                 </legend>
-                <label>Github Profile: </label><input type="url" name="github" placeholder="Add GitHub Profile link">
-                <br>
-                <label>Linkedin Profile:</label> <input type="url" name="linkedin"
-                    placeholder="Add LinkedIn Profile link">
+                <label>Github Profile: </label><input type="url" name="github" placeholder="Add GitHub Profile link"> <br>
+                <label>Linkedin Profile:</label> <input type="url" name="linkedin" placeholder="Add LinkedIn Profile link">
                 <!--PROFILE LINKS CLOSED-->
 
             </fieldset>
@@ -633,10 +601,10 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
         </div>
 
 
-        <button type="button" id="next" onclick="validAll()"
+        <button type="button" id="next"  onclick="validAll();"
             class="rotate button btn btn-primary btn-lg text-center">Next &raquo;</button>
-        <button type="button" id="back" onclick="prefield()" class="rotate button btn btn-primary btn-lg text-center"
-            hidden>&laquo; Back</button>
+        <button type="button" id="back" onclick="prefield()"
+            class="rotate button btn btn-primary btn-lg text-center" hidden>&laquo; Back</button>
 
 
         <!--SUBMIT BUTTON-->
@@ -650,378 +618,13 @@ REPORT ABOUT CHANGES AND FILE IN WORK TO WHATSAPP GROUP TO KEEP EVERYONE UPDATED
     </form>
 
 
-   
+    <script src="{{url_for('static',filename='js01.js')}}"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-
-    <script>
-        //VALIDATION
-        const F_name = document.getElementById('fname');
-        const L_name = document.getElementById('lname');
-        const contact = document.getElementById('cnum');
-        const email = document.getElementById('mail');
-        const HS = document.getElementById('HnS');
-        const city = document.getElementById('City');
-        const state = document.getElementById('State');
-        const country = document.getElementById('Country');
-        const pincode = document.getElementById('Pin');
-        const Name_Insti = document.getElementById('ed1');
-        const admission = document.getElementById('ed2');
-        const Grad_Year = document.getElementById('ed3');
-        const cgpa = document.getElementById('ed4');
-        const perc = document.getElementById('ed7');
-        const core_class = document.getElementById('ed5');
-        const objec = document.getElementById('obj');
-
-        //Add Education
-        var Edu = 0;
-        function addEduSub() {
-            document.getElementById(`education${Edu}`).removeAttribute('hidden', true);
-            Edu++;
-        }
-
-        //Remove Education
-        const removeEduSub = (education) => {
-            document.getElementById(education).setAttribute('hidden', true);
-            var rmEdu = document.getElementById(education).childNodes;
-            rmEdu[2].value = ""; rmEdu[8].value = ""; rmEdu[15].value = ""; rmEdu[23].value = ""; rmEdu[30].value = ""; rmEdu[38].value = "";
-            Edu--;
-            if (Edu === 0) {
-                const abc0 = document.getElementsByClassName("abc0");
-                console.log(abc0);
-                for (let i = 0; i < abc0.length; i++) {
-                    abc0[i].value = "";
-                }
-
-            }
-            else if (Edu === 1) {
-                const abc1 = document.getElementsByClassName("abc1");
-                console.log(abc1);
-                for (let j = 0; j < abc1.length; j++) {
-                    abc1[j].value = "";
-                }
-            }
-            else if (Edu === 2) {
-                const abc2 = document.getElementsByClassName("abc2");
-                console.log(abc2);
-                for (let k = 0; k < abc2.length; k++) {
-                    abc2[k].value = "";
-                }
-            }
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 
-
-
-        }
-
-
-
-
-
-        //Add Achievement for first list item in education
-        var eduA1 = 0;
-        function addEduAchieve1() {
-            document.getElementById("eduAchievement" + eduA1).removeAttribute('hidden', true);
-            eduA1++;
-        }
-        // Remove Achievement for first list item in education
-        const removeEduAchieve1 = (eduAchieve1) => {
-            document.getElementById(eduAchieve1).setAttribute('hidden', true);
-            document.getElementById(eduAchieve1).firstChild.value = "";
-            eduA1--;
-        }
-
-        //Add Achievement for second list item in education
-        var eduA2 = 3;
-        function addEduAchieveSub0() {
-            document.getElementById("eduAchievement" + eduA2).removeAttribute('hidden', true);
-            eduA2++;
-        }
-        // Remove Achievement for second list item in education
-        const removeEduAchieveSub0 = (eduAchieve2) => {
-            document.getElementById(eduAchieve2).setAttribute('hidden', true);
-            document.getElementById(eduAchieve2).firstChild.value = "";
-            eduA2--;
-        }
-
-        //Add Achievement for third list item in education
-        var eduA3 = 6;
-        function addEduAchieveSub1() {
-            document.getElementById("eduAchievement" + eduA3).removeAttribute('hidden', true);
-            eduA3++;
-        }
-        // Remove Achievement for third list item in education
-        const removeEduAchieveSub1 = (eduAchieve3) => {
-            document.getElementById(eduAchieve3).setAttribute('hidden', true);
-            document.getElementById(eduAchieve3).firstChild.value = "";
-            eduA3--;
-        }
-
-        //Add Achievement for fourth list item in education
-        var eduA4 = 9;
-        function addEduAchieveSub2() {
-            document.getElementById("eduAchievement" + eduA4).removeAttribute('hidden', true);
-            eduA4++;
-        }
-        // Remove Achievement for fourth list item in education
-        const removeEduAchieveSub2 = (eduAchieve4) => {
-            document.getElementById(eduAchieve4).setAttribute('hidden', true);
-            document.getElementById(eduAchieve4).firstChild.value = "";
-            eduA4--;
-        }
-
-
-
-
-        //Add Skill
-        var sId = 0;
-        function addSkill() {
-            document.getElementById("skill" + sId).removeAttribute('hidden', true);
-            sId++;
-
-        }
-        //Delete Skill
-        const removeSkill = (skill) => {
-            document.getElementById(skill).setAttribute('hidden', true);
-            document.getElementById(skill).firstChild.value = "";
-            sId--;
-
-        }
-        //Add Hobby
-        var hId = 0;
-        function addHobby() {
-            document.getElementById("hobby" + hId).removeAttribute('hidden', true);
-            hId++;
-        }
-        //Delete Hobby
-        const removeHobby = (hobby) => {
-            document.getElementById(hobby).setAttribute('hidden', true);
-            document.getElementById(hobby).firstChild.value = "";
-            hId--;
-        }
-
-
-        //Add Project
-        var pId = 0;
-        function addProject() {
-            document.getElementById("Project" + pId).removeAttribute('hidden', true);
-            pId++;
-        }
-        //Remove Project
-        const removeProject = (Project) => {
-            document.getElementById(Project).setAttribute('hidden', true);
-            var rP = document.getElementById(Project).childNodes;
-            rP[2].value = ""
-            rP[4].value = ""
-            rP[6].value = ""
-            rP[8].value = ""
-            pId--;
-        }
-
-        //Add Internship
-        var iId = 0;
-        function addInternship() {
-            document.getElementById("Internship" + iId).removeAttribute('hidden', true);
-            iId++;
-        }
-        //Remove Internship
-        const removeInternship = (Internship) => {
-            document.getElementById(Internship).setAttribute('hidden', true);
-            var rP = document.getElementById(Internship).childNodes;
-            rP[2].value = ""
-            rP[4].value = ""
-            rP[6].value = ""
-            rP[8].value = ""
-            iId--;
-        }
-
-        //Add Achievement
-        var aId = 0;
-        function addAchieve() {
-            document.getElementById("Achievement" + aId).removeAttribute('hidden', true);
-            aId++;
-        }
-        //Remove Achievement
-        const removeAchieve = (Achievement) => {
-            document.getElementById(Achievement).setAttribute('hidden', true);
-            document.getElementById(Achievement).firstChild.value = "";
-            aId--;
-        }
-
-
-        function copy(copy, name) {
-            const z = document.getElementById(copy).firstElementChild
-            const a = z.cloneNode(true)
-            a.innerHTML += `<br><button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-lg text-center m-3">Delete ` + name + `</button><br>`
-            document.getElementById(copy).appendChild(a)
-
-        }
-
-        function achievement(e) {
-            var x = e.parentNode.firstElementChild.cloneNode(true)
-            x.innerHTML += '<button type="button" onclick="cancel(this)" class="rotate cancel btn button btn-danger btn-md text-center m-1">Delete Achievement</button>'
-            e.parentNode.insertBefore(x, e)
-        }
-        var m = 1;
-        function removeAlert() {
-            document.getElementById("val_alert" + m).setAttribute('hidden', true)
-            m++
-            window.m = m
-        }
-
-        var i = 0;
-        var nex = 0;
-        var width = 0;
-        function validAll() {
-            //personal
-            if (i === 0) {
-                if (!F_name.value) {
-                    document.getElementById("val_alert1").removeAttribute('hidden', true);
-                }
-                else if (!L_name.value) {
-                    document.getElementById("val_alert2").removeAttribute('hidden', true);
-                }
-
-                else if (!contact.value) {
-                    document.getElementById("val_alert3").removeAttribute('hidden', true);
-                }
-
-                else if (!email.value) {
-                    document.getElementById("val_alert4").removeAttribute('hidden', true);
-                }
-
-                else if (!HS.value) {
-                    document.getElementById("val_alert5").removeAttribute('hidden', true);
-                }
-
-                else if (!city.value) {
-                    document.getElementById("val_alert6").removeAttribute('hidden', true);
-                }
-
-                else if (!state.value) {
-                    document.getElementById("val_alert7").removeAttribute('hidden', true);
-                }
-
-                else if (!country.value) {
-                    document.getElementById("val_alert8").removeAttribute('hidden', true);
-                }
-
-                else if (!pincode.value) {
-                    document.getElementById("val_alert9").removeAttribute('hidden', true);
-                }
-                else {
-                    nextfield();
-
-                }
-            }
-            //education
-            else if (i === 1) {
-                if (!Name_Insti.value) {
-                    document.getElementById("val_alert10").removeAttribute('hidden', true);
-                }
-                else if (!admission.value) {
-                    document.getElementById("val_alert111").removeAttribute('hidden', true);
-                }
-                else if (!Grad_Year.value) {
-                    document.getElementById("val_alert12").removeAttribute('hidden', true);
-                }
-                else if (!core_class.value) {
-                    document.getElementById("val_alert13").removeAttribute('hidden', true);
-                }
-                else {
-                    nextfield();
-
-                }
-
-
-            }
-            //objective
-            else if (i === 2) {
-                if (!objec.value) {
-                    document.getElementById("val_alert14").removeAttribute('hidden', true);
-                }
-                else {
-                    nextfield();
-                }
-            }
-            else {
-                nextfield();
-            }
-
-
-        }
-        function nextfield() {
-            /*next fieldset */
-            var x = document.getElementsByTagName('fieldset')
-            x[i + 1].removeAttribute('hidden', true)
-            x[i].setAttribute('hidden', true)
-            i++
-            window.i = i
-            if (i > 0) {
-                document.getElementById('back').removeAttribute('hidden', true)
-            }
-            if (i === 5) {
-                document.getElementById('submit').removeAttribute('hidden', true)
-                document.getElementById('next').setAttribute('hidden', true)
-            }
-            var list = document.getElementsByTagName('input')
-            for (var num = 0; num < list.length; num++) {
-                if (list[num].value == 0) {
-                    $('.cancel').trigger('click')
-                }
-            }
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-        function prefield() {
-
-            /*previous fieldset */
-            var x = document.getElementsByTagName('fieldset')
-            if (i !== 0) {
-                x[i].setAttribute('hidden', true)
-                x[i - 1].removeAttribute('hidden', true)
-                i--
-                window.i = i
-            }
-            if (i > 0) {
-                document.getElementById('back').removeAttribute('hidden', true)
-            } else {
-                document.getElementById('back').setAttribute('hidden', true)
-            }
-            if (i < 5) {
-                document.getElementById('submit').setAttribute('hidden', true)
-                document.getElementById('next').removeAttribute('hidden', true)
-            }
-            var list = document.getElementsByTagName('input')
-            for (var num = 0; num < list.length; num++) {
-                if (list[num].value == 0) {
-                    $('.cancel').trigger('click')
-                }
-            }
-
-
-        }
-
-
-    </script>
 </body>
 
 </html>
