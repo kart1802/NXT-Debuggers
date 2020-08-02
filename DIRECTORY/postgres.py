@@ -11,8 +11,8 @@ from jinja2.loaders import FileSystemLoader
 from pdflatex import PDFLaTeX,pdflatex
 import subprocess
 import webbrowser
-SOURCE_DIR = "/Users/Swami/Desktop/DIRECTORY"
-DEST_DIR = "/Users/Swami/Desktop/DIRECTORY/static"
+SOURCE_DIR = "/app"
+DEST_DIR = "/app/static"
 
 latex_jinja_env = jinja2.Environment(
     block_start_string = '\BLOCK{',
@@ -310,7 +310,7 @@ def input1():
             f.write(right)
         f.close()
         
-        subprocess.call('pdflatex test'+ str(var) +'.tex')
+        subprocess.call(['pdflatex', 'test', str(var),'.tex'])
         for fname in os.listdir(SOURCE_DIR):
             if fname.lower().endswith('.pdf'):
                 shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
