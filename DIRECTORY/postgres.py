@@ -145,7 +145,6 @@ def home():
 
 @app.route('/choose-template',methods = ['GET','POST'])
 def template():
-    global num
     select1 = request.form.get('select1')
     select2 = request.form.get('select2')
     select3 = request.form.get('select3')
@@ -156,16 +155,16 @@ def template():
     # print(select4)
     if (request.method == 'POST') :
         if (select1 == 'Go to Input Page') :
-            num = 1
+            session['num'] = 1
             return redirect('/inputfortemplate')
         elif (select2 == 'Go to Input Page') :
-            num = 2
+            session['num'] = 2
             return redirect('/inputfortemplate')
         elif (select3 == 'Go to Input Page') :
-            num = 3
+            session['num'] = 3
             return redirect('/inputfortemplate')
         elif (select4 == 'Go to Input Page') :
-            num = 4
+            session['num'] = 4
             return redirect('/inputfortemplate')
 
     return render_template('template.html')
@@ -173,9 +172,9 @@ def template():
 
 @app.route('/inputfortemplate',methods = ['GET','POST'])
 def input1():
+    num = session.get('num')
     if (request.method == 'POST') :  
         global var
-        global num
         global cp
         global edu
         global items
@@ -310,7 +309,7 @@ def input1():
             f.write(right)
         f.close()
         
-        subprocess.call(['pdflatex', 'test', str(var),'.tex'])
+        subprocess.call(['pdflatex', 'test'+str(var)+'.tex'])
         for fname in os.listdir(SOURCE_DIR):
             if fname.lower().endswith('.pdf'):
                 shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
@@ -318,7 +317,6 @@ def input1():
         items.clear()
         edu.clear()
         ship.clear()
-        num = 0
         return redirect('/pdf')
     return render_template("input.html")
 
@@ -326,7 +324,7 @@ def input1():
 def pdf():
     global var
     global cp
-    cp = 'test' + str(var-1) + '.pdf'
+    cp = 'test0.pdf'
     
     return render_template('SignOut.html', value = cp)
 
@@ -337,4 +335,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)    
