@@ -2,6 +2,7 @@ import psycopg2
 import psycopg2.extras
 from flask import Flask, render_template, request, redirect, url_for, session,send_file
 import re
+import random
 import jinja2
 import os
 import shutil
@@ -33,7 +34,7 @@ app.secret_key = 'your secret key'
 conn = psycopg2.connect(database="d993pimcmhkbu", user = "kakgaivnavppjb", password = "9431d918ce26ad100a6f097fe09f3c484f1071d04bfafbb6fcb255d25f331a16", host = "ec2-3-215-83-17.compute-1.amazonaws.com", port = "5432")
 
 num = 0
-var = 0
+var = random.random()
 cp = ''
 items = list()
 ship = list()
@@ -175,7 +176,6 @@ def input1():
     num = session.get('num')
     if (request.method == 'POST') :  
         global var
-        global cp
         global edu
         global items
         global ship
@@ -308,12 +308,10 @@ def input1():
         with open('test'+ str(var) +'.tex','w') as f :
             f.write(right)
         f.close()
-        
         subprocess.call(['pdflatex', 'test'+str(var)+'.tex'])
         for fname in os.listdir(SOURCE_DIR):
             if fname.lower().endswith('.pdf'):
                 shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
-        var = var + 1
         items.clear()
         edu.clear()
         ship.clear()
@@ -322,12 +320,11 @@ def input1():
 
 @app.route('/pdf')
 def pdf():
-    global var
     global cp
-    cp = 'test0.pdf'
+    global var
+    cp = 'test'+str(var)+'.pdf'
     
     return render_template('SignOut.html', value = cp)
-
 
 @app.route('/logout')
 def logout():
