@@ -3,11 +3,9 @@ import psycopg2.extras
 from flask import Flask, render_template, redirect, url_for, session,send_file
 from flask import request as r
 import re
-import random
 import jinja2
 import os
 import shutil
-import pdfkit
 from jinja2 import Template
 from jinja2.loaders import FileSystemLoader
 from pdflatex import PDFLaTeX,pdflatex
@@ -35,15 +33,10 @@ app.secret_key = 'your secret key'
 conn = psycopg2.connect(database="d993pimcmhkbu", user = "kakgaivnavppjb", password = "9431d918ce26ad100a6f097fe09f3c484f1071d04bfafbb6fcb255d25f331a16", host = "ec2-3-215-83-17.compute-1.amazonaws.com", port = "5432")
 
 num = 0
-var = random.random()
 cp = ''
 items = list()
 ship = list()
 edu = list()
-if os.path.exists("/app/static/test" +str(var)+".tex"): 
-            os.remove("/app/static/test" +str(var)+".tex")
-if os.path.exists("/app/static/test" +str(var)+".pdf"):
-            os.remove("/app/static/test" +str(var)+".pdf")
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -179,11 +172,11 @@ def template():
 def input1():
     num = session.get('num')
     if (r.method == 'POST') :  
-        global var
         global edu
         global items
         global ship
-        fname = r.form.get('fname')
+        session['fname'] = r.form.get('fname')
+        fname = session.get('fname')
         lname = r.form.get('lname')
         contact = r.form.get('contact')
         email = r.form.get('email')
@@ -306,14 +299,16 @@ def input1():
         elif (num == 3) :
             template = latex_jinja_env.get_template('templates/Template-3.tex')
         elif (num == 4) :
-            template = latex_jinja_env.get_template('templates/Template-4.tex')
-
+            template = latex_jinja_env.get_template('templates/Template-4.tex')  
+        if os.path.exists("/app/static/"+fname+".tex"): 
+            os.remove("/app/static/"+fname+".tex")
+        if os.path.exists("/app/static/"+fname+".pdf"):
+            os.remove("/app/static/"+fname+".pdf")
         right = template.render(fname = fname, lname = lname, contact = contact ,email = email, address = address, city = city, state = state, country = country, pincode = pincode,  edu = edu, objective = objective, skill = skill, hobby = hobby, items = items,  ship = ship, achievement = achievement, github = github, linkedin = linkedin )
-
-        with open('test'+ str(var) +'.tex','w') as f :
+        with open(fname+'.tex','w') as f :
             f.write(right)
         f.close()
-        subprocess.call(['pdflatex', 'test'+str(var)+'.tex'])
+        subprocess.call(['pdflatex', fname+'.tex'])
         for fname in os.listdir(SOURCE_DIR):
             if fname.lower().endswith('.pdf'):
                 shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
@@ -326,8 +321,8 @@ def input1():
 @app.route('/pdf')
 def pdf():
     global cp
-    global var
-    cp = 'test'+str(var)+'.pdf'
+    fname = session.get('fname')
+    cp = fname+'.pdf'
     return render_template('SignOut.html', value = cp)
 
 @app.route('/logout')
