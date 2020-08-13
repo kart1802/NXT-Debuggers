@@ -1,6 +1,7 @@
 import psycopg2
 import psycopg2.extras
-from flask import Flask, render_template, request, redirect, url_for, session,send_file
+from flask import Flask, render_template, redirect, url_for, session,send_file
+from flask import request as r
 import re
 import random
 import jinja2
@@ -39,7 +40,10 @@ cp = ''
 items = list()
 ship = list()
 edu = list()
-
+if os.path.exists("/app/static/test" +str(var)+".tex"): 
+            os.remove("/app/static/test" +str(var)+".tex")
+if os.path.exists("/app/static/test" +str(var)+".pdf"):
+            os.remove("/app/static/test" +str(var)+".pdf")
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -48,10 +52,10 @@ def login():
     command = 'logged out'
     modal=''
     lusername =''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+    if r.method == 'POST' and 'username' in r.form and 'password' in r.form:
     
-        lusername = request.form['username']
-        password = request.form['password']
+        lusername = r.form['username']
+        password = r.form['password']
                 
         cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute('SELECT * FROM userinfo WHERE username = %s AND password = %s', (lusername, password,))
@@ -84,12 +88,12 @@ def register():
     signupsuccess = ''
     susername =''
     email =''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
+    if r.method == 'POST' and 'username' in r.form and 'password' in r.form and 'email' in r.form:
         
-        susername = request.form['username']
-        password = request.form['password']
-        cpassword = request.form['cpassword']
-        email = request.form['email']
+        susername = r.form['username']
+        password = r.form['password']
+        cpassword = r.form['cpassword']
+        email = r.form['email']
             
         cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute('SELECT username FROM userinfo WHERE username = %s', (susername,))
@@ -126,7 +130,7 @@ def register():
             conn.close()
             signupsuccess = 'You have successfully registered. Now you can log in!'
             command = 'logging'
-    elif request.method == 'POST':
+    elif r.method == 'POST':
         
         msg2 = 'Please fill out the form'
         modal = 'signup'
@@ -146,15 +150,15 @@ def home():
 
 @app.route('/choose-template',methods = ['GET','POST'])
 def template():
-    select1 = request.form.get('select1')
-    select2 = request.form.get('select2')
-    select3 = request.form.get('select3')
-    select4 = request.form.get('select4')
+    select1 = r.form.get('select1')
+    select2 = r.form.get('select2')
+    select3 = r.form.get('select3')
+    select4 = r.form.get('select4')
     # print(select1)
     # print(select2)
     # print(select3)
     # print(select4)
-    if (request.method == 'POST') :
+    if (r.method == 'POST') :
         if (select1 == 'Go to Input Page') :
             session['num'] = 1
             return redirect('/inputfortemplate')
@@ -174,127 +178,127 @@ def template():
 @app.route('/inputfortemplate',methods = ['GET','POST'])
 def input1():
     num = session.get('num')
-    if (request.method == 'POST') :  
+    if (r.method == 'POST') :  
         global var
         global edu
         global items
         global ship
-        fname = request.form.get('fname')
-        lname = request.form.get('lname')
-        contact = request.form.get('contact')
-        email = request.form.get('email')
-        address = request.form.get('address')
-        city = request.form.get('city')
-        state = request.form.get('state')
-        country = request.form.get('country')
-        pincode = request.form.get('pincode')
+        fname = r.form.get('fname')
+        lname = r.form.get('lname')
+        contact = r.form.get('contact')
+        email = r.form.get('email')
+        address = r.form.get('address')
+        city = r.form.get('city')
+        state = r.form.get('state')
+        country = r.form.get('country')
+        pincode = r.form.get('pincode')
 
-        edu0 = { 'college' : request.form['college0'],
-                  'adyear' : request.form['adyear0'],
-                  'gradyear' : request.form['gradyear0'],
-                  'cgpa' : request.form['cgpa0'],
-                  'percent' : request.form['percent0'],
-                  'core' : request.form['core0'],
+        edu0 = { 'college' : r.form['college0'],
+                  'adyear' : r.form['adyear0'],
+                  'gradyear' : r.form['gradyear0'],
+                  'cgpa' : r.form['cgpa0'],
+                  'percent' : r.form['percent0'],
+                  'core' : r.form['core0'],
                   'association' : {
-                   'asso0' : request.form['association0'],
-                   'asso1' : request.form['association1'],
-                   'asso2' : request.form['association2'],
-                   'asso3' : request.form['association3']
+                   'asso0' : r.form['association0'],
+                   'asso1' : r.form['association1'],
+                   'asso2' : r.form['association2'],
+                   'asso3' : r.form['association3']
         }}
         edu.append(edu0)
-        edu1 = { 'college' : request.form['college1'],
-                 'adyear' : request.form['adyear1'],
-                 'gradyear' : request.form['gradyear1'],
-                 'cgpa' : request.form['cgpa1'],
-                 'percent' : request.form['percent1'],
-                 'core' : request.form['core1'],
+        edu1 = { 'college' : r.form['college1'],
+                 'adyear' : r.form['adyear1'],
+                 'gradyear' : r.form['gradyear1'],
+                 'cgpa' : r.form['cgpa1'],
+                 'percent' : r.form['percent1'],
+                 'core' : r.form['core1'],
                  'association' : {
-                  'asso0' :  request.form['association4'],
-                  'asso1' :  request.form['association5'],
-                  'asso2' :  request.form['association6'],
-                  'asso3' :  request.form['association7']
+                  'asso0' :  r.form['association4'],
+                  'asso1' :  r.form['association5'],
+                  'asso2' :  r.form['association6'],
+                  'asso3' :  r.form['association7']
         }}
         edu.append(edu1)
-        edu2 = { 'college' : request.form['college2'],
-                 'adyear' : request.form['adyear2'],
-                 'gradyear' : request.form['gradyear2'],
-                 'cgpa' : request.form['cgpa2'],
-                 'percent' : request.form['percent2'],
-                 'core' : request.form['core2'],
+        edu2 = { 'college' : r.form['college2'],
+                 'adyear' : r.form['adyear2'],
+                 'gradyear' : r.form['gradyear2'],
+                 'cgpa' : r.form['cgpa2'],
+                 'percent' : r.form['percent2'],
+                 'core' : r.form['core2'],
                  'association' : {
-                   'asso0' : request.form['association8'],
-                   'asso1' : request.form['association9'],
-                   'asso2' : request.form['association10'],
-                   'asso3' : request.form['association11']
+                   'asso0' : r.form['association8'],
+                   'asso1' : r.form['association9'],
+                   'asso2' : r.form['association10'],
+                   'asso3' : r.form['association11']
         }}
         edu.append(edu2)
-        edu3 = { 'college' : request.form['college3'],
-                 'adyear' : request.form['adyear3'],
-                 'gradyear' : request.form['gradyear3'],
-                 'cgpa' : request.form['cgpa3'],
-                 'percent' : request.form['percent3'],
-                 'core' : request.form['core3'],
+        edu3 = { 'college' : r.form['college3'],
+                 'adyear' : r.form['adyear3'],
+                 'gradyear' : r.form['gradyear3'],
+                 'cgpa' : r.form['cgpa3'],
+                 'percent' : r.form['percent3'],
+                 'core' : r.form['core3'],
                  'association' : {
-                   'asso0' : request.form['association12'],
-                   'asso1' : request.form['association13'],
-                   'asso2' : request.form['association14'],
-                   'asso3' : request.form['association15']
+                   'asso0' : r.form['association12'],
+                   'asso1' : r.form['association13'],
+                   'asso2' : r.form['association14'],
+                   'asso3' : r.form['association15']
         }}
         edu.append(edu3)
         print(edu)
 
 
 
-        objective = request.form.get('objective')
-        skill = request.form.getlist('skill')
-        hobby = request.form.getlist('hobby')
-        items0 = { 'proname': request.form['proname0'],
-                    'profrom': request.form['profrom0'],
-                    'proto': request.form['proto0'],
-                    'prodescription': request.form['prodescription0']}
+        objective = r.form.get('objective')
+        skill = r.form.getlist('skill')
+        hobby = r.form.getlist('hobby')
+        items0 = { 'proname': r.form['proname0'],
+                    'profrom': r.form['profrom0'],
+                    'proto': r.form['proto0'],
+                    'prodescription': r.form['prodescription0']}
         items.append(items0)
-        items1 = { 'proname': request.form['proname1'],
-                    'profrom': request.form['profrom1'],
-                    'proto': request.form['proto1'],
-                    'prodescription': request.form['prodescription1']}
+        items1 = { 'proname': r.form['proname1'],
+                    'profrom': r.form['profrom1'],
+                    'proto': r.form['proto1'],
+                    'prodescription': r.form['prodescription1']}
         items.append(items1)
-        items2 = { 'proname': request.form['proname2'],
-                    'profrom': request.form['profrom2'],
-                    'proto': request.form['proto2'],
-                    'prodescription': request.form['prodescription2']}
+        items2 = { 'proname': r.form['proname2'],
+                    'profrom': r.form['profrom2'],
+                    'proto': r.form['proto2'],
+                    'prodescription': r.form['prodescription2']}
         items.append(items2)
-        items3 = { 'proname': request.form['proname3'],
-                    'profrom': request.form['profrom3'],
-                    'proto': request.form['proto3'],
-                    'prodescription': request.form['prodescription3']}
+        items3 = { 'proname': r.form['proname3'],
+                    'profrom': r.form['profrom3'],
+                    'proto': r.form['proto3'],
+                    'prodescription': r.form['prodescription3']}
         items.append(items3)
         # print(items)
 
-        ship0 = { 'intitle': request.form['intitle0'],
-                    'infrom': request.form['infrom0'],
-                    'into': request.form['into0'],
-                    'indescription': request.form['indescription0']}
+        ship0 = { 'intitle': r.form['intitle0'],
+                    'infrom': r.form['infrom0'],
+                    'into': r.form['into0'],
+                    'indescription': r.form['indescription0']}
         ship.append(ship0)
-        ship1 = { 'intitle': request.form['intitle1'],
-                    'infrom': request.form['infrom1'],
-                    'into': request.form['into1'],
-                    'indescription': request.form['indescription1']}
+        ship1 = { 'intitle': r.form['intitle1'],
+                    'infrom': r.form['infrom1'],
+                    'into': r.form['into1'],
+                    'indescription': r.form['indescription1']}
         ship.append(ship1)
-        ship2 = { 'intitle': request.form['intitle2'],
-                    'infrom': request.form['infrom2'],
-                    'into': request.form['into2'],
-                    'indescription': request.form['indescription2']}
+        ship2 = { 'intitle': r.form['intitle2'],
+                    'infrom': r.form['infrom2'],
+                    'into': r.form['into2'],
+                    'indescription': r.form['indescription2']}
         ship.append(ship2)
-        ship3 = { 'intitle': request.form['intitle3'],
-                    'infrom': request.form['infrom3'],
-                    'into': request.form['into3'],
-                    'indescription': request.form['indescription3']}
+        ship3 = { 'intitle': r.form['intitle3'],
+                    'infrom': r.form['infrom3'],
+                    'into': r.form['into3'],
+                    'indescription': r.form['indescription3']}
         ship.append(ship3)
         # print(ship)
         print(num)
-        achievement = request.form.getlist('achievement')
-        github = request.form.get('github')
-        linkedin = request.form.get('linkedin')
+        achievement = r.form.getlist('achievement')
+        github = r.form.get('github')
+        linkedin = r.form.get('linkedin')
         if (num == 1) :
             template = latex_jinja_env.get_template('templates/Template-1.tex')
         elif (num == 2) :
@@ -305,6 +309,7 @@ def input1():
             template = latex_jinja_env.get_template('templates/Template-4.tex')
 
         right = template.render(fname = fname, lname = lname, contact = contact ,email = email, address = address, city = city, state = state, country = country, pincode = pincode,  edu = edu, objective = objective, skill = skill, hobby = hobby, items = items,  ship = ship, achievement = achievement, github = github, linkedin = linkedin )
+
         with open('test'+ str(var) +'.tex','w') as f :
             f.write(right)
         f.close()
@@ -323,13 +328,11 @@ def pdf():
     global cp
     global var
     cp = 'test'+str(var)+'.pdf'
-    
     return render_template('SignOut.html', value = cp)
 
 @app.route('/logout')
 def logout():
      return redirect(url_for('login'))  
-
 
 if __name__ == "__main__":
     app.run(debug=True)    
