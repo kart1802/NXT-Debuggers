@@ -4,9 +4,9 @@
 <head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
-</style>
-<link rel="icon" type="image/jgp" href="{{ url_for('static',filename='final_logo().jpg') }}">
+        @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+    </style>
+    <link rel="icon" type="image/jgp" href="{{ url_for('static',filename='final_logo().jpg') }}">
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -17,50 +17,70 @@
 
 <body style="background: url({{ url_for('static',filename='NXT_theme.jpg') }});">
     <h1 style="text-align:center ;font-family: 'Odibee Sans', cursive; font-size: 8rem;
-    padding: 12px; font: outline; color: white;" class="container">Select your Template!</h1><br><p></p>
+    padding: 12px; font: outline; color: white;" class="container">Select your Template!</h1><br>
+    <p></p>
 
-    <div class="row  container-fluid row-cols-2 row-cols-lg-4">
-    <div class="container">
-        <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp1">
-            <div class="card-body">
-                <img src="{{ url_for('static',filename='FinalTemplate-1.jpg') }}" class="card-img" alt="Template 1">
+<fieldset class="container">
+<p>
+    <span class="container">
+        
+            <div type="button" class="col-lg-3 float-lg-left card m-2 p-2" data-toggle="modal" data-target="#Temp1">
+                <div class="card-body">
+                    <img src="{{ url_for('static',filename='FinalTemplate-1.jpg') }}" class="card-img" alt="Template 1">
 
-            </div>
-            <div class="card-footer">Template 1</div>
-        </div><br>
-
-        <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp3">
-            <div class="card-body">
-                <img src="{{ url_for('static',filename='FinalTemplate-3.jpg') }}" class="card-img" alt="Template 3">
+                </div>
+                <div class="card-footer">Template 1</div>
 
             </div>
-            <div class="card-footer">Template 3</div>
-        </div>
-    </div>
-     <div class="container">
-        <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp2">
-            <div class="card-body">
-                <img src="{{ url_for('static',filename='FinalTemplate-2.jpg') }}" class="card-img" alt="Template 2">
+
+      
+            <div type="button" class="col-lg-3 float-lg-right card m-2 p-2" data-toggle="modal" data-target="#Temp2">
+                <div class="card-body">
+                    <img src="{{ url_for('static',filename='FinalTemplate-2.jpg') }}" class="card-img" alt="Template 2">
+
+                </div>
+                <div class="card-footer">Template 2</div>
+            </div>
+
+        
+    </span>
+</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>
+    <span class="container">
+                
+            <div type="button" class="col-lg-3 float-lg-left card m-2 p-2" data-toggle="modal" data-target="#Temp3">
+                <div class="card-body">
+                    <img src="{{ url_for('static',filename='FinalTemplate-3.jpg') }}" class="card-img" alt="Template 3">
+
+                </div>
+                <div class="card-footer">Template 3</div>
+            </div>
+
+        
+       
+            <div type="button" class="col-lg-3 float-lg-right card m-2 p-2" data-toggle="modal" data-target="#Temp4">
+                <div class="card-body">
+                    <img src="{{ url_for('static',filename='FinalTemplate-4.jpg') }}" class="card-img" alt="Template 4">
+
+                </div>
+                <div class="card-footer">Template 4</div>
 
             </div>
-            <div class="card-footer">Template 2</div>
-        </div><br>
 
-        <div type="button" class="quote card col col-lg-12 m-2 p-3" data-toggle="modal" data-target="#Temp4">
-            <div class="card-body">
-                <img src="{{ url_for('static',filename='FinalTemplate-4.jpg') }}" class="card-img" alt="Template 4">
-
-            </div>
-            <div class="card-footer">Template 4</div>
-        </div>
-
-    </div>
-</div>
+        
+        </span>
+</p>
+</fieldset>
     <!-- Button trigger modal -->
 
 
     <!-- Modal -->
-<!--Template 1-->
+    <!--Template 1-->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="Temp1" tabindex="-1" role="dialog"
         aria-labelledby="Temp_label_1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -75,19 +95,22 @@
                     <img src="{{ url_for('static',filename='FinalTemplate-1.jpg') }}" class="card-img" alt="Template 1">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"  data-target="#selectTemp1"  data-toggle="collapse" href="#selectTemp1" role="button" aria-expanded="false" aria-controls="selectTemp1">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp1"
+                        data-toggle="collapse" href="#selectTemp1" role="button" aria-expanded="false"
+                        aria-controls="selectTemp1">Close</button>
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp1">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp1">
-                    <form action="/choose-template" method="post" >
-                    <div class="card card-body"><input class="btn btn-success" type="submit" value="Go to Input Page" name="select1"></div>
+                    <form action="/choose-template" method="post">
+                        <div class="card card-body"><input class="btn btn-success" type="submit"
+                                value="Go to Input Page" name="select1"></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-<!--Template 2-->
+    <!--Template 2-->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="Temp2" tabindex="-1" role="dialog"
         aria-labelledby="Temp_label_2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -102,19 +125,22 @@
                     <img src="{{ url_for('static',filename='FinalTemplate-2.jpg') }}" class="card-img" alt="Template 2">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp2"  data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false" aria-controls="selectTemp2">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp2"
+                        data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false"
+                        aria-controls="selectTemp2">Close</button>
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp2">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp2">
-                    <form action="/choose-template" method="post" >
-                    <div class="card card-body"><input class="btn btn-success" value="Go to Input Page" name="select2" type="submit"></div>
-                </form>
+                    <form action="/choose-template" method="post">
+                        <div class="card card-body"><input class="btn btn-success" value="Go to Input Page"
+                                name="select2" type="submit"></div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-<!--Template 3-->
+    <!--Template 3-->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="Temp3" tabindex="-1" role="dialog"
         aria-labelledby="Temp_label_3" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -129,19 +155,22 @@
                     <img src="{{ url_for('static',filename='FinalTemplate-3.jpg') }}" class="card-img" alt="Template 3">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"  data-target="#selectTemp3"  data-toggle="collapse" href="#selectTemp3" role="button" aria-expanded="false" aria-controls="selectTemp3">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp3"
+                        data-toggle="collapse" href="#selectTemp3" role="button" aria-expanded="false"
+                        aria-controls="selectTemp3">Close</button>
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp3">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp3">
-                    <form action="/choose-template" method="post" >
-                    <div class="card card-body"><input class="btn btn-success" name="select3" value="Go to Input Page" type="submit" ></div>
-                </form>
+                    <form action="/choose-template" method="post">
+                        <div class="card card-body"><input class="btn btn-success" name="select3"
+                                value="Go to Input Page" type="submit"></div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-<!--Template 4-->
+    <!--Template 4-->
     <div class="modal fade" data-backdrop="static" data-keyboard="false" id="Temp4" tabindex="-1" role="dialog"
         aria-labelledby="Temp_label_4" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -156,13 +185,16 @@
                     <img src="{{ url_for('static',filename='FinalTemplate-4.jpg') }}" class="card-img" alt="Template 4">
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"  data-target="#selectTemp4"  data-toggle="collapse" href="#selectTemp4" role="button" aria-expanded="false" aria-controls="selectTemp4">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp4"
+                        data-toggle="collapse" href="#selectTemp4" role="button" aria-expanded="false"
+                        aria-controls="selectTemp4">Close</button>
                     <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp4">Select this template</a>
                 </div>
                 <div class="collapse" id="selectTemp4">
-                    <form action="/choose-template" method="post" >
-                    <div class="card card-body"><input class="btn btn-success" name="select4" value="Go to Input Page" type="submit" ></div>
-                </form>
+                    <form action="/choose-template" method="post">
+                        <div class="card card-body"><input class="btn btn-success" name="select4"
+                                value="Go to Input Page" type="submit"></div>
+                    </form>
                 </div>
             </div>
         </div>
