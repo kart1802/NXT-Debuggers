@@ -1,20 +1,15 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{ragged2e}
-\usepackage[english]{babel}
 \usepackage[autostyle]{csquotes}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{geometry}
-\usepackage{fancyhdr}
 \usepackage{nopageno}
 \usepackage{fontawesome}
 \usepackage{setspace}
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0pt}{0pt}{0pt}
-\usepackage{xcolor}
 \usepackage{hyperref}
 \hypersetup{
 colorlinks = true,
@@ -24,47 +19,94 @@ urlcolor = red
 \geometry{
  a4paper,
  total={190mm,257mm},
+ right=10mm,
  left=10mm,
- top=35mm,
- headheight=25mm
+ top=8mm,
+ bottom=10mm,
+ nohead
  }
-
+\newcommand{\VAR}[1]{}
+\newcommand{\BLOCK}[1]{}
 \urlstyle{same}
 
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\flushleft
-{\LARGE{\uppercase{\textbf{\VAR{fname} \VAR{lname}}}}}\\
-}
+\begin{document}
+\flushleft{
 
-\rhead{\BLOCK{ if linkedin != '' and github == '' }
-\flushright
-\small{ \VAR{contact} \faPhone\\ 
-{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}}  \faEnvelopeO  \\  {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}} \faLinkedinSquare \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode}   \faHome}
-}
+\parbox[][3cm][t]{19cm}{\parbox[][5mm][t]{14cm}{\flushleft{
+{\LARGE {\uppercase{\VAR{fname} \VAR{lname}}}}}}\hfill {\flushright{\BLOCK{ if linkedin != '' and github == '' }
+ \href{tel:\VAR{contact}}{\VAR{contact}} \hspace{0.5mm} \faPhone\\ 
+{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \hspace{0.5mm} \faEnvelopeO  \\  {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}} \hspace{0.5mm} \faLinkedinSquare \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \hspace{0.5mm}  \faHome\\
+}}\rule{19cm}{1pt}
+}\vspace{7mm}
 
 \BLOCK{ elif github != '' and linkedin == '' }
-\flushright
-\small{ \VAR{contact} \faPhone\\ 
-{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}}  \faEnvelopeO  \\ {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}}  \faGithubSquare \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode}   \faHome}
-}
+\href{tel:\VAR{contact}}{\VAR{contact}} \hspace{0.5mm} \faPhone\\ 
+{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \hspace{0.5mm} \faEnvelopeO  \\ {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} \hspace{0.5mm} \faGithubSquare \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \hspace{0.5mm}  \faHome\\
+}}\rule{19cm}{1pt}
+}\vspace{7mm}
 
 \BLOCK{ elif (linkedin != '') and (github != '') }
-\flushright
-\small{ \VAR{contact} \faPhone\\ 
-{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}}  \faEnvelopeO  \\  {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}} \faLinkedinSquare \\ {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}}  \faGithubSquare \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode}   \faHome}
-}
+\href{tel:\VAR{contact}}{\VAR{contact}} \hspace{0.5mm} \faPhone\\ 
+{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \hspace{0.5mm} \faEnvelopeO  \\  {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}} \hspace{0.5mm} \faLinkedinSquare \\ {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}} \hspace{0.5mm} \faGithubSquare \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode}  \hspace{0.5mm} \faHome\\
+}}\rule{19cm}{1pt}
+}\vspace{7mm}
+
 \BLOCK{ else }
-\flushright
-\small{ \VAR{contact} \faPhone\\ 
-{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}}  \faEnvelopeO  \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode}   \faHome}
-}
+\href{tel:\VAR{contact}}{\VAR{contact}} \hspace{0.5mm} \faPhone\\ 
+{\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \hspace{0.5mm} \faEnvelopeO  \\  \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \hspace{0.5mm}  \faHome\\
+}}\rule{19cm}{1pt}
+}\vspace{7mm}
 \BLOCK{ endif }
 
+{\large{\textbf{\uppercase{Professional Summary}}}}
 
-\begin{document}
+\vspace{3pt}
+\VAR{objective}
+\vspace{10pt}
+\BLOCK{ if skill[0] != '' }
+{\large{\textbf{\uppercase{Skills}}}}
 
-\section*{\large{\uppercase{education}}}
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{ for x in skill }
+	\BLOCK{ if x != '' }
+		\item \VAR{x}
+	\BLOCK{ endif }
+		
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+\vspace{10pt}
+\BLOCK{ if hobby[0] != '' }
+{\large{\textbf{\uppercase{Hobbies}}}}
+
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{ for x in hobby }
+	\BLOCK{ if x != '' }
+		\item \VAR{x}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+\vspace{10pt}
+
+\BLOCK{ if achievement[0] != '' }
+
+{\large{\textbf{\uppercase{achievements}}}}
+
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+\BLOCK{ for x in achievement }
+	\BLOCK{ if x != '' }
+		\item \VAR{x}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+\vspace{10pt}
+
+{\large{\textbf{\uppercase{education}}}}
 
 \vspace{3pt}
 \renewcommand{\labelitemii}{$\circ$}
@@ -72,7 +114,7 @@ urlcolor = red
 \BLOCK{ for i in edu } 
 	\BLOCK{ if i['college'] != '' }
 
-{\large{\textbf{\VAR{i['college']}}}}\hfill {\textbf{From}}: \VAR{i['adyear']} - \VAR{i['gradyear']}\\
+{\textit{\large{\textbf{\VAR{i['college']}}}}}\hfill {\textbf{From}}: \VAR{i['adyear']} - \VAR{i['gradyear']}\\
 {\textbf{CGPA}}: \VAR{i['cgpa']} \hspace{30mm} 
 \BLOCK{ if i['percent'] == '-' }
 {\textbf{Percentage}}: \VAR{i['percent']} \\
@@ -102,43 +144,11 @@ urlcolor = red
 
 \BLOCK{ endfor }
 }
-
  
-\vspace{3pt}
-\section*{\large{\uppercase{objective}}}
+\vspace{10pt}
 
-\vspace{3pt}
-\VAR{objective}
-\vspace{3pt}
-\BLOCK{ if skill[0] != '' }
-\section*{\large{\uppercase{Skills}}}
-
-\vspace{3pt}
-\begin{itemize}[noitemsep,nolistsep]
-\BLOCK{ for x in skill }
-	\BLOCK{ if x != '' }
-		\item \VAR{x}
-	\BLOCK{ endif }
-		
-\BLOCK{ endfor }
-\end{itemize}
-\BLOCK{ endif }
-\vspace{3pt}
-\BLOCK{ if hobby[0] != '' }
-\section*{\large{\uppercase{Hobbies}}}
-
-\vspace{3pt}
-\begin{itemize}[noitemsep,nolistsep]
-\BLOCK{ for x in hobby }
-	\BLOCK{ if x != '' }
-		\item \VAR{x}
-	\BLOCK{ endif }
-\BLOCK{ endfor }
-\end{itemize}
-\BLOCK{ endif }
-\vspace{3pt}
 \BLOCK{ if items[0]['proname'] != '' }
-\section*{\large{\uppercase{projects}}}
+{\large{\textbf{\uppercase{projects}}}}
 
 \vspace{3pt}
 \begin{enumerate}[noitemsep,nolistsep]
@@ -150,9 +160,9 @@ urlcolor = red
 \BLOCK{ endfor }
 \end{enumerate}
 \BLOCK{ endif }
-\vspace{3pt}
+\vspace{10pt}
 \BLOCK{ if ship[0]['intitle'] != '' }
-\section*{\large{\uppercase{Internship}}}
+{\large{\textbf{\uppercase{internship}}}}
 
 \vspace{3pt}
 \begin{enumerate}[noitemsep,nolistsep]
@@ -165,19 +175,7 @@ urlcolor = red
 	
 \end{enumerate}
 \BLOCK{ endif }
-\vspace{3pt}
-\BLOCK{ if achievement[0] != '' }
+\vspace{10pt}
 
-\section*{\large{\uppercase{achievements}}}
-
-\vspace{3pt}
-\begin{itemize}[noitemsep,nolistsep]
-\BLOCK{ for x in achievement }
-	\BLOCK{ if x != '' }
-		\item \VAR{x}
-	\BLOCK{ endif }
-\BLOCK{ endfor }
-\end{itemize}
-\BLOCK{ endif }
-\vspace{3pt}
+}
 \end{document}

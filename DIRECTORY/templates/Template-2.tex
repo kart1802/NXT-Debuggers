@@ -1,14 +1,9 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
 \usepackage[autostyle]{csquotes}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{geometry}
-\usepackage{fancyhdr}
-
 \usepackage{vwcol} 
 \usepackage{multicol}
 \usepackage{nopageno}
@@ -16,7 +11,6 @@
 \usepackage{setspace}
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0pt}{0pt}{0pt}
-\usepackage{xcolor}
 \usepackage{hyperref}
 \hypersetup{
 colorlinks = true,
@@ -27,19 +21,15 @@ urlcolor = red
  a4paper,
  total={190mm,257mm},
  left=10mm,
- top=25mm,
- headheight=8mm
+ top=10mm
  }
 
 \urlstyle{same}
 
-\pagestyle{fancy}
-\fancyhf{}
-\chead{\LARGE {\uppercase{\textbf{\VAR{fname} \VAR{lname}}} }}
-
-
-
 \begin{document}
+\flushleft{
+\parbox[][0.5cm][t]{19cm}{\centering{
+{\LARGE {\uppercase{\VAR{fname} \VAR{lname}}}}}}\\ \rule{19cm}{1pt}\vspace{3mm}
 \begin{multicols}{2}
 %\begin{vwcol}[widths={0.4,0.6},
 %sep=.8cm, justify=flush,rule=0pt,indent=1em]
@@ -49,44 +39,44 @@ urlcolor = red
 %]
 
 
-\section*{\large{\uppercase{contact:}}}
+\section*{\large{\uppercase{contact :}}}
 %\vspace{3pt}
 
 \BLOCK{ if linkedin != '' and github == '' }
 \begin{flushleft}
 
-\faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faPhone \hspace{1mm} Phone: \href{tel:\VAR{contact}}{\VAR{contact}}\\
 \faEnvelopeO \hspace{1mm} {\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \\
 \faHome \hspace{1mm} \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
-\faLinkedin\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}}
+\faLinkedin\hspace{1mm}  {\color{red}\underline{\href{\VAR{linkedin}}{LinkedIn Profile}}}
 
 \end{flushleft}
 
 \BLOCK{ elif github != '' and linkedin == '' }
 \begin{flushleft}
 
-\faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faPhone \hspace{1mm} Phone: \href{tel:\VAR{contact}}{\VAR{contact}}\\
 \faEnvelopeO \hspace{1mm} {\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \\
 \faHome \hspace{1mm} \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
-\faGithub\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}}
+\faGithub\hspace{1mm}  {\color{red}\underline{\href{\VAR{github}}{Github Link}}}
 
 \end{flushleft}
 
 \BLOCK{ elif (linkedin != '') and (github != '') }
 \begin{flushleft}
 
-\faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faPhone \hspace{1mm} Phone: \href{tel:\VAR{contact}}{\VAR{contact}}\\
 \faEnvelopeO \hspace{1mm} {\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \\
 \faHome \hspace{1mm} \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode} \\ 
-\faLinkedin\hspace{1mm}  LinkedIn: {\color{red}\underline{\href{\VAR{linkedin}}{\VAR{linkedin}}}}\\
-\faGithub\hspace{1mm} Github: {\color{red}\underline{\href{\VAR{github}}{\VAR{github}}}}
+\faLinkedin\hspace{1mm}  {\color{red}\underline{\href{\VAR{linkedin}}{LinkedIn Profile}}}\\
+\faGithub\hspace{1mm} {\color{red}\underline{\href{\VAR{github}}{Github Link}}}
 
 \end{flushleft}
 
 \BLOCK{ else }
 \begin{flushleft}
 
-\faPhone \hspace{1mm} Phone: \VAR{contact}\\
+\faPhone \hspace{1mm} Phone: \href{tel:\VAR{contact}}{\VAR{contact}}\\
 \faEnvelopeO \hspace{1mm} {\color{red}\underline{\href{mailto:\VAR{email}}{\VAR{email}}}} \\
 \faHome \hspace{1mm} \VAR{address},\VAR{city},\VAR{state},\VAR{country}-\VAR{pincode}
 
@@ -95,7 +85,7 @@ urlcolor = red
 
 
 \vspace{10pt}
-\section*{\large{\uppercase{education:}}}
+\section*{\large{\uppercase{education :}}}
 
 %\vspace{3pt}
 
@@ -137,7 +127,7 @@ urlcolor = red
 }
 \vspace{5pt}
 \BLOCK{ if hobby[0] != '' }
-\section*{\large{\uppercase{Hobbies:}}}
+\section*{\large{\uppercase{Hobbies :}}}
 
 %\vspace{3pt}
 \flushleft{
@@ -154,49 +144,8 @@ urlcolor = red
 \BLOCK{ endif }
 \vspace{5pt}
 \columnbreak
-\BLOCK{ if items[0]['proname'] != '' }
-\section*{\large{\uppercase{projects:}}}
 
-%\vspace{3pt}
-
-\begin{enumerate}[noitemsep,nolistsep]
-
-\BLOCK{ for i in items } 
-	\BLOCK{ if i['proname'] != '' }
-	\item {\textbf{\VAR{i['proname']}}}\\
-	\hfill {\textbf{From}}: \VAR{i['profrom']} {\textbf{To}} \VAR{i['proto']}\\
-	\VAR{i['prodescription']}
-	\BLOCK{ endif }
-\BLOCK{ endfor }
-
-\end{enumerate}
-\BLOCK{ endif }
-\vspace{5pt}
-
-
-\BLOCK{ if ship[0]['intitle'] != '' }
-\section*{\large{\uppercase{Internship:}}}
-
-%\vspace{3pt}
-
-\begin{enumerate}[noitemsep,nolistsep]
-
-\BLOCK{ for i in ship } 
-	\BLOCK{ if i['intitle'] != '' }
-	\item {\textbf{\VAR{i['intitle']}}}\\
-	\hfill {\textbf{From}}: \VAR{i['infrom']} {\textbf{To}} \VAR{i['into']}\\
-	\VAR{i['indescription']}
-	\BLOCK{ endif }
-\BLOCK{ endfor }
-
-\end{enumerate}
-\BLOCK{ endif }
-\vspace{5pt}
-
-
-
-
-\section*{\large{\uppercase{objective:}}}
+\section*{\large{\uppercase{professional summary :}}}
 
 %\vspace{3pt}
 
@@ -208,7 +157,7 @@ urlcolor = red
 
 \vspace{3pt}
 \BLOCK{ if skill[0] != '' }
-\section*{\large{\uppercase{Skills:}}}
+\section*{\large{\uppercase{Skills :}}}
 
 %\vspace{3pt}
 \flushleft{
@@ -228,7 +177,7 @@ urlcolor = red
 
 
 \BLOCK{ if achievement[0] != '' }
-\section*{\large{\uppercase{achievements:}}}
+\section*{\large{\uppercase{achievements :}}}
 
 %\vspace{3pt}
 \begin{flushleft}
@@ -245,6 +194,47 @@ urlcolor = red
 \BLOCK{ endif }
 \vspace{5pt}
 
+\BLOCK{ if items[0]['proname'] != '' }
+\section*{\large{\uppercase{projects :}}}
+
+%\vspace{3pt}
+
+\begin{enumerate}[noitemsep,nolistsep]
+
+\BLOCK{ for i in items } 
+	\BLOCK{ if i['proname'] != '' }
+	\item {\textbf{\VAR{i['proname']}}}\\
+	\hfill {\textbf{From}}: \VAR{i['profrom']} {\textbf{To}} \VAR{i['proto']}\\
+	\VAR{i['prodescription']}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+
+\end{enumerate}
+\BLOCK{ endif }
+\vspace{5pt}
+
+
+\BLOCK{ if ship[0]['intitle'] != '' }
+\section*{\large{\uppercase{Internship :}}}
+
+%\vspace{3pt}
+
+\begin{enumerate}[noitemsep,nolistsep]
+
+\BLOCK{ for i in ship } 
+	\BLOCK{ if i['intitle'] != '' }
+	\item {\textbf{\VAR{i['intitle']}}}\\
+	\hfill {\textbf{From}}: \VAR{i['infrom']} {\textbf{To}} \VAR{i['into']}\\
+	\VAR{i['indescription']}
+	\BLOCK{ endif }
+\BLOCK{ endfor }
+
+\end{enumerate}
+\BLOCK{ endif }
+\vspace{5pt}
+
+
 %\end{vwcol}
 \end{multicols}
+}
 \end{document}
