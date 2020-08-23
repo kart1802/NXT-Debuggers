@@ -1,21 +1,32 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+%\usepackage[default]{sourcecodepro}
+%\usepackage{algolrevived}
+%\usepackage{yfonts}
 \usepackage[T1]{fontenc}
-\usepackage{ragged2e}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{geometry}
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
+\usepackage{color,xcolor,colortbl}
+%\usepackage{longtable}
+\usepackage{graphicx}
+%\usepackage{multirow}
+\usepackage{layout}
+%\usepackage{vwcol} 
+%\usepackage{changepage}
+%\usepackage{multicol}
 \usepackage{nopageno}
 \usepackage{fontawesome}
 \usepackage{setspace}
-\usepackage{helvet}
- \fontfamily{phv}\selectfont
+\usepackage{lmodern}
+\fontfamily{cmtt}\selectfont
 \usepackage[compact]{titlesec}
+%\frakfamily
 \titlespacing{\section}{0pt}{0pt}{0pt}
-\usepackage{xcolor}
-\usepackage{hyperref}
+%\usepackage[hyphens]{url}
+\usepackage[breaklinks]{hyperref}
 \hypersetup{
 colorlinks = true,
 linkcolor = blue,
@@ -24,33 +35,73 @@ urlcolor = red
 \geometry{
  a4paper,
  total={190mm,257mm},
+ right=10mm,
  left=10mm,
- top=35mm,
- headheight=25mm
+ top=8mm,
+ bottom=10mm,
+ nohead
  }
-
+%\definecolor{gray}{gray}{0.5}
 \urlstyle{same}
 
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\flushleft
-{\LARGE{\uppercase{\textbf{Prahlad Amudan}}}}\\
-}
-
-\rhead{\flushright
-\small{ +919833004100  \faPhone\\ 
-{\color{red}\underline{\href{mailto:prahlad2001a@gmail.com}{prahlad2001a@gmail.com}}}  \faEnvelopeO  \\  {\color{red}\underline{\href{mailto:prahlad2001a@gmail.com}{www.linkedin.com/in/Prahlad-Amudan}}} \faLinkedinSquare \\ {\color{red}\underline{\href{mailto:prahlad2001a@gmail.com}{www.github.com/in/Prahlad-Amudan}}}  \faGithubSquare \\  2nd Floor,Brahma Niwas,Near Pangong Tso Lake, Chembur,Mumbai-400089  \faHome}
-}
+%\pagestyle{fancy}
+%\fancyhf{}
 
 
 \begin{document}
+\flushleft{
 
-\section*{\large{\uppercase{education}}}
+\parbox[][3cm][t]{19cm}{\parbox[][5mm][t]{14cm}{\flushleft{
+{\LARGE {\uppercase{Chandrashekhar Swaminathan}}}}}\hfill {\flushright{\href{tel:+918692365298}{+918692365298} \hspace{0.5mm} \faPhone\\
+	{\color{red}\underline{\href{mailto:cs2000@gmail.com}	{cs2000@gmail.com}}} \hspace{0.5mm} \faEnvelopeO   \\
+	{\color{red}\underline{\href{https://www.linkedin.com/in/Chandra-Swami}{https://www.linkedin.com/in/Chandra-Swami}}}	\hspace{0.5mm} \faLinkedin \\
+	{\color{red}\underline{\href{https://www.github.com/Chandra}{https://www.github.com/Chandra}}} \hspace{0.5mm} \faGithub\\
+	 2nd Floor,Brahma Niwas,Near Pangong Tso Lake, Matunga, Mumbai, Maharashtra, India-400089 \hspace{0.5mm} \faHome\\}}\rule{19cm}{1pt}
+}\vspace{7mm}
+
+{\large{\textbf{\uppercase{Professional Summary}}}}
+
+\vspace{3pt}
+The decision about what to put into your paragraphs begins with the germination of a seed of ideas; this "germination process" is better known as brainstorming.
+\vspace{10pt}
+
+{\large{\textbf{\uppercase{Skills}}}}
+
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+	\item AutoCAD, Solidworks, AutoCAD Mechanical, Autodesk Inventor
+	\item Excel, C++, HTML, Javascript, Python
+	\item Management, Leadership, Organization, Public Speaking, Problem-solving, Teamwork
+\end{itemize}
+\vspace{10pt}
+
+{\large{\textbf{\uppercase{Hobbies}}}}
+
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+	\item Reading Different kinds of books, Programming, listening to classical Indian music
+	\item Blogging, Volunteering, Traveling, Art, Design, Music, Reading, Video Gaming.
+\end{itemize}
+
+\vspace{10pt}
+
+{\large{\textbf{\uppercase{achievements}}}}
+
+\vspace{3pt}
+\begin{itemize}[noitemsep,nolistsep]
+	\item Was a part of State level football team
+	\item Won many national and international level olympiads
+	\item having a soft corner towards art
+\end{itemize}
+
+\vspace{10pt}
+
+{\large{\textbf{\uppercase{education}}}}
 
 \vspace{3pt}
 \renewcommand{\labelitemii}{$\circ$}
 \flushleft{
-{\large{\textbf{Veermata Jijabai Technological Institute(VJTI)}}}\hfill {\textbf{From}}: 14/08/2019 - 14/08/2023\\
+{\textit{\large{\textbf{Veermata Jijabai Technological Institute(VJTI)}}}}\hfill {\textbf{From}}: 14/08/2019 - 14/08/2023\\
 {\textbf{CGPA}}: 10 \hspace{30mm} {\textbf{Percentage}}: -\\
 {\textbf{Course Work}} : Thermodynamics, Fluid Mechanics, Coding, Mechatronics, Entreprenuership,Computer Programming, Basic Electrical Engineering, Elements of Mechanical Engineering, Mechanics, Graphics.\\
 {\textbf{\underline{Professional Associations}}}:
@@ -61,7 +112,7 @@ urlcolor = red
 	\item Member of Institute of Electrical and Electronics Engineers(IEEE)(VJTI)
 \end{itemize}
 \vspace{3pt}
-{\large{\textbf{South Indian Education Society(SIES)}}} \hfill
+{\textit{\large{\textbf{South Indian Education Society(SIES)}}}} \hfill
 \textbf{From}: 15/06/2017 - 20/03/2019 \\   
 \textbf{CGPA}: -  \hspace{3cm}      \textbf{Percentage}: 91\% \\
 
@@ -75,33 +126,9 @@ Studied For JEE Mains and Advanced and various other competitive exams \\
 }
 
  
-\vspace{3pt}
-\section*{\large{\uppercase{objective}}}
+\vspace{10pt}
 
-\vspace{3pt}
-The decision about what to put into your paragraphs begins with the germination of a seed of ideas; this "germination process" is better known as brainstorming.
-\vspace{3pt}
-
-\section*{\large{\uppercase{Skills}}}
-
-\vspace{3pt}
-\begin{itemize}[noitemsep,nolistsep]
-	\item AutoCAD, Solidworks, AutoCAD Mechanical, Autodesk Inventor
-	\item Excel, C++, HTML, Javascript, Python
-	\item Management, Leadership, Organization, Public Speaking, Problem-solving, Teamwork
-\end{itemize}
-\vspace{3pt}
-
-\section*{\large{\uppercase{Hobbies}}}
-
-\vspace{3pt}
-\begin{itemize}[noitemsep,nolistsep]
-	\item Reading Different kinds of books, Programming, listening to classical Indian music
-	\item Blogging, Volunteering, Traveling, Art, Design, Music, Reading, Video Gaming.
-\end{itemize}
-
-\vspace{3pt}
-\section*{\large{\uppercase{projects}}}
+{\large{\textbf{\uppercase{projects}}}}
 
 \vspace{3pt}
 \begin{enumerate}[noitemsep,nolistsep]
@@ -111,8 +138,8 @@ The decision about what to put into your paragraphs begins with the germination 
 	Although most people consider piranhas to be quite dangerous, they are, for the most part, entirely harmless. Piranhas rarely feed on large animals; they eat smaller fish and aquatic plants.
 \end{enumerate}
 	
-\vspace{3pt}
-\section*{\large{\uppercase{Internship}}}
+\vspace{10pt}
+{\large{\textbf{\uppercase{Internship}}}}
 
 \vspace{3pt}
 \begin{enumerate}[noitemsep,nolistsep]
@@ -122,17 +149,7 @@ The decision about what to put into your paragraphs begins with the germination 
 	 Scientists' research has revealed that viruses are by far the most abundant life forms on Earth. There are a million times more viruses on the planet than stars in the universe. Viruses also harbor the majority of genetic diversity on Earth.
 \end{enumerate}
 
-\vspace{3pt}
+\vspace{10pt}
 
-
-\section*{\large{\uppercase{achievements}}}
-
-\vspace{3pt}
-\begin{itemize}[noitemsep,nolistsep]
-	\item Was a part of State level football team
-	\item Won many national and international level olympiads
-	\item having a soft corner towards art
-\end{itemize}
-
-\vspace{3pt}
+}
 \end{document}
