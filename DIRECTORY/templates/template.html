@@ -20,62 +20,54 @@
     padding: 12px; font: outline; color: white;" class="container">Select your Template!</h1><br>
     <p></p>
 
-<fieldset class="container">
-<p>
-    <span class="container">
-        
-            <div type="button" class="col-lg-3 float-lg-left card m-2 p-2" data-toggle="modal" data-target="#Temp1">
-                <div class="card-body">
-                    <img src="{{ url_for('static',filename='FinalTemplate-1.jpg') }}" class="card-img" alt="Template 1">
+    <div class="row row-cols-1 row-cols-md-3 container-fluid">
+        <div class="col mb-4">       
 
+                <div type="button" class="card m-2 p-2" data-toggle="modal" data-target="#Temp1">
+                    <div class="card-body">
+                        <img src="{{ url_for('static',filename='FinalTemplate-1.jpg') }}" class="card-img"
+                            alt="Template 1">
+                    </div>
+                    <div class="card-footer">Template 1</div>
                 </div>
-                <div class="card-footer">Template 1</div>
 
-            </div>
-
+        </div>
+        <div class="col mb-4">    
+                <div type="button" class="card m-2 p-2" data-toggle="modal" data-target="#Temp2">
+                    <div class="card-body">
+                        <img src="{{ url_for('static',filename='FinalTemplate-2.jpg') }}" class="card-img"
+                            alt="Template 2">
+                    </div>
+                    <div class="card-footer">Template 2</div>
+                </div>
+        </div>
       
-            <div type="button" class="col-lg-3 float-lg-right card m-2 p-2" data-toggle="modal" data-target="#Temp2">
-                <div class="card-body">
-                    <img src="{{ url_for('static',filename='FinalTemplate-2.jpg') }}" class="card-img" alt="Template 2">
-
+        <div class="col mb-4">  
+                <div type="button" class="card m-2 p-2" data-toggle="modal" data-target="#Temp3">
+                    <div class="card-body">
+                        <img src="{{ url_for('static',filename='FinalTemplate-3.jpg') }}" class="card-img"
+                            alt="Template 3">
+                    </div>
+                    <div class="card-footer">Template 3</div>
                 </div>
-                <div class="card-footer">Template 2</div>
-            </div>
+        </div>
 
-        
-    </span>
-</p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p>
-    <span class="container">
-                
-            <div type="button" class="col-lg-3 float-lg-left card m-2 p-2" data-toggle="modal" data-target="#Temp3">
-                <div class="card-body">
-                    <img src="{{ url_for('static',filename='FinalTemplate-3.jpg') }}" class="card-img" alt="Template 3">
 
+        <div class="col mb-4">  
+                <div type="button" class="card m-2 p-2" data-toggle="modal" data-target="#Temp4">
+                    <div class="card-body">
+                        <img src="{{ url_for('static',filename='FinalTemplate-4.jpg') }}" class="card-img"
+                            alt="Template 4">
+                    </div>
+                    <div class="card-footer">Template 4</div>
                 </div>
-                <div class="card-footer">Template 3</div>
-            </div>
+       </div>
 
-        
-       
-            <div type="button" class="col-lg-3 float-lg-right card m-2 p-2" data-toggle="modal" data-target="#Temp4">
-                <div class="card-body">
-                    <img src="{{ url_for('static',filename='FinalTemplate-4.jpg') }}" class="card-img" alt="Template 4">
 
-                </div>
-                <div class="card-footer">Template 4</div>
+        </div>
 
-            </div>
+    </div>
 
-        
-        </span>
-</p>
-</fieldset>
     <!-- Button trigger modal -->
 
 
@@ -98,7 +90,8 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp1"
                         data-toggle="collapse" href="#selectTemp1" role="button" aria-expanded="false"
                         aria-controls="selectTemp1">Close</button>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp1">Select this template</a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp1">Select this
+                        template</a>
                 </div>
                 <div class="collapse" id="selectTemp1">
                     <form action="/choose-template" method="post">
@@ -128,7 +121,8 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp2"
                         data-toggle="collapse" href="#selectTemp2" role="button" aria-expanded="false"
                         aria-controls="selectTemp2">Close</button>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp2">Select this template</a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp2">Select this
+                        template</a>
                 </div>
                 <div class="collapse" id="selectTemp2">
                     <form action="/choose-template" method="post">
@@ -158,7 +152,8 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp3"
                         data-toggle="collapse" href="#selectTemp3" role="button" aria-expanded="false"
                         aria-controls="selectTemp3">Close</button>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp3">Select this template</a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp3">Select this
+                        template</a>
                 </div>
                 <div class="collapse" id="selectTemp3">
                     <form action="/choose-template" method="post">
@@ -188,7 +183,8 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="#selectTemp4"
                         data-toggle="collapse" href="#selectTemp4" role="button" aria-expanded="false"
                         aria-controls="selectTemp4">Close</button>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp4">Select this template</a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#selectTemp4">Select this
+                        template</a>
                 </div>
                 <div class="collapse" id="selectTemp4">
                     <form action="/choose-template" method="post">
